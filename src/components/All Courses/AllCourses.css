@@ -1,0 +1,106 @@
+.AllCoursesHeader {
+    height: 60vh;
+    /* text-align: center; */
+    background-image: url("../../Assets/courses-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 80% left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.AllCoursesHeader .AllCoursesTitle {
+    width: 100%;
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.AllCoursesHeader .searchDiv {
+    width: 40%;
+    padding: 10px;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.AllCoursesHeader .searchDiv input,
+.AllCoursesHeader .searchDiv button {
+    border-radius: 25px;
+    outline: 0;
+    border: 0;
+}
+
+.AllCoursesHeader .searchDiv input {
+    width: 75%;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.AllCoursesHeader .searchDiv button {
+    width: 22%;
+    height: 50px;
+    background-color: var(--firstColor);
+    color: white;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 1.2px;
+    transition: .5s all ease;
+}
+
+.AllCoursesHeader .searchDiv button:hover {
+    background-color: var(--secondColor);
+    letter-spacing: 0px;
+}
+.asideCategory{
+    margin: 50px 0 0 20px !important; 
+}
+.asideCategory h4 {
+    color: var(--secondColor);
+    font-size: 20px;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    padding: 15px 0;
+}
+
+.asideCategory h4 i {
+    color: var(--firstColor);
+}
+
+.form-check {
+    margin-left: 30px;
+    text-align: center;
+}
+
+.form-check-input[type=checkbox] {
+    border-radius: 2px;
+    margin-right: 10px;
+    padding: 7px;
+}
+
+.form-check-label {
+    margin-left: -40px !important;
+    color: var(--secondColor);
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.form-check-input:checked {
+    background-color: var(--firstColor) !important;
+    border-color: var(--firstColor) !important;
+}
+
+.course-section {
+    margin: 50px !important;
+}
+
+.bread-crumb {
+    background-image: url("../../Assets/coursebreadcramb.png");
+    background-size: cover;
+ }

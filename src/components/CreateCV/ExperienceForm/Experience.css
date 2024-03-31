@@ -1,0 +1,168 @@
+.cv-experience-label
+ {
+    display: block;
+    color: var(--white);
+    padding-top: 30px;
+    text-transform: capitalize;
+    font-weight: var(--fw-600);
+    line-height: 19.36px;
+    font-family: var(--font-family);
+    margin-left: 30px;
+}
+
+.cv-experience-block {
+    position: absolute;
+    top: 8%;
+    left: 3%;
+    border: 1px dashed var(--Primary);
+    width: 600px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cv-experience-block {
+    height: 511px;
+}
+
+.cv-company-label,
+.cv-position-label,
+.cv-from-label,
+.cv-to-label
+ {
+    display: block;
+    color: var(--white);
+    padding-top: 30px;
+    text-transform: capitalize;
+    font-weight: var(--fw-600);
+    line-height: 19.36px;
+    font-family: var(--font-family);
+    margin-left: 18px;
+}
+.cv-to-label{
+    margin-left: 2px;
+}
+
+.cv-company-input,
+.cv-position-input
+ {
+    display: block;
+    background-color: var(--content-bg);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 564px;
+    height: 44px;
+}
+
+
+.cv-from-label,
+.cv-to-label {
+    display: block;
+    color: var(--white);
+    padding-top: 20px;
+    text-transform: capitalize;
+    font-weight: var(--fw-600);
+    line-height: 19.36px;
+    font-family: var(--font-family);
+}
+
+.cv-from-input,
+.cv-to-input {
+    background-color: var(--content-bg);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 44px;
+    width: 279px;
+}
+
+.cv-from-label {
+    margin-left: 15px;
+}
+
+.cv-to-label {
+    padding-right: 15px;
+}
+
+.cv-company-logo-upload-label {
+    position: absolute;
+    bottom: 33%;
+    left: 3%;
+    color: var(--white);
+}
+
+.cv-company-logo-uploader {
+    position: absolute;
+    top: 355px;
+    left: 3%;
+    border: 1px dashed var(--Primary);
+    width: 183px;
+    height: 123px;
+    border-radius: 4px;
+    background: rgba(24, 24, 24, 0.89);
+    cursor: pointer;
+}
+
+.cv-logo-upload-desc {
+    color: var(--white);
+    line-height: 24px;
+    font-size: 10px;
+    font-weight: var(--fw-700);
+    margin-bottom: -2px;
+}
+
+.cv-logo-upload-span {
+    color: var(--Primary);
+    text-decoration: underline;
+}
+
+.cv-logo-upload-info {
+    color: #676767;
+    font-size: 10px;
+    line-height: 18px;
+    margin-bottom: -30px;
+}
+
+.cv-description-label {
+    display: block;
+    padding-left: 100%;
+    margin-left: -380px;
+    color: var(--white);
+    margin-top: 27px;
+    text-transform: capitalize;
+    font-weight: var(--fw-600);
+    line-height: 19.36px;
+    font-family: var(--font-family);
+}
+
+.cv-description-input
+ {
+    display: block;
+    background-color: var(--content-bg);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 123px;
+    width: 371px;
+    padding-bottom: 90px;
+    padding-left: 4px;
+}
+
+
+
+.cv-experience-icons {
+    position: absolute;
+    bottom: 27%;
+    left: 46%;
+    font-size: 30px;
+}
+.cv-company-input:focus,
+.cv-position-input:focus,
+.cv-description-input:focus,
+.cv-from-input:focus,
+.cv-to-input:focus{
+    outline: none;
+}

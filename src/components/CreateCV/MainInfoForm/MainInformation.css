@@ -1,0 +1,138 @@
+.cv-info-form-label
+ {
+    display: block;
+    color: var(--white);
+    text-transform: capitalize;
+    font-weight: var(--fw-600);
+    line-height: 19.36px;
+    font-family: var(--font-family);
+}
+
+.cv-info-form-label {
+    padding-top: 20px;
+}
+
+.cv-first-name-label {
+    margin-left: 30px;
+}
+
+.cv-last-name-label {
+    margin-left: 5px;
+}
+
+.cv-info-form-input,
+.cv-city-input,
+.cv-mobile-input,
+.cv-email-input{
+    background-color: var(--content-bg);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.cv-info-form-input {
+    height: 44px;
+    width: 286px;
+}
+
+.cv-info-form-input:focus,
+.cv-city-input:focus,
+.cv-mobile-input:focus,
+.cv-email-input:focus
+ {
+    outline: none;
+}
+
+
+.cv-profession-div {
+    position: absolute;
+    top: 13%;
+    left: 0;
+}
+
+.cv-profession-label,
+.cv-country-label,
+.cv-city-label,
+.cv-mobile-label {
+    color: var(--white);
+    margin-left: 30px;
+    text-transform: capitalize;
+}
+
+.cv-profession-input,
+.cv-country-input,
+.cv-city-input,
+.cv-mobile-input {
+    display: block;
+}
+
+.cv-country-input,
+.cv-mobile-input {
+    margin-right: -120px;
+    margin-left: -12px;
+}
+
+.cv-city-input {
+    width: 196px;
+    height: 44px;
+}
+
+.cv-mobile-input {
+    width: 378px;
+    height: 44px;
+}
+
+.cv-form-position {
+    top: 24%;
+}
+
+.cv-email-position {
+    top: 36%;
+}
+
+.cv-email-label {
+    color: var(--white);
+    margin-left: 30px;
+    text-transform: capitalize;
+}
+
+.cv-email-input {
+    display: block;
+    width: 585px;
+    height: 44px;
+}
+
+.cv-uploader {
+    position: absolute;
+    top: 53%;
+    left: 3%;
+    border: 1px dashed var(--Primary);
+    width: 585px;
+    height: 226px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cv-upload-label {
+    position: absolute;
+    top: 48%;
+    left: 3%;
+    color: var(--white);
+}
+
+.cv-img-upload-desc {
+    color: var(--white);
+    line-height: 24px;
+}
+
+.cv-img-upload-span {
+    color: var(--Primary);
+    text-decoration: underline;
+}
+
+.cv-img-upload-info {
+    color: #676767;
+    font-size: 11px;
+    line-height: 18px;
+}

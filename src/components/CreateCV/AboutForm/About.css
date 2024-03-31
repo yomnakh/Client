@@ -1,0 +1,25 @@
+
+.cv-about-input {
+    display: block;
+    height: 145px;
+    width: 586px;
+    padding-left: 3px;
+    background-color: var(--content-bg);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.cv-about-input:focus{
+    outline: none;
+}
+
+.cv-about-label {
+    display: block;
+    color: var(--white);
+    text-transform: capitalize;
+    font-weight: var(--fw-600);
+    line-height: 19.36px;
+    font-family: var(--font-family);
+    padding: 20px;
+}

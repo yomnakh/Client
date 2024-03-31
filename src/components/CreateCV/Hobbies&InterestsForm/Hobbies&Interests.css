@@ -1,0 +1,29 @@
+.cv-hobbies-label {
+    color: var(--white);
+    margin: 25px;
+}
+
+.cv-hobbies-input {
+    background-color: var(--content-bg);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.cv-hobbies-input {
+    height: 43.01px;
+    width: 551.05px;
+}
+
+.cv-hobbies-delete-icon,
+.cv-hobbies-add-icon {
+    font-size: 30px;
+    margin-left: 10px;
+    margin-bottom: 8px;
+}
+
+
+.cv-hobbies-input:focus {
+    outline: none;
+}

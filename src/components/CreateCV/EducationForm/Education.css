@@ -1,0 +1,114 @@
+
+.cv-education-label {
+    display: block;
+    color: var(--white);
+    padding-top: 30px;
+    text-transform: capitalize;
+    font-weight: var(--fw-600);
+    line-height: 19.36px;
+    font-family: var(--font-family);
+    margin-left: 30px;
+}
+
+.cv-education-block{
+    position: absolute;
+    top: 8%;
+    left: 3%;
+    border: 1px dashed var(--Primary);
+    width: 600px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 511px;
+}
+
+
+.cv-Organization-label,.cv-degree-label {
+    display: block;
+    color: var(--white);
+    padding-top: 30px;
+    text-transform: capitalize;
+    font-weight: var(--fw-600);
+    line-height: 19.36px;
+    font-family: var(--font-family);
+    margin-left: 18px;
+}
+
+.cv-Organization-input,.cv-degree-input {
+    display: block;
+    background-color: var(--content-bg);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 564px;
+    height: 44px;
+}
+
+
+.cv-education-to-label,
+.cv-edu-from-label{
+    display: block;
+    color: var(--white);
+    padding-top: 20px;
+    text-transform: capitalize;
+    font-weight: var(--fw-600);
+    line-height: 19.36px;
+    font-family: var(--font-family);
+    padding-right: 15px;
+}
+.cv-edu-from-input ,.cv-education-to-input{
+    background-color: var(--content-bg);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 44px;
+    width: 279px;
+}
+.cv-edu-from-label {
+    margin-left: 12px;
+}
+
+
+.cv-education-description-label {
+    display: block;
+    padding-left: 100%;
+    padding-bottom: 15%;
+    margin-left: -55px;
+    color: var(--white);
+    padding-top: 13px;
+    text-transform: capitalize;
+    font-weight: var(--fw-600);
+    line-height: 19.36px;
+    font-family: var(--font-family);
+}
+
+.cv-education-description-input{
+    display: block;
+    background-color: var(--content-bg);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 564px;
+    height: 123px;
+    margin-right: -440px;
+    padding-bottom: 92px;
+}
+
+
+
+
+.cv-education-icons {
+    position: absolute;
+    bottom: 27%;
+    left: 46%;
+    font-size: 30px;
+}
+.cv-education-description-input:focus,
+.cv-edu-from-input:focus,
+.cv-education-to-input:focus,.cv-Organization-input:focus,
+.cv-degree-input:focus
+{
+    outline: none;
+}

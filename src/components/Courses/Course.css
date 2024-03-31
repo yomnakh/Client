@@ -1,0 +1,40 @@
+.course-section {
+    margin: 100px 0 !important;
+}
+
+.cardImage {
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 1px dashed var(--secondColor);
+}
+
+.courseSection_title {
+    color: var(--secondColor);
+    font-weight: 700;
+}
+
+.courseSection_icon {
+    color: var(--firstColor);
+}
+
+.course_card:hover {
+    box-shadow: 5px 7px #eaeaea;
+    transition: .4s all ease-in;
+}
+
+@media(max-width:575px) {
+    .course_card {
+        width: 100% !important;
+    }
+
+    .courseSection_title {
+        width: 90% !important;
+        margin-top: 20px;
+        font-weight: 600;
+    }
+
+    .title_img {
+        width: 50% !important;
+    }
+}

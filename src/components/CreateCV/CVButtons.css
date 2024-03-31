@@ -1,0 +1,56 @@
+.cv-button {
+   position: absolute;
+  top: 100%;
+  margin-top: 15px;
+  
+}
+ .cv-button .cv-btn {
+    padding: 8px 25px;
+    background-color: var(--Primary);
+    outline-style: none;
+    color: var(--white);
+    cursor: pointer;
+    font-size: var(--p-14);
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+ .cv-button .cv-back-btn {
+    width: 115px;
+    background-color: #9D9D9D;
+}
+.cv-button .cv-btn.active{
+    transform: scale(0.98);
+}
+
+.cv-button .cv-btn:focus,.cv-download-btn:focus{
+    outline: none;
+}
+.cv-button .cv-btn:hover,.cv-download-btn:hover{
+    background-color: var(--btn-hover);
+    color: var(--white);
+}
+.cv-button .cv-btn:disabled{
+    background-color: #9D9D9D;
+    color: var(--white);
+    cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

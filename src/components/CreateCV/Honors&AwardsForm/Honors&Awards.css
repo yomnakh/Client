@@ -1,0 +1,88 @@
+.cv-awards-label {
+    display: block;
+    color: var(--white);
+    padding-top: 30px;
+    text-transform: capitalize;
+    font-weight: var(--fw-600);
+    line-height: 19.36px;
+    font-family: var(--font-family);
+    margin-left: 30px;
+    
+}
+.cv-awards-block {
+    position: absolute;
+    top: 8%;
+    left: 3%;
+    border: 1px dashed var(--Primary);
+    width: 600px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 274px;
+}
+.cv-award-name-label,
+.cv-award-year-label {
+    display: block;
+    color: var(--white);
+    padding-top: 20px;
+    text-transform: capitalize;
+    font-weight: var(--fw-600);
+    line-height: 19.36px;
+    font-family: var(--font-family);
+}
+
+.cv-award-name-label {
+    margin-left: 12px;
+}
+.cv-award-description-label {
+    display: block;
+    padding-left: 100%;
+    padding-bottom: 15%;
+    margin-left: -55px;
+    color: var(--white);
+    padding-top: 13px;
+    text-transform: capitalize;
+    font-weight: var(--fw-600);
+    line-height: 19.36px;
+    font-family: var(--font-family);
+}
+.cv-award-name-input,
+.cv-award-year-input,
+.cv-award-description-input {
+    display: block;
+    background-color: var(--content-bg);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.cv-award-name-input {
+    width: 349px;
+    height: 44px;
+}
+
+.cv-award-year-input {
+    width: 209px;
+    height: 44px;
+    margin-right: -50px;
+    margin-left: 10px;
+}
+
+.cv-award-description-input {
+    width: 564px;
+    height: 71px;
+    margin-right: -440px;
+    padding-bottom: 50px;
+}
+
+.cv-award-icons {
+    position: absolute;
+    top: 40%;
+    left: 46%;
+    font-size: 30px;
+}
+.cv-award-name-input:focus,
+.cv-award-year-input,
+.cv-award-description-input {
+    outline: none;
+}

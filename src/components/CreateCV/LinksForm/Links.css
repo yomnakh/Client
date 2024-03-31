@@ -1,0 +1,65 @@
+.cv-links-label{
+    color: var(--white);
+    margin: 25px;
+}
+.cv-link-websiteName-label,
+.cv-link-url-label {
+    color: var(--white);
+    font-weight: var(--fw-600);
+    margin-left: 2px;
+    margin-top: 20px;
+}
+#cv-container{
+    display: none;
+}
+.cv-link-url-label {
+    margin-left: 20px;
+}
+
+.cv-link-websiteName-input,
+.cv-link-url-input {
+    display: block;
+    height: 44px;
+    border: none;
+    border-radius: 5px;
+    background-color: #D9D9D92B;
+    margin-top: 10px;
+    color: var(--white);
+}
+
+.cv-link-websiteName-input:focus,
+.cv-link-url-input:focus {
+    outline: none;
+}
+
+.cv-link-websiteName-input {
+    width: 185px;
+
+}
+
+.cv-link-url-input {
+    width: 344px;
+
+}
+
+.cv-download-btn {
+    padding: 8px 25px;
+    background-color: var(--Primary);
+    outline-style: none;
+    color: var(--white);
+    cursor: pointer;
+    font-size: var(--p-14);
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 5px;
+    margin: 5px;
+    margin-left: 1014px;
+
+}
+
+.cv-links-delete-icon,
+.cv-links-add-icon {
+    font-size: 30px;
+    margin-left: 10px;
+    margin-bottom: 8px;
+}

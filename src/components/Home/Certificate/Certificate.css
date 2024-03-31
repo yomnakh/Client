@@ -1,0 +1,216 @@
+/* 
+.certificatecontainer {
+  height: 360px;
+  width: 1500px;
+  background-image: url("../../../Assets/homeCertificate.png");
+  background-size: cover !important;
+  background-attachment: fixed;
+  position: relative;
+  border-radius: 20px;
+}
+
+.certificateh1 {
+  font-size: 30px;
+}
+
+.certificatep {
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.certificatetxt {
+  position: absolute;
+  color: aliceblue;
+}
+
+.certificateimg {
+  border: 20px solid cadetblue;
+  border-radius: 50%;
+  margin-left: 300px;
+  animation-name: change;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: initial;
+}
+
+@keyframes change {
+  0% {
+      margin-bottom: 10px;
+  }
+
+  50% {
+      margin-top: 15px;
+  }
+
+  100% {
+      margin-bottom: 20px;
+  }
+
+} */
+
+.certificatecontainer {
+  height: 350px;
+  background-image: url("../../../Assets/homeCertificate.png");
+  background-size: cover !important;
+  background-attachment: fixed;
+  border-radius: 20px;
+  text-align: start;
+  margin: auto !important;
+}
+
+.certificateh1 {
+  font-size: 30px;
+  color: aliceblue;
+}
+
+.certificatep {
+  font-size: 40px;
+  line-height: 40px;
+  color: aliceblue;
+  width: 50%;
+}
+
+.certificatetxt {
+  margin-left: auto;
+}
+
+.certificatebtn {
+  border-radius: 30px;
+  font-size: 16px;
+  background-color: var(--firstColor) !important;
+  outline: 0 !important;
+  border: 0 !important;
+}
+
+.certificateimg {
+  border: 15px solid cadetblue;
+  border-radius: 50%;
+  height: 300px;
+  animation: change 1.5s infinite alternate;
+}
+
+@keyframes change {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 576px) {
+  .certificatetxt {
+    padding: 0px;
+  }
+  .certificateh1 {
+  }
+  .certificatep {
+  }
+  .certificatebtn {
+    width: 50% !important;
+  }
+  .certificateimg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .certificatecontainer {
+      padding: 10px;
+  }
+
+  .certificatetxt {
+      margin-top: 20px;
+  }
+  .certificateh1 , .certificatep {
+    width: 100% !important;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+
+  .certificatebtn {
+      font-size: 14px;
+  }
+
+  .certificateimg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      display: none !important;
+
+  }
+}
+@media (max-width: 991px) {
+  .certificatecontainer {
+    text-align: center;
+  }
+  .certificateh1 {
+    width: 100% !important;
+    margin-left: 0;
+  }
+  .certificatetxt {
+    /* margin-top: 60px !important; */
+  }
+  .certificateh1 {
+    /* margin-left: 20% !important;
+    margin-bottom: 10% !important; */
+  }
+  .certificatep {
+    color: whitesmoke;
+    width: 100% !important;
+  }
+  .certificatebtn {
+     width: 30%;
+     margin: auto !important;
+  }
+  .certificateimg{
+    /* display: none; */
+    /* width: 250px !important;
+    height: 250px !important; */
+    display: none;
+
+
+  }
+  
+}
+@media (max-width: 1200px) {
+  .certificatecontainer{
+        margin: auto;
+        }
+
+        .certificateimg{
+            /* margin-right:-300px !important ; */
+        }
+  .certificatetxt {
+  }
+  .certificateh1 {
+    width: 100% !important;
+  }
+  .certificatep {
+    /* margin-left: 20px !important;
+    margin-top: 25 px !important; */
+    color: whitesmoke;
+    width: 100% !important;
+  }
+  .certificatebtn {
+    /* margin-left: 40% !important;
+    margin-top: 20px !important; */
+  }
+}
+
+@media (max-width: 1400px) {
+  .certificateh1 {
+    width: 100% !important;
+  }
+  .certificatep {
+    width: 100% !important;
+  }
+}
+
+
+
+
+
+

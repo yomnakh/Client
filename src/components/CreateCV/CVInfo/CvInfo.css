@@ -1,0 +1,53 @@
+.cv-heading,
+.cv-desc,
+.cv-subtitle,
+.cv-subtitle-line,
+.cv-date {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--white);
+    z-index: 1;
+}
+
+.cv-heading {
+    top: 46%;
+    left: 16%;
+    font-size: var(--h2-38);
+}
+
+
+.cv-desc {
+
+    top: 54%;
+    left: 22%;
+    font-weight: var(--fw-400);
+}
+
+.break-line {
+    display: block;
+    padding-right: 40px;
+    line-height: 1;
+}
+
+
+.cv-subtitle {
+    top: 32%;
+    left: 7%;
+    font-size: var(--p-14);
+}
+
+.cv-subtitle-line {
+    top: 35%;
+    left: 7%;
+    display: block;
+    height: 1px;
+    width: 65px;
+    background-color: var(--Primary);
+}
+
+.cv-date {
+    top: 37.5%;
+    left: 8%;
+    font-size: 14px;
+}
