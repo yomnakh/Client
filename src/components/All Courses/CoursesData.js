@@ -14,6 +14,8 @@ import Security from "../../Assets/Security.jpg";
 // import { CourseDesc } from "../Course Description/coursedesc";
 // import Security from "./../RoadMaps/Security";
 
+
+
 export const courseData = {
   courses: [
     {
@@ -230,5 +232,6 @@ export const courseData = {
     "Network",
     "ALL Courses",
   ],
+  
 };
 export default courseData;

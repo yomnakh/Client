@@ -1,14 +1,10 @@
 import React from "react";
-import course from "./Course";
-import { data } from '../Data';
-import { courseData } from './CoursesData';
-// const courseData = './CourseData';
-import { useParams } from "react-router-dom";
+import "./AllCourses.css";
 
- const CourseDesc = ({course}) => {
+ const CourseDesc = ({ course }) => {
   
   return (
-    <section /* courseId={courseId} */>
+    <section>
       <div className="bread-crumb courses-details">
         <div className="container">
           <div className="row">
@@ -17,11 +13,9 @@ import { useParams } from "react-router-dom";
                 <h1>
                 {/* {course.title} */}
                 </h1>
-                <p className="mb-3">
-                  Getting Started is the perfect course for you. In this course,
+                <p className="mb-3"> Getting Started is the perfect course for you. In this course,
                   you’ll learn how to build apps with Flutter, the new mobile
-                  platform backed by Google.
-                </p>
+                  platform backed by Google.{/* {course.Disc} */} </p>
                 <div className="review">
                   <div className="row ">
                     <div className="col-12 course-heading-info mb-3">
