@@ -10,10 +10,6 @@ import CourseDesc from './CourseDesc';
 
 
 const Course = ({ course }) => {
-    // const [course, setcourse] = useState(courseData.courses)
-    // useEffect(() => {
-    //     setcourse([...courseData.courses])
-    // }, [])
     return (
         <div className='course-section'>
             <Container>
