@@ -19,7 +19,7 @@ import Security from "../../Assets/Security.jpg";
 export const courseData = {
   courses: [
     {
-      id: Math.random(),
+      id: 120,
       title: "The Complete HTML course for Beginners from zero to hero",
       category: ["Front End", "Full Stack", "ALL Courses"],
       hours: "3h",
@@ -36,7 +36,7 @@ export const courseData = {
     },
     
     {
-      id: Math.random(),
+      id: 121,
       title: "The Complete Node Js course for Beginners from zero to hero",
       category: ["Back End", "Full Stack", "ALL Courses"],
       hours: "33h",
@@ -52,7 +52,7 @@ export const courseData = {
       },
     },
     {
-      id: Math.random(),
+      id: 122,
       title: "The Complete JavaScript course from zero to hero",
       category: [
         "Front End",
@@ -74,7 +74,7 @@ export const courseData = {
       },
     },
     {
-      id: Math.random(),
+      id: 123,
       title: "The Complete Bootstrap course for Beginners",
       category: ["Front End", "ALL Courses"],
       hours: "3h",
@@ -90,7 +90,7 @@ export const courseData = {
       },
     },
     {
-      id: Math.random(),
+      id: 124,
       title: "The Complete React Js course for Beginners from zero to hero",
       category: ["Front End", "Full Stack", "ALL Courses"],
       hours: "10h 20m",

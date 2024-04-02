@@ -5,7 +5,9 @@ import { Container, Row, Col, Tabs, Tab, Button } from "react-bootstrap";
 import { courseData } from './CoursesData';
 import instructor from "../../Assets/instructor.png";
 import asidecourseimg from "../../Assets/asidecourseimg.png";
+import { courseData } from './CoursesData';
 
+<<<<<<< HEAD
 
  const CourseDesc = () => {
 
@@ -15,17 +17,22 @@ import asidecourseimg from "../../Assets/asidecourseimg.png";
     setcourse(courseData.courses);
 
 }, []);
+=======
+const CourseDesc = ({ course }) => {
+>>>>>>> a5d6ed0b993c2ab8209798fa7221c5eb1958bfc8
   return (
     <div>
       <div className="CourseInfoMainData">
         <Container>
+<<<<<<< HEAD
           <h2 className="CourseInfoMainData_header">
             {/* DESIGN RULES: Principles + Practices <br></br>for Great UI Design */}{course.title}
           </h2>
+=======
+          <h2 className="CourseInfoMainData_header">{course.title}</h2>
+>>>>>>> a5d6ed0b993c2ab8209798fa7221c5eb1958bfc8
           <p className="CourseInfoMainData_p">
-            Getting Started is the perfect course for you. In this course,
-            you’ll learn how to build <br></br> apps with Flutter, the new
-            mobile platform backed by Google.
+            {course.disc}
           </p>
           <div class="info-tag">
             <img
