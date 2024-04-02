@@ -129,6 +129,7 @@
   .CourseInfoMainData_p {
     font-size: 18px !important;
     line-height: 35px !important;
+    color: #fff !important;
   }
   .created_by {
     font-size: 15px !important;
@@ -141,6 +142,7 @@
   .selection {
     display: flex;
     align-items: center;
+    padding-bottom: 10px !important;
   }
   .language-icon {
     margin-right: 8px !important;
