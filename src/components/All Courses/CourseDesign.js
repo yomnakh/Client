@@ -4,8 +4,7 @@ import Col from "react-bootstrap/Col";
 import "./AllCourses.css";
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
-import CourseDesc from "./CourseDesc";
-import courseData from "./CoursesData";
+
 
 const CourseDesign = ({ course }) => {
   return (

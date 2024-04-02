@@ -1,52 +1,50 @@
 .navbar {
-    width: 100% !important;
-    background-color: white;
+  width: 100% !important;
+  background-color: white;
 }
 
 .EduLogo {
-    width: 200px;
+  width: 200px;
 }
 
 .navbar-nav .homeNav,
 .navbar-nav .nav-link {
-    color: var(--secondColor) !important;
-    padding: 7px !important;
-    margin: 0 15px !important;
-    font-weight: 700;
-    font-size: 18px;
-
+  color: var(--secondColor) !important;
+  padding: 7px !important;
+  margin: 0 15px !important;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .dropdown-toggle::after {
-    border-top: 0.3em solid var(--firstColor) !important;
+  border-top: 0.3em solid var(--firstColor) !important;
 }
 
 .dropdown-menu {
-    top: 55px !important;
+  top: 55px !important;
 }
 
 .dropdown-menu .dropdown-item {
-    padding: 5px !important;
-    margin: 5px 0 !important;
-    text-align: center;
-    transition: 0.7s all ease;
+  padding: 5px !important;
+  margin: 5px 0 !important;
+  text-align: center;
+  transition: 0.7s all ease;
 }
 
 .dropdown-menu .dropdown-item:hover {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 5px;
-
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
 }
 
 .dropdown-menu .dropdown-item:active {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 .dropdown-menu .dropdown-item a {
-    color: var(--firstColor) !important;
-    font-weight: 600;
-    transition: 1s all ease;
-    padding: 5px 30px !important;
+  color: var(--firstColor) !important;
+  font-weight: 600;
+  transition: 1s all ease;
+  padding: 5px 30px !important;
 }
 
 /* .auth-div{
@@ -54,75 +52,73 @@
 } */
 
 .auth {
-    padding: 10px 20px !important;
-    background-color: var(--secondColor);
-    border-radius: 7px;
-    transition: .6s all ease;
+  padding: 10px 20px !important;
+  background-color: var(--secondColor);
+  border-radius: 7px;
+  transition: 0.6s all ease;
 }
 
 .auth:nth-child(2) {
-    margin-left: 10px !important;
+  margin-left: 10px !important;
 }
 
 .auth a {
-    color: white;
-    font-weight: 700;
-    padding: 7px !important;
+  color: white;
+  font-weight: 700;
+  padding: 7px !important;
 }
 
 .auth:hover {
-    background-color: var(--firstColor);
-    opacity: 0.8;
+  background-color: var(--firstColor);
+  opacity: 0.8;
 }
 
-@media only screen and (max-width:1200px) {
-    .offcanvas-header {
-        padding: 15px 40px !important;
-        background: var(--secondColor);
-        color: white;
-    }
+@media only screen and (max-width: 1200px) {
+  .offcanvas-header {
+    padding: 15px 40px !important;
+    background: var(--secondColor);
+    color: white;
+  }
 
+  .dropdown-menu {
+    width: 80% !important;
+    margin: auto !important;
+  }
 
-    .dropdown-menu {
-        width: 80% !important;
-        margin: auto !important;
-    }
+  .navbar-nav .homeNav,
+  .navbar-nav .nav-link {
+    margin: 7px 25px !important;
+    width: 70% !important;
+    padding: 10px !important;
+  }
 
-    .navbar-nav .homeNav,
-    .navbar-nav .nav-link {
-        margin: 7px 25px !important;
-        width: 70% !important;
-        padding: 10px !important;
-    }
+  .auth-div {
+    width: 50% !important;
+    flex-direction: column !important;
+  }
 
-    .auth-div {
-        width: 50% !important;
-        flex-direction: column !important;
-    }
+  .auth-div .auth {
+    padding: 15px 20px !important;
+  }
 
-    .auth-div .auth {
-        padding: 15px 20px !important;
-    }
+  .auth-div .auth a {
+    padding: 20px !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+  }
 
-    .auth-div .auth a {
-        padding: 20px !important;
-        font-weight: 700 !important;
-        font-size: 18px !important;
-    }
+  .auth:nth-child(2) {
+    border-left: none;
+    margin-left: 0 !important;
+  }
 
-    .auth:nth-child(2) {
-        border-left: none;
-        margin-left: 0 !important;
-    }
+  .auth {
+    padding: 0 20px !important;
+    background-color: transparent;
+    border-radius: 0;
+  }
 
-    .auth {
-        padding: 0 20px !important;
-        background-color: transparent;
-        border-radius: 0;
-    }
-
-    .auth a {
-        color: var(--secondColor);
-    }
-
+  .auth a {
+    color: var(--secondColor);
+  }
 }

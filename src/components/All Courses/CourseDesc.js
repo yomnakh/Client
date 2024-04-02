@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import "./AllCourses.css";
 import { Container, Row, Col, Tabs, Tab, Button } from "react-bootstrap";
 // import "bootstrap/dist/css/bootstrap.min.css";
+import { courseData } from './CoursesData';
 import instructor from "../../Assets/instructor.png";
 import asidecourseimg from "../../Assets/asidecourseimg.png";
 
- const CourseDesc = ({ course }) => {
-  
+
+ const CourseDesc = () => {
+
+  const [course, setcourse] = useState([]);
+
+  useEffect(() => {
+    setcourse(courseData.courses);
+
+}, []);
   return (
     <div>
       <div className="CourseInfoMainData">
         <Container>
           <h2 className="CourseInfoMainData_header">
-            DESIGN RULES: Principles + Practices <br></br>for Great UI Design
+            {/* DESIGN RULES: Principles + Practices <br></br>for Great UI Design */}{course.title}
           </h2>
           <p className="CourseInfoMainData_p">
             Getting Started is the perfect course for you. In this course,
