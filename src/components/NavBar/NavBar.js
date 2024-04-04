@@ -35,7 +35,8 @@ const NavBar = () => {
                                 <NavDropdown.Item><Link to={'/roadmap/fullstack'}>FullStack</Link></NavDropdown.Item>
                                 <NavDropdown.Item><Link to={'/roadmap/security'}>Security</Link></NavDropdown.Item>
                             </NavDropdown>
-                            <NavDropdown title="Courses" id="basic-nav-dropdown">
+                            <Link to={'/courses'} className='homeNav'>Courses</Link>
+                            {/* <NavDropdown title="Courses" id="basic-nav-dropdown">
                                 <NavDropdown.Item >Front End</NavDropdown.Item>
                                 <NavDropdown.Item> Back End </NavDropdown.Item>
                                 <NavDropdown.Item >JavaScript</NavDropdown.Item>
@@ -45,7 +46,7 @@ const NavBar = () => {
                                 <NavDropdown.Item >Security</NavDropdown.Item>
                                 <DropdownDivider />
                                 <NavDropdown.Item ><Link to={"/courses"}>All Courses</Link></NavDropdown.Item>
-                            </NavDropdown>
+                            </NavDropdown> */}
                             <NavDropdown title="Quizs" id="basic-nav-dropdown">
                                 <NavDropdown.Item >HTML</NavDropdown.Item>
                                 <NavDropdown.Item >CSS</NavDropdown.Item>

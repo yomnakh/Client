@@ -2,6 +2,7 @@ import { Carousel } from 'react-bootstrap';
 import React, { Fragment } from 'react';
 import '../Slider/Slider.css';
 import himg from "../../../Assets/HeaderImage.png"
+import { Link } from 'react-router-dom';
 
 const Slider = () => {
     return (
@@ -27,7 +28,7 @@ const Slider = () => {
                     <div className='col-md-6 col-lg-6'>
                         <h2 className='header-info'>Classical <br />
                             <p className='education'>Education</p>  For The Future </h2>
-                        <button className='btn headerBtn'>Explore Courses <i class="fa-solid fa-angle-right"></i></button>
+                            <Link to={"/courses"}><button className='btn headerBtn'>Explore Courses <i class="fa-solid fa-angle-right"></i></button></Link>
                         <img src='https://bracketweb.com/eduactwp/wp-content/uploads/2023/09/about-2-shape-4.png' className='animateImage' />
 
 
