@@ -1,0 +1,51 @@
+.why-card {
+    width: 100% !important;
+    border: none !important;
+    padding: 20px  ;
+    margin-right: 50px !important;
+    margin-top: 10vh !important;
+    border-radius: 12px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  
+}
+.why-card:hover{
+    transform: scale(1.01);
+    background-color: var(--firstColor) !important;
+}
+
+.why-card:hover .why-p  {
+  color: white !important;
+}
+.why-card:hover .why-h3 {
+    color: white !important;
+}
+.why-us{
+ height: 70vh !important;
+  background-image: url(../../../Assets/whyBG.png);
+  background-size: cover;
+}
+.why-h3{
+    line-height: 70px !important;
+    color: black !important;
+}
+.why-p{
+    font-size: 18px !important;
+    color: #7e7e7e;
+}
+.why-header{
+    font-size: 30px  !important;
+    font-weight: 700;
+}
+.why-color {
+    color: var(--firstColor);
+    display: inline;
+}
+
+
+@media (max-width: 576px) {
+    .how-card{
+        margin-top: 0px !important ;
+        margin-right: 0px !important;
+    }
+}

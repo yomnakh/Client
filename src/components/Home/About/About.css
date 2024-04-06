@@ -51,6 +51,7 @@
   .aboutimg {
     width: 350px !important;
     height: 380px !important;
+
   }
 
   .abouticontxt {
@@ -60,4 +61,5 @@
   .aboutxt {
     margin-bottom: 20px !important;
   }
+ 
 }

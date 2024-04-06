@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/esm/Row';
 import { courseData } from './CoursesData';
 // import "../Courses/Course.css"
-// import './AllCourses.css'
+// import './AllCourses.css'scfd
 import Container from 'react-bootstrap/esm/Container';
 import CourseDesign from './CourseDesign';
 import CourseError from './CourseError';
