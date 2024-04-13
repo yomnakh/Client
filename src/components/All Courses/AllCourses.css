@@ -123,7 +123,7 @@
   }
   .CourseInfoMainData_header {
     font-size: 35px !important;
-    padding: 40px 30px 20px 0px !important;
+    padding: 40px 30px 0px !important;
     line-height: 50px !important;
   }
   .CourseInfoMainData_p {
@@ -149,6 +149,9 @@
   }
   .calender-icon {
     padding: 15px 10px !important;
+  }
+  .clock-icon{
+   padding-left: 20px  !important;
   }
   select {
     background-color: transparent;
@@ -267,10 +270,14 @@
     font-size: 25px !important;
     font-weight: 700 !important;
     margin-left: 20px !important;
+    color: var(--secondColor);
   }
   .overview_content {
     margin-left: 30px !important;
+    list-style-type:disc !important;
+
   }
+  
   
   /* Social Media Icons */
   /* .social-icons {

@@ -17,6 +17,8 @@ const CourseDesc = () => {
       <div className="CourseInfoMainData">
         <Container>
           <h2 className="CourseInfoMainData_header">{course.title}</h2>
+
+          <p class="text-12px px-5 me-1 created_by">{course.courseHeader} </p>
           <div class="info-tag">
             <img loading="lazy" width="35px" height="35px" class="rounded-circle object-fit-cover me-1" src={course.instructor.img} alt="instructor img" />
             <p class="text-12px mt-5px me-1 created_by ">Created by</p>
@@ -43,6 +45,10 @@ const CourseDesc = () => {
               {" "}
               <i class="fa-solid fa-calendar-days calender-icon"></i>
               <span>Last updated: 2024-04-04</span>
+
+              <i class="far fa-clock  -icon"></i>
+              <span> {course.hours} Hours</span>
+
             </div>
           </div>
         </Container>
@@ -66,13 +72,16 @@ const CourseDesc = () => {
                   </p>
                   <h3 className="overview_what">What will i learn?</h3>
                   <p className="overview_content">
-                    {course.instructor.about}
+                    {course.willLearn}
                   </p>
                   <h3 className="overview_req">Requirements</h3>
                   <p>
                     <ul>
                       <li className="overview_content">
-                        To start with flutter you need to learn Dart language
+                        {course.require.r1}
+                      </li>
+                      <li className="overview_content">
+                        {course.require.r2}
                       </li>
                     </ul>
                   </p>
