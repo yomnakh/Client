@@ -272,6 +272,181 @@ select {
 
 /* Social Media Icons */
 /* .social-icons {
+=======
+ .custom-box {
+    padding: 20px;
+    width: 100% !important;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .CourseInfoMainData {
+    width: 100% !important;
+    margin-top: 92px !important;
+    background-image: url(../../Assets/bgg.png);
+    background-size: cover !important;
+    color: aliceblue;
+  }
+  .CourseInfoMainData_header {
+    font-size: 35px !important;
+    padding: 40px 30px 0px !important;
+    line-height: 50px !important;
+  }
+  .CourseInfoMainData_p {
+    font-size: 18px !important;
+    line-height: 35px !important;
+    color: #fff !important;
+  }
+  .created_by {
+    font-size: 15px !important;
+    color: #fff;
+  }
+  .created-by-instructor {
+    font-size: 15px !important;
+    color: var(--firstColor) !important;
+  }
+  .selection {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px !important;
+  }
+  .language-icon {
+    margin-right: 8px !important;
+  }
+  .calender-icon {
+    padding: 15px 10px !important;
+  }
+  .clock-icon{
+   padding-left: 20px  !important;
+  }
+  select {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .last-updated {
+    font-size: 12px;
+  }
+  /* ///////////////////////////////////////////////////////////////////////////////////////////////////// */
+  .instructorimg {
+    width: 150px !important;
+    height: 150px !important;
+    margin: 30px !important;
+  }
+  .instructorinfo {
+    width: 100% !important;
+  }
+  
+  .asidecourseimg {
+    width: 100% !important;
+    padding-bottom: 30px !important;
+  }
+  .asideorder {
+    font-size: 20px !important;
+  }
+  .spanaside {
+    margin-right: auto !important;
+  }
+  .icon {
+    padding-right: 20px !important;
+  }
+  .info-card {
+    padding: 10px;
+  }
+  .info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(222, 220, 220);
+    padding: 5px 10px !important;
+  }
+  .icon {
+    font-size: larger;
+  }
+  
+  .social-icons {
+    text-align: center !important;
+  }
+  
+  .enrollbtn {
+    background-color: var(--secondColor) !important;
+    border: none !important;
+    margin-top: 30px;
+    width: 100% !important;
+    display: block;
+    font-size: 17px !important;
+    padding: 10px !important;
+    margin-bottom: 20px;
+    font-weight: 600 !important;
+  }
+  .enrollbtn:hover {
+    opacity: 0.8;
+    letter-spacing: 1.5px;
+  }
+  .instructor_profile {
+    background-color: var(--secondColor) !important;
+    border: none !important;
+    margin-top: 30px;
+    font-size: 12px !important;
+    padding: 8px 4px !important;
+    margin-bottom: 20px;
+    font-weight: 600 !important;
+    color: aliceblue;
+    width: 150px !important;
+  }
+  .instructor_social-icons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: var(--secondColor) !important;
+  }
+  .instructor_social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .instructor_social-icons a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    color: #fff;
+  }
+  .instructor_facebook {
+    border: 1px solid rgb(234, 232, 232) !important;
+    color: rgb(47, 42, 201) !important;
+  }
+  .instructor_linkedin {
+    border: 1px solid rgb(234, 232, 232) !important;
+    color: #0077b5 !important;
+  }
+  .instructor_twitter {
+    border: 1px solid rgb(234, 232, 232) !important;
+    color: black !important;
+    cursor: pointer;
+  }
+  .overview_header,
+  .overview_what,
+  .overview_req {
+    font-size: 25px !important;
+    font-weight: 700 !important;
+    margin-left: 20px !important;
+    color: var(--secondColor);
+  }
+  .overview_content {
+    margin-left: 30px !important;
+    list-style-type:disc !important;
+
+  }
+  
+  
+  /* Social Media Icons */
+  /* .social-icons {
+>>>>>>> e19af9278c1221572d1f9f42206203d31f4e2c54
     list-style: none;
     margin: 0;
     padding: 0;
@@ -336,4 +511,107 @@ select {
   .custom-box {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+<<<<<<< HEAD
 }
+=======
+  
+  @media (min-width: 992px) {
+    .custom-box {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .custom-box {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+
+  /* course video  */
+
+  .course-video-header{
+    display: flex;
+    width: 100% !important;
+    height: 70px;
+    background-color: var(--secondColor);
+    margin-top: 95px !important;
+    border-bottom: 1px solid #d7dadb  ;
+
+  }
+  .left-video-header{
+    flex: 10;
+    background-color: antiquewhite;
+    justify-content: space-around;
+  }
+  .right-video-header{
+    flex:2;
+    background-color:aliceblue;
+    border-left: 1px solid #d7dadb !important;
+    
+  }
+  .video-header-btn{
+    background-color: var(--firstColor) !important;
+    border-radius: 2 !important;
+    
+  }
+  .video-header-btn2{
+    background-color: var(--firstColor) !important;
+  }
+  .i-house{
+    color: black !important;
+    size: 100px !important;
+  }
+
+
+  .course-video-body{
+   display: flex;
+   height: 100vh !important;
+  }
+  .video-play{
+   flex:9;
+   background-color:#fff;
+   text-align: center;
+  }
+  .video-play iframe{
+    margin-left: 250px;
+  }
+
+  .video-play h2 {
+    margin-bottom: 30px;
+  font-size: var(--fs3);
+  line-height: var(--lh3);
+  font-weight: 600;
+  /* text-align: left; */
+  }
+
+  .side-video-content{
+    flex:3;
+    background-color: aliceblue;
+
+  }
+  .course-sidebar-head h2{
+    padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
+  margin-top: 0;
+  font-size: var(--fs1);
+  line-height: var(--lh1);
+  font-weight: 600;
+  padding-bottom: 0px;
+  }
+  .course-sidebar-head{
+    border-bottom: 1px solid #d7dadb !important;
+  }
+
+  .lesson{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    /* margin-top: 25px; */
+    margin-bottom: 25px;
+    border-bottom: 1px solid #d7dadb !important;
+    padding: 5px;
+  }
+>>>>>>> e19af9278c1221572d1f9f42206203d31f4e2c54

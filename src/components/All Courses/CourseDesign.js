@@ -40,7 +40,7 @@ const CourseDesign = ({ course }) => {
             </p>
             <div className="d-flex flex-row justify-content-between">
               <span style={{ color: "#1B3F6B" }}>
-                <i class="fa-regular fa-clock mx-1" style={{ color: "#018883" }}></i>{" "} {course.hours}{" "}
+                <i class="fa-regular fa-clock mx-1" style={{ color: "#018883" }}></i> {course.hours}
               </span>
               <span style={{ color: "#1B3F6B" }}>
                 <i
