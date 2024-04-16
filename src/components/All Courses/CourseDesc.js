@@ -21,9 +21,10 @@ const CourseDesc = () => {
             <img loading="lazy" width="35px" height="35px" class="rounded-circle object-fit-cover me-1" src={course.instructor.img} alt="instructor img" />
             <p class="text-12px mt-5px me-1 created_by ">Created by</p>
             <p>
-              <a
+              <a target="_blank"
                 class="created-by-instructor"
                 href="https://www.facebook.com/profile.php?id=100006483658713"
+                
               >
                 {course.instructor.name}
               </a>
