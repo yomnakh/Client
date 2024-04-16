@@ -4,7 +4,8 @@ import { Container, Row, Col, Tabs, Tab, Button } from "react-bootstrap";
 import { courseData } from './CoursesData';
 import instructor from "../../Assets/instructor.png";
 import asidecourseimg from "../../Assets/asidecourseimg.png";
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+
 
 const CourseDesc = () => {
   const { id } = useParams();
@@ -182,9 +183,11 @@ const CourseDesc = () => {
                   <span>Yes</span>
                 </div>
               </div>
+              <Link to="/courses/coursevideo/:id">
               <Button className="enrollbtn" type="enroll">
                 Enroll
               </Button>
+              </Link>
 
               {/* <ul class="social-icons">
         <li><a href="#" class="facebook"> <i class="fa-brands fa-facebook"></i></a></li>
