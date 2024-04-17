@@ -125,7 +125,7 @@ const CourseVideo = () => {
 
   return (
     <div className="course-container">
-      <div className="row align-content-center mx-auto text-start">
+      <div className="row align-content-center mx-auto text-start rowVideo">
         <div className="col-12">
           <h5>{videoTitle}</h5> {/* Display the title above the video */}
         </div>
@@ -149,7 +149,14 @@ const CourseVideo = () => {
         </div>
         <div
           className="side-video-content col-3"
-          style={{ overflowY: "scroll", position: "sticky", top: 0 }}
+          style={{
+            height: "100vh",
+            overflow: "scroll",
+            position: "static",
+            top: 0,
+            scrollbarWidth: "none",
+            msOverflowStyle: "none"
+          }}
         >
           <div className="course-sidebar-head">
             <h2 className="playlist_header">The Complete HTML course for Beginners from zero to hero</h2>
