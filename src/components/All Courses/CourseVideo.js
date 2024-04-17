@@ -125,48 +125,54 @@ const CourseVideo = () => {
   }, [selectedVideo, playlistVideos]);
 
   return (
-    <div className="course-container" >
-      <div className="row align-content-center mx-auto text-start">
-       
-        <div className="col-9">
-        <div className="col-12">
-          <h5 className="video_title">{videoTitle}</h5> {/* Display the title above the video */}
-        </div>
-          <div className="video-player">
-            {selectedVideo && (
-              <iframe
-                width="750"
-                height="450"
-                src={`https://www.youtube.com/embed/${selectedVideo}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="YouTube Video Player"
-              ></iframe>
-            )}
-            {/* <Link to="courses/coursevideo/:id"> */}
-            <button className="next_video_btn">Next Video</button>
-            {/* </Link> */}
-          </div>
-        </div>
-        <div
-          className="side-video-content col-3"
-          style={{ overflowY: "scroll", position: "sticky", top: 0 }}
-        >
-          <div className="course-sidebar-head">
-            <h2 className="playlist_header">The Complete HTML course for Beginners from zero to hero</h2>
-          </div>
-          <ul className="fixed-video-list ">
-            {playlistVideos.map((video) => (
-              <li key={video.id} onClick={() => setSelectedVideo(video.id)}>
-                {video.title}
-              </li>
-            ))}
-          </ul>
+    <div className="course-container">
+    <div className="row align-content-center mx-auto text-start rowVideo">
+      <div className="col-12">
+        <h5>{videoTitle}</h5> {/* Display the title above the video */}
+      </div>
+      <div className="col-9">
+        <div className="video-player">
+          {selectedVideo && (
+            <iframe
+              width="750"
+              height="450"
+              src={`https://www.youtube.com/embed/${selectedVideo}`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="YouTube Video Player"
+            ></iframe>
+          )}
+          {/* <Link to=""> */}
+          <button className="next_video_btn">Next Video</button>
+          {/* </Link> */}
         </div>
       </div>
+      <div
+        className="side-video-content col-3"
+        style={{
+          height: "100vh",
+          overflow: "scroll",
+          position: "static",
+          top: 0,
+          scrollbarWidth: "none",
+          msOverflowStyle: "none"
+        }}
+      >
+        <div className="course-sidebar-head">
+          <h2 className="playlist_header">The Complete HTML course for Beginners from zero to hero</h2>
+        </div>
+        <ul className="fixed-video-list ">
+          {playlistVideos.map((video) => (
+            <li key={video.id} onClick={() => setSelectedVideo(video.id)}>
+              {video.title}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default CourseVideo;
