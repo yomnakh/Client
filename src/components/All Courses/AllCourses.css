@@ -351,8 +351,13 @@
   /* course video  */
 .video-player-container{
 margin-top: 100px !important;
+
 }
-.next_video{
+
+.video_title{
+  margin-top: 100px !important;
+}
+.next_video_btn{
   display: block !important;
   margin-top: 60px !important;
   margin-left: 300px !important;
@@ -361,8 +366,6 @@ margin-top: 100px !important;
   border: none !important;
   color: #d7dadb;
   font-size: 17px !important;
-
- 
  border-radius: 8px !important;
   font-weight: 600 !important;
 }
@@ -385,6 +388,8 @@ margin-top: 100px !important;
   }
   .course-container{
     margin-top: 95px; 
+    overflow-y: hidden !important;
+   
   }
   .fixed-video-list li{
    padding: 18px 5px !important;
