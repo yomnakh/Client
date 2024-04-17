@@ -43,8 +43,6 @@ export const courseData = {
         about:"I'm a fornt-end web developer and designer with a passion for building beautiful web interfaces from scratch. " ,
       
           img: Abdelrahman
-          // "Throughout this course, Abdelrahman Gamal will teaches web development, empowering you to create dynamic, responsive web pages using HTML. you'll have the knowledge and confidence to create dynamic, responsive, and visually appealing web pages using HTML.",
-
       },
     },
 
