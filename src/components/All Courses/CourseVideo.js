@@ -129,7 +129,7 @@ const CourseVideo = () => {
         <div className="col-12">
           <h5>{videoTitle}</h5> {/* Display the title above the video */}
         </div>
-        <div className="col-9">
+        <div className="col-8">
           <div className="video-player">
             {selectedVideo && (
               <iframe
@@ -148,14 +148,15 @@ const CourseVideo = () => {
           </div>
         </div>
         <div
-          className="side-video-content col-3"
+          className="side-video-content col-4"
           style={{
             height: "100vh",
             overflow: "scroll",
             position: "static",
             top: 0,
             scrollbarWidth: "none",
-            msOverflowStyle: "none"
+            msOverflowStyle: "none",
+            paddingBottom:"120px"
           }}
         >
           <div className="course-sidebar-head">
