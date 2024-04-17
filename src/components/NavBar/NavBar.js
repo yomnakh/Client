@@ -47,7 +47,7 @@ const NavBar = () => {
                                 <DropdownDivider />
                                 <NavDropdown.Item ><Link to={"/courses"}>All Courses</Link></NavDropdown.Item>
                             </NavDropdown> */}
-                            <NavDropdown title="Quizs" id="basic-nav-dropdown">
+                            <NavDropdown title="Quizzes" id="basic-nav-dropdown">
                                 <NavDropdown.Item >HTML</NavDropdown.Item>
                                 <NavDropdown.Item >CSS</NavDropdown.Item>
                                 <NavDropdown.Item >JavaScript</NavDropdown.Item>
