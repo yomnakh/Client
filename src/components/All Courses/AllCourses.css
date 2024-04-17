@@ -349,91 +349,45 @@
   
 
   /* course video  */
+.video-player-container{
+margin-top: 100px !important;
+}
+.next_video{
+  display: block !important;
+  margin-top: 60px !important;
+  margin-left: 300px !important;
+  width: 200px !important;
+  background-color: var(--secondColor) !important;
+  border: none !important;
+  color: #d7dadb;
+  font-size: 17px !important;
 
-  .course-video-header{
-    display: flex;
-    width: 100% !important;
-    height: 70px;
-    background-color: var(--secondColor);
-    margin-top: 95px !important;
-    border-bottom: 1px solid #d7dadb  ;
-
+ 
+ border-radius: 8px !important;
+  font-weight: 600 !important;
+}
+.next_video:hover{
+  opacity: 0.911;
+  letter-spacing: 1.5px;
+}
+  .playlist_header{
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    font-size: 19px !important;
+    cursor: pointer;
   }
-  .left-video-header{
-    flex: 10;
-    background-color: antiquewhite;
-    justify-content: space-around;
-  }
-  .right-video-header{
-    flex:2;
-    background-color:aliceblue;
-    border-left: 1px solid #d7dadb !important;
-    
-  }
-  .video-header-btn{
-    background-color: var(--firstColor) !important;
-    border-radius: 2 !important;
-    
-  }
-  .video-header-btn2{
-    background-color: var(--firstColor) !important;
-  }
-  .i-house{
-    color: black !important;
-    size: 100px !important;
-  }
-
-
-  .course-video-body{
-   display: flex;
-   height: 100vh !important;
-  }
-  .video-play{
-   flex:9;
-   background-color:#fff;
-   text-align: center;
-  }
-  .video-play iframe{
-    margin-left: 250px;
-  }
-
-  .video-play h2 {
-    margin-bottom: 30px;
-  font-size: var(--fs3);
-  line-height: var(--lh3);
-  font-weight: 600;
-  /* text-align: left; */
-  }
-
   .side-video-content{
     flex:3;
     background-color: aliceblue;
-
-  }
-  .course-sidebar-head h2{
-    padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 25px;
-  margin-top: 0;
-  font-size: var(--fs1);
-  line-height: var(--lh1);
-  font-weight: 600;
-  padding-bottom: 0px;
   }
   .course-sidebar-head{
     border-bottom: 1px solid #d7dadb !important;
   }
-
-  .lesson{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
-    /* margin-top: 25px; */
-    margin-bottom: 25px;
-    border-bottom: 1px solid #d7dadb !important;
-    padding: 5px;
-  }
   .course-container{
-    margin-top: 95px;
+    margin-top: 95px; 
+  }
+  .fixed-video-list li{
+   padding: 18px 5px !important;
+  border-bottom: 1px solid rgb(225, 224, 224) !important;
+    cursor: pointer;
   }

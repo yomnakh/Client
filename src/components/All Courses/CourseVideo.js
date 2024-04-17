@@ -568,13 +568,16 @@ const CourseVideo = () => {
                 title="YouTube Video Player"
               ></iframe>
             )}
+            {/* <Link to=""> */}
+            <button className="next_video">Next Video</button>
+            {/* </Link> */}
           </div>
         </div>
         <div className="side-video-content col-3" style={{overflowY:"scroll", position:"sticky"}}>
           <div className="course-sidebar-head">
-            <h2>The Complete HTML course for Beginners from zero to hero</h2>
+            <h2 className="playlist_header">The Complete HTML course for Beginners from zero to hero</h2>
           </div>
-          <ul className="fixed-video-list">
+          <ul className="fixed-video-list ">
             {playlistVideos.map((video) => (
               <li key={video.id} onClick={() => setSelectedVideo(video.id)}>
                 {video.title}
