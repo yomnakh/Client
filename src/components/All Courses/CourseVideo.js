@@ -84,7 +84,7 @@ const CourseVideo = () => {
     const fetchPlaylistVideos = async () => {
       try {
         const playlistId = "PLknwEmKsW8OuN04Odt2sJqt4aAnkp-iYA"; // Replace with your YouTube playlist ID
-        const apiKey = "AIzaSyA78gCg5xNX3rwoq529yqWsLADzwqwr0xg"; // Replace with your YouTube API key
+        const apiKey = "AIzaSyB_jr_dntXXwwv-Mox-GcGGSrtj7JVEdqw"; // Replace with your YouTube API key
 
         const response = await axios.get(
           `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=28&playlistId=${playlistId}&key=${apiKey}`
@@ -126,52 +126,57 @@ const CourseVideo = () => {
 
   return (
     <div className="course-container">
-    <div className="row align-content-center mx-auto text-start rowVideo">
-      <div className="col-12">
-        <h5>{videoTitle}</h5> {/* Display the title above the video */}
-      </div>
-      <div className="col-9">
-        <div className="video-player">
-          {selectedVideo && (
-            <iframe
-              width="750"
-              height="450"
-              src={`https://www.youtube.com/embed/${selectedVideo}`}
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title="YouTube Video Player"
-            ></iframe>
-          )}
-          {/* <Link to=""> */}
-          <button className="next_video_btn">Next Video</button>
-          {/* </Link> */}
+      <div className="row align-content-center mx-auto text-start rowVideo">
+        
+        <div className="col-8 vidcontainer ">
+          <div className="video-player">
+          <div className="col-8 video_title ">
+          <h4>{videoTitle}</h4> {/* Display the title above the video */}
         </div>
-      </div>
-      <div
-        className="side-video-content col-3"
-        style={{
-          height: "100vh",
-          overflow: "scroll",
-          position: "static",
-          top: 0,
-          scrollbarWidth: "none",
-          msOverflowStyle: "none"
-        }}
-      >
-        <div className="course-sidebar-head">
-          <h2 className="playlist_header">The Complete HTML course for Beginners from zero to hero</h2>
+            {selectedVideo && (
+              <iframe
+                width="750"
+                height="450"
+                src={`https://www.youtube.com/embed/${selectedVideo}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="YouTube Video Player"
+              ></iframe>
+            )}
+            {/* <Link to=""> */}
+            <button className="video_btn">previous</button>
+            <button className="video_btn">Next</button>
+            {/* </Link> */}
+          </div>
         </div>
-        <ul className="fixed-video-list ">
-          {playlistVideos.map((video) => (
-            <li key={video.id} onClick={() => setSelectedVideo(video.id)}>
-              {video.title}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  </div>
+        <div
+          className="side-video-content col-4"
+          style={{
+            height: "100vh",
+            overflow: "scroll",
+            position: "static",
+            top: 0,
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            paddingBottom:"120px"
+          }}
+        >
+          <div className="course-sidebar-head">
+            <h2 className="playlist_header">The Complete HTML course for Beginners from zero to hero</h2>
+          </div>
+          <ul className="fixed-video-list ">
+            {playlistVideos.map((video) => (
+              <li key={video.id} onClick={() => setSelectedVideo(video.id)}>
+                {video.title}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div> 
+    
+    </div> //main container
+
 );
 };
 

@@ -349,41 +349,41 @@
   
 
   /* course video  */
-.video-player-container{
-margin-top: 100px !important;
 
-}
-.video-player{
+.vid_container{
+  margin-top: 40px !important;
   
 }
-.video_title{
+.video-player {
+  margin-left: 180px !important;
   margin-top: 100px !important;
+ 
 }
-.next_video_btn{
-  display: block !important;
-  margin-top: 60px !important;
-  margin-left: 300px !important;
-  width: 200px !important;
-  background-color: var(--secondColor) !important;
-  border: none !important;
-  color: #d7dadb;
-  font-size: 17px !important;
- border-radius: 8px !important;
-  font-weight: 600 !important;
+.video-player iframe{
+  display: block;
 }
-.next_video:hover{
-  opacity: 0.911;
-  letter-spacing: 1.5px;
+.video_title{
+ margin: 30px !important;
+text-align: center !important;
+font-size: 20px !important;
+color: var(--firstColor);
+cursor: pointer;
 }
+
   .playlist_header{
-    margin-top: 15px !important;
-    margin-bottom: 15px !important;
-    font-size: 19px !important;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+    font-size: 20px !important;
+   font-weight: 600 !important;
     cursor: pointer;
+    color: var(--firstColor);
+  }
+  .playlist_header:hover,.video_title:hover,.fixed-video-list li:hover{
+    color: var(--firstColor);
   }
   .side-video-content{
     flex:3;
-    background-color: aliceblue;
+   background-color: rgb(252, 252, 252);
   }
   .course-sidebar-head{
     border-bottom: 1px solid #d7dadb !important;
@@ -394,7 +394,28 @@ margin-top: 100px !important;
    
   }
   .fixed-video-list li{
-   padding: 18px 5px !important;
-  border-bottom: 1px solid rgb(225, 224, 224) !important;
+    padding: 18px 5px !important;
+    border-bottom: 1px solid rgb(225, 224, 224) !important;
     cursor: pointer;
+    font-size: 18px !important;
+    color: var(--secondColor);
+  }
+  .video_btn{
+    display: inline-block ;
+    cursor: pointer;
+    margin-top: 60px !important;
+    width: 150px !important;
+    background-color: var(--secondColor) !important;
+    border: none !important;
+    color: #d7dadb !important;
+    font-size: 17px !important;
+    margin: 60px 100px !important ;
+   border-radius: 8px !important;
+    font-weight: 600 !important;
+  }
+  
+  .video_btn:hover {
+    
+   letter-spacing: 1px !important;
+    border: 2px solid #4CAF50;
   }
