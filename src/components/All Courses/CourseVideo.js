@@ -83,7 +83,7 @@ const CourseVideo = () => {
     const fetchPlaylistVideos = async () => {
       try {
         const playlistId = "PLknwEmKsW8OuN04Odt2sJqt4aAnkp-iYA"; // Replace with your YouTube playlist ID
-        const apiKey = "AIzaSyA78gCg5xNX3rwoq529yqWsLADzwqwr0xg"; // Replace with your YouTube API key
+        const apiKey = "AIzaSyB_jr_dntXXwwv-Mox-GcGGSrtj7JVEdqw"; // Replace with your YouTube API key
 
         const response = await axios.get(
           `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=28&playlistId=${playlistId}&key=${apiKey}`

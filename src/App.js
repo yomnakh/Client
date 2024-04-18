@@ -10,6 +10,7 @@ import LoginPage from "./Pages/LoginPage";
 import SignUpPage from "./Pages/SignUpPage";
 import ErrorPage from "./Pages/ErrorPage";
 import CourseVideo from "./components/All Courses/CourseVideo";
+import InterviewPage from "./Pages/InterviewPage";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/register" element={<SignUpPage />} />
         <Route path="/courses/coursedesc/:id" element={<CourseDescPage/>} />
         <Route path="/courses/coursevideo/:id" element={<CourseVideo/>} />
+        <Route path="/interview" element={<InterviewPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
