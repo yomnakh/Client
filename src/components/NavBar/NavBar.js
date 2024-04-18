@@ -57,7 +57,7 @@ const NavBar = () => {
                             </NavDropdown>
                             <NavDropdown title="About" id="basic-nav-dropdown">
                                 <NavDropdown.Item >CV</NavDropdown.Item>
-                                <NavDropdown.Item >Interview</NavDropdown.Item>
+                                <NavDropdown.Item ><Link to={"/interview"}>Interview</Link></NavDropdown.Item>
                                 <NavDropdown.Item >Jobs</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
