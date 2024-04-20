@@ -176,6 +176,7 @@ const CourseVideo = () => {
       </div> 
     
     </div> //main container
+    
 
 );
 };
