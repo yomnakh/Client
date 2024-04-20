@@ -73,6 +73,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+
 const CourseVideo = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [playlistVideos, setPlaylistVideos] = useState([]);
@@ -126,11 +127,12 @@ const CourseVideo = () => {
   return (
     <div className="course-container">
       <div className="row align-content-center mx-auto text-start rowVideo">
-        <div className="col-12">
-          <h5>{videoTitle}</h5> {/* Display the title above the video */}
-        </div>
-        <div className="col-8">
+        
+        <div className="col-8 vidcontainer ">
           <div className="video-player">
+          <div className="col-8 video_title ">
+          <h4>{videoTitle}</h4> {/* Display the title above the video */}
+        </div>
             {selectedVideo && (
               <iframe
                 width="750"
@@ -143,7 +145,8 @@ const CourseVideo = () => {
               ></iframe>
             )}
             {/* <Link to=""> */}
-            <button className="next_video">Next Video</button>
+            <button className="video_btn">previous</button>
+            <button className="video_btn">Next</button>
             {/* </Link> */}
           </div>
         </div>
@@ -170,9 +173,11 @@ const CourseVideo = () => {
             ))}
           </ul>
         </div>
-      </div>
-    </div>
-  );
+      </div> 
+    
+    </div> //main container
+
+);
 };
 
 export default CourseVideo;
