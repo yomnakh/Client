@@ -346,8 +346,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   }
-  
-}
+
 
   /* course video  */
 
@@ -394,8 +393,6 @@ cursor: pointer;
     overflow-y: hidden !important;
    
   }
-<<<<<<< HEAD
-=======
   .fixed-video-list li{
     padding: 18px 5px !important;
     border-bottom: 1px solid rgb(225, 224, 224) !important;
@@ -431,4 +428,3 @@ align-items: center;
 }
   } */
     
->>>>>>> fbc3e55d61e729ca505c34ddf606006031d5b6f3
