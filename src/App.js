@@ -11,6 +11,13 @@ import SignUpPage from "./Pages/SignUpPage";
 import ErrorPage from "./Pages/ErrorPage";
 import CourseVideo from "./components/All Courses/CourseVideo";
 import InterviewPage from "./Pages/InterviewPage";
+import InterviewReact from "./components/Career/interview/InterviewsTracs/InterviewReact";
+import InterviewNode from "./components/Career/interview/InterviewsTracs/InterviewNode";
+import InterviewAngular from "./components/Career/interview/InterviewsTracs/InterviewAngular";
+import InterviewNext from "./components/Career/interview/InterviewsTracs/InterviewNext";
+import InterviewNetwork from "./components/Career/interview/InterviewsTracs/InterviewNetwork";
+import InterviewAndroid from "./components/Career/interview/InterviewsTracs/InterviewAndroid";
+
 
 const App = () => {
   return (
@@ -22,13 +29,19 @@ const App = () => {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<SignUpPage />} />
-        <Route path="/courses/coursedesc/:id" element={<CourseDescPage/>} />
-        <Route path="/courses/coursevideo/:id" element={<CourseVideo/>} />
-        <Route path="/interview" element={<InterviewPage />} />
+        <Route path="/courses/coursedesc/:id" element={<CourseDescPage />} />
+        <Route path="/courses/coursevideo/:id" element={<CourseVideo />} />
+        <Route path="/interview" element={<InterviewPage />}></Route>
+        <Route path='/interview/react' element={<InterviewReact />} />
+        <Route path='/interview/node' element={<InterviewNode />} />
+        <Route path='/interview/angular' element={<InterviewAngular />} />
+        <Route path='/interview/next' element={<InterviewNext />} />
+        <Route path='/interview/network' element={<InterviewNetwork/>} />
+        <Route path='/interview/android' element={<InterviewAndroid/>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
-    
+
   );
 };
 

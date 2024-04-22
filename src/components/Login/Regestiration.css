@@ -16,6 +16,7 @@
   background-color: rgb(255, 255, 255) !important;
   margin: 20px 10px 10px  !important;
   border: 0.5px solid #0188834b !important;
+  padding: 15px !important;
 }
 .submitbtn {
   background-color: var(--secondColor) !important;
@@ -33,7 +34,7 @@
   letter-spacing: 1.5px;
 }
 Form {
-  margin: 90px 0px;
+  margin: 90px 25px;
 }
 .loginimg {
   width: 500px !important;
@@ -50,9 +51,6 @@ Form {
   font-size: 40px;
   font-weight: 600;
   color: var(--secondColor);
-}
-.logininput {
-  padding: 15px !important;
 }
 .logininput:focus {
   outline: none !important;
@@ -73,18 +71,31 @@ Form {
     height: 250px;
     justify-content: center !important;
   }
+  .logininput{
+    margin-right: 20px !important;
+  }
+  .loginword{
+text-align: center !important;
+  }
 }
 @media (min-width: 767px) {
   .loginimg {
     width: 100% !important;
     justify-content: center !important;
   }
+  .logininput{
+    margin-right: 20px !important;
+  }
+  .loginword{
+    text-align: center !important;
+      }
 }
 @media (min-width: 1024px) {
   .loginimg {
     width: 500px !important;
     margin: 10px 0px;
   }
+
 }
 
 @media (min-width: 1023px) and (max-width: 1300px) {
@@ -92,4 +103,10 @@ Form {
     width: 400px !important;
     margin: 10px 0px;
   }
+  .logininput{
+    margin-right: 20px !important;
+  }
+  .loginword{
+    text-align: center !important;
+      }
 }
