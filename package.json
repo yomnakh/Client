@@ -11,14 +11,20 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
+<<<<<<< HEAD
     "formik": "^2.4.5",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
+=======
+    "bootstrap-icons": "^1.11.3",
+>>>>>>> fbc3e55d61e729ca505c34ddf606006031d5b6f3
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.1.0",
     "react-router-dom": "^6.22.1",
     "react-scripts": "5.0.1",
+    "react-text-gradients": "^1.0.2",
     "typewriter-effect": "^2.21.0",
     "web-vitals": "^2.1.4"
   },

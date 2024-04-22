@@ -10,6 +10,7 @@ import LoginPage from "./Pages/LoginPage";
 import SignUpPage from "./Pages/SignUpPage";
 import ErrorPage from "./Pages/ErrorPage";
 import CourseVideo from "./components/All Courses/CourseVideo";
+import InterviewPage from "./Pages/InterviewPage";
 
 import  CvPage1  from './components/Cv/CvPage1';
 import CvPage2 from './components/Cv/CvPage2';
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<SignUpPage />} />
+<<<<<<< HEAD
         <Route path="/courses/coursedesc/:id" element={<CourseDescPage />} />
         <Route path="/courses/coursevideo/:id" element={<CourseVideo />} />
 
@@ -44,6 +46,11 @@ const App = () => {
           <Route path="Form7" element={<CvPage7 />} />
           <Route path="Form8" element={<CvPage8 />} />
         </Route>
+=======
+        <Route path="/courses/coursedesc/:id" element={<CourseDescPage/>} />
+        <Route path="/courses/coursevideo/:id" element={<CourseVideo/>} />
+        <Route path="/interview" element={<InterviewPage />} />
+>>>>>>> fbc3e55d61e729ca505c34ddf606006031d5b6f3
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
