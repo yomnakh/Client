@@ -1,91 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./Interview.css"
-import { Link } from 'react-router-dom';
 import { LinearGradient } from 'react-text-gradients'
+import InterviewAside from './InterviewAside';
 
 const Interview = () => {
-    const [showSpans, setShowSpans] = useState(false);
 
-    const handleClick = () => {
-        setShowSpans(!showSpans);
-    }
 
     return (
         <div className='container-fluid interviewContainer'>
             <div className='row'>
-                <div className={`interview shadow col-auto col-md-${showSpans ? 2 : 1} min-vh-100 d-flex justify-content-between flex-column`}>
-                    <div className='interviewSide'>
-                        <Link className='text-decoration-none text-white  d-flex justify-content-evenly align-content-center' style={{ marginTop: "120px" }}>
-                            <i className="fa-solid fa-bars interviewIcon interviewIcon1" onClick={handleClick}></i>
-                            {showSpans && <span className=' d-none d-sm-inline interviewSpan interviewSpan1'>Interview</span>}
-                        </Link>
-
-                        <hr className='text-secondary' />
-
-                        <ul className="nav nav-pills flex-column">
-                            {/* React Track */}
-                            <li className="nav-item text-white  mb-2">
-                                <Link className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page" onClick={handleClick}>
-                                    <i className="fa-brands fa-react interviewIcon"></i>
-                                    {showSpans && <span className=' d-none d-sm-inline interviewSpan'>React Js</span>}
-                                </Link>
-                            </li>
-
-                            <hr className='text-secondary' />
-
-                            {/* Angular Track */}
-                            <li className="nav-item text-white  mb-2">
-                                <Link className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page" onClick={handleClick}>
-                                    <i className="fa-brands fa-angular interviewIcon"></i>
-                                    {showSpans && <span className=' d-none d-sm-inline interviewSpan'>Angular</span>}
-                                </Link>
-                            </li>
-
-                            <hr className='text-secondary' />
-
-                            {/* Node.js Track */}
-                            <li className="nav-item text-white ">
-                                <Link className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page" onClick={handleClick}>
-                                    <i className="fa-brands fa-node interviewIcon"></i>
-                                    {showSpans && <span className=' d-none d-sm-inline interviewSpan'>Node.js</span>}
-                                </Link>
-                            </li>
-
-                            <hr className='text-secondary' />
-
-                            {/* Nest.js Track */}
-                            <li className="nav-item text-white">
-                                <Link className="nav-link  text-white  d-flex justify-content-evenly align-content-center" aria-current="page" onClick={handleClick}>
-                                    <i className="fa-solid fa-code interviewIcon"></i>
-                                    {showSpans && <span className=' d-none d-sm-inline interviewSpan'>Nest.js</span>}
-                                </Link>
-                            </li>
-
-                            <hr className='text-secondary' />
-
-                            {/* Android Track */}
-                            <li className="nav-item text-white ">
-                                <Link className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page" onClick={handleClick}>
-                                    <i className="fa-brands fa-android interviewIcon"></i>
-                                    {showSpans && <span className=' d-none d-sm-inline interviewSpan'>Android</span>}
-                                </Link>
-                            </li>
-
-                            <hr className='text-secondary' />
-
-                            {/* security Track */}
-                            <li className="nav-item text-white ">
-                                <Link className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page" onClick={handleClick}>
-                                    <i className="fa-solid fa-shield-halved interviewIcon"></i>
-                                    {showSpans && <span className=' d-none d-sm-inline interviewSpan'>Security</span>}
-                                </Link>
-                            </li>
-
-                            <hr className='text-secondary' />
-
-                        </ul>
-                    </div>
-                </div>
+            <InterviewAside/>
                 <div className='col-auto col-lg-10 col-md-10'>
                     <div className='interviewInfo'>
                         <div className='interviewInfoHeader'>
@@ -124,3 +48,5 @@ const Interview = () => {
 }
 
 export default Interview;
+
+
