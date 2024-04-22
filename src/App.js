@@ -11,6 +11,16 @@ import SignUpPage from "./Pages/SignUpPage";
 import ErrorPage from "./Pages/ErrorPage";
 import CourseVideo from "./components/All Courses/CourseVideo";
 
+import  CvPage1  from './components/Cv/CvPage1';
+import CvPage2 from './components/Cv/CvPage2';
+import CvPage3 from './components/Cv/CvPage3';
+import CvPage4 from './components/Cv/CvPage4';
+import CvPage5 from './components/Cv/CvPage5';
+import CvPage6 from './components/Cv/CvPage6';
+import CvPage7 from './components/Cv/CvPage7';
+import CvPage8 from './components/Cv/CvPage8';
+import { Outlet } from 'react-router-dom';
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -21,12 +31,22 @@ const App = () => {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<SignUpPage />} />
-        <Route path="/courses/coursedesc/:id" element={<CourseDescPage/>} />
-        <Route path="/courses/coursevideo/:id" element={<CourseVideo/>} />
+        <Route path="/courses/coursedesc/:id" element={<CourseDescPage />} />
+        <Route path="/courses/coursevideo/:id" element={<CourseVideo />} />
+
+        <Route path="/CV" element={<Outlet />}>
+          <Route path="" element={<CvPage1 />} />
+          <Route path="Form2" element={<CvPage2 />} />
+          <Route path="Form3" element={<CvPage3 />} />
+          <Route path="Form4" element={<CvPage4 />} />
+          <Route path="Form5" element={<CvPage5 />} />
+          <Route path="Form6" element={<CvPage6 />} />
+          <Route path="Form7" element={<CvPage7 />} />
+          <Route path="Form8" element={<CvPage8 />} />
+        </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
-    
   );
 };
 

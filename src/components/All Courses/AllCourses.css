@@ -511,9 +511,6 @@ select {
   .custom-box {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-<<<<<<< HEAD
-}
-=======
   
   @media (min-width: 992px) {
     .custom-box {
@@ -527,6 +524,7 @@ select {
     }
   }
   
+}
 
   /* course video  */
 
@@ -614,4 +612,3 @@ select {
     border-bottom: 1px solid #d7dadb !important;
     padding: 5px;
   }
->>>>>>> e19af9278c1221572d1f9f42206203d31f4e2c54
