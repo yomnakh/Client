@@ -1,7 +1,8 @@
-.interviewContainer{
-    background-image:url("../../../Assets/slider-bg.png");
+.interviewContainer {
+    background-image: url("../../../Assets/slider-bg.png");
     background-size: cover;
 }
+
 .interview {
     background-color: var(--secondColor);
     text-align: center !important;
@@ -51,17 +52,19 @@
     text-align: center;
     color: var(--secondColor)
 }
-.interviewCard{
-    border:1px solid var(--firstColor) !important;
+
+.interviewCard {
+    border: 1px solid var(--firstColor) !important;
     transition: 0.8s all ease;
     padding: 0 5px;
 }
-.interviewCard:nth-child(2){
-    background-color:var(--secondColor) !important;
+
+.interviewCard:nth-child(2) {
+    background-color: var(--secondColor) !important;
 }
 
-.interviewCard:hover{
-    background-color:var(--secondColor) !important;   
+.interviewCard:hover {
+    background-color: var(--secondColor) !important;
     transform: scale(0.98);
 }
 
@@ -70,7 +73,7 @@
     height: 70px;
     width: 70px;
     border-radius: 50%;
-    background-color:var(--firstColor);
+    background-color: var(--firstColor);
     margin: auto;
     margin-bottom: 15px !important;
 }
@@ -78,17 +81,72 @@
 .interviewCardIcon i {
     font-size: 35px;
     line-height: 70px;
-    color:white;
+    color: white;
 }
-.interviewCardtext{
-    color:var(--secondColor);
+
+.interviewCardtext {
+    color: var(--secondColor);
     font-weight: 500;
     font-size: 16px;
     transition: 0.8s all ease;
 }
-.interviewCard:nth-child(2) .interviewCardtext{
-    color:white !important;
+
+.interviewCard:nth-child(2) .interviewCardtext {
+    color: white !important;
 }
-.interviewCard:hover .interviewCardtext{
-    color:white !important; 
+
+.interviewCard:hover .interviewCardtext {
+    color: white !important;
 }
+
+.trackContent {
+    height: 400px;
+    overflow: scroll;
+    border: 1px solid var(--firstColor) !important;
+    border-radius: 20px;
+}
+
+.interviewTrack {
+    width: 780px !important;
+    height: 100px !important;
+    margin: auto;
+}
+
+.accordinationHeader {
+    padding: 12.8px !important;
+}
+
+.accordinationHeader button {
+    color: var(--secondColor) !important;
+    font-weight: 600;
+}
+
+.accordinationBody {
+    font-weight: 600;
+}
+
+.interviewTrackHeader {
+    margin-top: 100px !important;
+}
+
+.interviewBtn {
+    background-image: linear-gradient(to right, #1B3F6B 0%, #018883 51%, #1B3F6B 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.4s all ease !important;
+    background-size: 200% auto;
+    color: white !important;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    font-weight: 600 !important;
+}
+
+.interviewBtn:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
