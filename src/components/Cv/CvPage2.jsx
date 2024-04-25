@@ -1,22 +1,29 @@
 import React from "react";
 import Cv from "./Cv";
 import { useNavigate } from "react-router-dom";
+import image from "../../Assets/404 Page.jpg";
 import { useFormik } from "formik";
+import { setProfile } from "../../redux/slices/cv.slice";
+import { useDispatch, useSelector } from "react-redux";
 import "./Cv.css";
 
 function CvPage2() {
   const Navigate = useNavigate();
+
+  const dispatch = useDispatch();
+  const profileData = useSelector((state) => state.cv.profile);
+
   const handleSubmit = (values) => {
     const OldData = localStorage.getItem("CvData");
-    localStorage.setItem("CvData", { ...OldData, ...values });
+    localStorage.setItem("CvData", { ...OldData, ...values, image });
+    dispatch(setProfile(values));
   };
 
-  const formik = useFormik({
-    initialValues: {
-      about: "",
-    },
-    onSubmit: handleSubmit,
-  });
+  const handleChange = (e) => {
+    dispatch(setProfile({ ...profileData, [e.target.name]: e.target.value }));
+  };
+
+  console.log(profileData);
   return (
     <div>
       <div className="container">
@@ -104,7 +111,7 @@ function CvPage2() {
       <div className="container mt-4 px-4 py-4 background-transparent rounded form-container d-flex">
         <form
           className="col-12 col-lg-4 me-lg-5"
-          onSubmit={formik.handleSubmit}
+          onSubmit={handleSubmit}
         >
           <div className="row my-3">
             <div className="col-md col-lg me-3">
@@ -118,8 +125,8 @@ function CvPage2() {
                 cols
                 placeholder="Enter text"
                 name="about"
-                value={formik.values.about}
-                onChange={formik.handleChange}
+                value={profileData.about}
+                onChange={handleChange}
               ></textarea>
             </div>
           </div>
@@ -131,7 +138,7 @@ function CvPage2() {
           <div className="col-12 col-lg-2 mb-3 mb-lg-0">
             <button
               type="submit"
-              onClick={() => (formik.handleSubmit(), Navigate("/CV/Form3"))}
+              onClick={() => (handleSubmit(), Navigate("/CV/Form3"))}
               className="btn bg-gold text-white text-uppercase btn-gold-hover py-3 w-100"
             >
               Continue
