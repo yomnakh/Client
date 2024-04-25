@@ -2,27 +2,28 @@ import React from "react";
 import "./Cv.css";
 import { useSelector } from "react-redux";
 function Cv() {
-  let CVData = localStorage.getItem('CvData' )|| {} ; 
+  let CVData = localStorage.getItem("CvData") || {};
   let {
-    fName = '',
-    lName = '',
-    profession = '',
-    country = '',
-    city = '',
-    mobileNumber = '',
-    email = '',
-    image = '',
-    about = '',
+    fName = "",
+    lName = "",
+    profession = "",
+    country = "",
+    city = "",
+    mobileNumber = "",
+    email = "",
+    image = "",
+    about = "",
     Skills = [],
     Experiences = [],
     Education = [],
     Award = [],
     Hobbies = [],
-    URL = [],}= CVData;
+    URL = [],
+  } = CVData;
 
-    const profileData = useSelector((state)=>state.cv.profile) 
+  const profileData = useSelector((state) => state.cv.profile);
 
-    return (
+  return (
     <div className="col-8 d-none d-lg-block CVPage">
       <div className="container cv-container">
         <div className="row cv-height">
@@ -32,28 +33,43 @@ function Cv() {
               src={image}
               alt=""
               style={{ width: "120px", height: "120px" }}
+              
             />
             <div className="neme-job my-4">
-            
               <h4 className="text-white text-capitalize">
-                   {profileData.fName === "" ? "Name" : `${profileData.fName} ${profileData.lName ||""}`}
-</h4>
+                {profileData.fName === ""
+                  ? "Name"
+                  : `${profileData.fName} ${profileData.lName || ""}`}
+              </h4>
               <p className="text-capitalize">
-                {profession == "" ? profession : "Profession"}{" "}
+              {profileData.profession === ""
+                  ? "profession"
+                  : `${profileData.profession} `}
+              
+                
               </p>
             </div>
+
+            {/* mobileNumber  */}
             <div className="info-cv">
               <p className=" phone py-1 px-2">
-                {" "}
-                {mobileNumber == "" ? "Mobile Number" : mobileNumber}
+              {profileData.mobileNumber === ""
+                  ? "mobileNumber"
+                  : `${profileData.mobileNumber} `}
+              
               </p>
               <p className=" email py-1 px-2">
-                {" "}
-                {email == "" ? "Email" : email}
+              {profileData.email === ""
+                  ? "Email"
+                  : `${profileData.email} `}
               </p>
               <p className=" location py-1 px-2">
                 {" "}
-                {city == "" ? "Location" : city + "," + country}{" "}
+               
+                {profileData.city === "" 
+    ? "Location" 
+    : `${profileData.city}, ${profileData.country || ""}`}
+                
               </p>
             </div>
             <div className="skills mb-5">
@@ -66,15 +82,15 @@ function Cv() {
             </div>
             <div className="award mb-5">
               <h6 className="text-white">Honor & Award</h6>
-              {Award.map(Award=><div key={Award.AwardName} className="col-12">
-                <div className="gradute-cv mb-1 d-flex align-items-center justify-content-between">
-                <span>{Award.AwardName}</span>
-                <span>{Award.Year} </span>
-              </div>
-              <p>
-              {Award.Description}
-              </p>
-              </div>)}
+              {Award.map((Award) => (
+                <div key={Award.AwardName} className="col-12">
+                  <div className="gradute-cv mb-1 d-flex align-items-center justify-content-between">
+                    <span>{Award.AwardName}</span>
+                    <span>{Award.Year} </span>
+                  </div>
+                  <p>{Award.Description}</p>
+                </div>
+              ))}
             </div>
             <div className="hobbies mb-5">
               <h6 className="text-white">Hobbies & Interest</h6>
@@ -84,12 +100,22 @@ function Cv() {
                 ))}
               </ul>
             </div>
-              <div className="links">
-              <h6 className="text-white" >Links and Credentials</h6>
+            <div className="links">
+              <h6 className="text-white">Links and Credentials</h6>
               <div className="links-icon row">
-                  {URL.map(link=><a  href={link.url} key={link.websiteName} className="  col-6 fs-5 text-light"><span  style={{textDecoration:'underline'}}>{link.websiteName}</span></a>)}
+                {URL.map((link) => (
+                  <a
+                    href={link.url}
+                    key={link.websiteName}
+                    className="  col-6 fs-5 text-light"
+                  >
+                    <span style={{ textDecoration: "underline" }}>
+                      {link.websiteName}
+                    </span>
+                  </a>
+                ))}
               </div>
-          </div>
+            </div>
           </div>
           <div className="col-7 bg-white">
             <div className="about mb-5">
@@ -102,7 +128,10 @@ function Cv() {
                 <h4 className="cateigry-cv">Education</h4>
                 <div className="line-cv mb-3"></div>
                 {Education.map((Education) => (
-                  <div key={Education.OrganizationName} className="d-flex justify-content-between">
+                  <div
+                    key={Education.OrganizationName}
+                    className="d-flex justify-content-between"
+                  >
                     <div className="col-3">
                       <p className="text-dark">
                         {Education.From} - {Education.to}

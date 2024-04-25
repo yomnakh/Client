@@ -176,8 +176,8 @@ function CvPage1() {
                 id="profession"
                 placeholder="Enter your profession"
                 name="profession"
-                value={formik.values.profession}
-                onChange={formik.handleChange}
+                value={profileData.profession}
+                onChange={handleChange}
               />
             </div>
             <div className="col-md col-lg">
@@ -190,8 +190,8 @@ function CvPage1() {
                 id="country"
                 placeholder="Enter your country"
                 name="country"
-                value={formik.values.country}
-                onChange={formik.handleChange}
+                value={profileData.country}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -207,8 +207,8 @@ function CvPage1() {
                 id="city"
                 placeholder="Enter your city"
                 name="city"
-                value={formik.values.city}
-                onChange={formik.handleChange}
+                value={profileData.city}
+                onChange={handleChange}
               />
             </div>
             <div className="col-md col-lg-8">
@@ -222,8 +222,8 @@ function CvPage1() {
                 id="phone"
                 placeholder="Enter your mobile number"
                 name="mobileNumber"
-                value={formik.values.mobileNumber}
-                onChange={formik.handleChange}
+                value={profileData.mobileNumber}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -239,8 +239,8 @@ function CvPage1() {
                 id="email"
                 placeholder="Enter your email"
                 name="email"
-                value={formik.values.email}
-                onChange={formik.handleChange}
+                value={profileData.email}
+                onChange={handleChange}
               />
             </div>
           </div>
