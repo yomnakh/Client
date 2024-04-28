@@ -26,6 +26,7 @@ import CvPage6 from './components/Cv/CvPage6';
 import CvPage7 from './components/Cv/CvPage7';
 import CvPage8 from './components/Cv/CvPage8';
 import { Outlet } from 'react-router-dom';
+import Quiz from "./components/Quizzes/Quiz";
 
 
 const App = () => {
@@ -48,7 +49,8 @@ const App = () => {
         <Route path='/interview/network' element={<InterviewNetwork/>} />
         <Route path='/interview/android' element={<InterviewAndroid/>} />
 
-        
+        <Route path='Quiz' element={<Quiz/>} />
+
       <Route path='/CV' element={<Outlet />}>
               <Route path='' element={<CvPage1 />} />
               <Route path='Form2' element={<CvPage2 />} />

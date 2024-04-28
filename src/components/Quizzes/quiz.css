@@ -1,0 +1,126 @@
+.quiz-wrapper{
+    /* margin-top: 100px !important; */
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-color: #57404b;
+    display: grid;
+    place-items: center;
+    position: relative;
+    background-image: url(../../Assets/bg.jpg);
+}
+
+.quiz-container {
+    margin-top: 100px !important;
+    position: absolute;
+    /* top:0; */
+    left:0;
+    transform: translate(50%,0);
+    width: 750px !important;
+ 
+  }
+  .quiz-card{
+    height: 600px !important;
+    display: block;
+    margin-top: 0em;
+    unicode-bidi: isolate;
+  }
+  .question-title{
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px !important;
+  }
+  .question-title input{
+  /* -ms-transform: scale(1.5) !important; For IE 9 */
+  /* -webkit-transform: scale(1.5) !important; For Chrome, Safari */
+
+  }
+
+  .answer-input{
+    transform: scale(2.5);
+  }
+  .quiz-ul{
+    font-size: xx-large;
+  }
+  .quiz-answer{
+    margin-left: 30px !important;
+
+  }
+.quiz-header{
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    color: var(--secondColor) !important;
+  }
+  .text-center{
+    position: relative;
+
+  }
+
+  .form-buttons
+{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    margin-top: 4rem;
+    display: flex;
+    justify-content:space-around;
+    /* margin-left: -64px !important; */
+    width: 600px; 
+    height: 30px; 
+
+}
+.form-buttons button
+{
+    border-radius: 34px;
+    width: 46%;
+    height: 68px;
+    border: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.5s all ease;
+}
+.form-buttons button i
+{
+
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    transition: 0.5s all ease;
+}
+.form-buttons .next:hover i,.apply:hover i
+{
+    transform: translateX(10px);
+}
+.form-buttons .prev:hover i
+{
+    transform: translateX(-10px);
+}
+.form-buttons .prev
+{
+
+    background-color: var(--firstColor);
+}
+.form-buttons .next, .apply
+{
+
+    background-color:var(--secondColor);
+
+}
+  
+  .timer {
+    margin-bottom: 15px;
+    font-weight: bold;
+    /* display: none; */
+  }
+  
+  .thank{
+    font-size: 70px;
+    text-align: center;
+  }
