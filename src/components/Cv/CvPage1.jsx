@@ -80,7 +80,7 @@ function CvPage1() {
             className="col d-flex align-items-center"
             onClick={() => Navigate("/CV")}
           >
-            <div className="btn-golden-border me-3 bg-warning">1</div>
+            <div className="btn-golden-border me-3 ">1</div>
             <span className="text-uppercase">main information</span>
           </div>
           <div
@@ -119,7 +119,7 @@ function CvPage1() {
             className="col d-flex align-items-center"
             onClick={() => Navigate("/CV")}
           >
-            <div className="btn-golden-border me-3 bg-warning">1</div>
+            <div className="btn-golden-border me-3 ">1</div>
             <span className="text-uppercase">main information</span>
           </div>
           <div
@@ -291,7 +291,7 @@ function CvPage1() {
             <button
               type="submit"
               onClick={() => (formik.handleSubmit(), Navigate("/CV/Form2"))}
-              className="btn bg-gold text-white text-uppercase btn-gold-hover py-3 w-100"
+              className="btn  text-white text-uppercase btn-gold-hover py-3 w-100"
             >
               Continue
             </button>

@@ -1,32 +1,29 @@
 
 :root {
     --colorBlack: #1a1919;
-    --colorWarning: #bf9b30;
+    --colorWarning: var(--secondColor);
     --colorGreen: #34a853;
     --colorGrey: #d0d0d0;
+    --main-color: var(--secondColor);
+    --btn-hover: #E7BC3C;
+    --bg-cv: #22395D;
+    --firstColor: #018883;
+    --secondColor: #1B3F6B;
 }
 
-a {
-    text-decoration: none !important;
 
-}
 
 .btn-cv {
-    background-color: #BF9B30;
+    background-color: var(--firstColor);
 }
 
 .btn-cv:hover {
-    background-color: #f1b708;
+    background-color: var(--secondColor);
 }
 
-.article-page-bg {
-    min-height: 100vh;
-}
 
-.article-page-bg form input::placeholder {
-    color: rgba(255, 255, 255, 0.365);
 
-}
+
 
 @media screen and (min-width: 1000px) {
     .img-art {
@@ -55,56 +52,14 @@ a {
     }
 }
 
-.bg-dropdown-Header {
-    background-color: #1a19196e !important;
-
-}
-
-
-.bg-dropdown-Header a {
-    background-color: inherit !important;
-    color: white !important;
-}
-
-.bg-dropdown-Header a:hover {
-    background-color: #1a1919b2 !important;
-    color: white !important;
-}
-
-.nav-link-line {
-    position: absolute;
-    width: 100%;
-    height: 5px;
-    background-color: #BF9B30;
-    border-radius: 5px;
-    opacity: 0;
-}
-
-.text-hover-warning:hover {
-    color: #BF9B30 !important;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
-:root {
-    --main-color: #BF9B30;
-    --btn-hover: #E7BC3C;
-    --bg-cv: #22395D;
-}
 
-body {
-    background-color: rgb(34, 34, 34);
-    color: white;
-    font-family: 'Open Sans', sans-serif;
-}
 
-.gold-border {
-    border: 1px solid var(--main-color);
-    width: 6%;
-}
+
 
 .btn-golden-border {
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--firstColor);
     border-radius: 5px;
     padding: 5px;
     width: 50px;
@@ -114,15 +69,16 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    
 }
 
 .active-cv,
 .bg-gold {
-    background-color: var(--main-color);
+    background-color: var(--firstColor);
 }
 
 .background-transparent {
-    background-color: rgba(0, 0, 0, 0.199);
+    background-color: rgba(205, 204, 204, 0.199);
 }
 
 .btn-gold-hover:hover {
@@ -131,7 +87,7 @@ body {
 
 .form-container input,
 .form-container textarea {
-    background-color: #393939;
+    background-color: #949292;
     border: none;
     color: white;
 }
@@ -145,7 +101,7 @@ body {
 .form-container input:not(:placeholder-shown),
 .form-container textarea:placeholder-shown,
 .form-container textarea:not(:placeholder-shown) {
-    background-color: #393939 !important;
+    background-color: #312727 !important;
     color: white;
 }
 
@@ -154,12 +110,12 @@ body {
 }
 
 .golden-dashed-border {
-    border: 2px dashed var(--main-color);
+    border: 2px dashed var(--secondColor);
     border-radius: 5px;
 }
 
 .gold-txt {
-    color: var(--main-color);
+    color: var(--secondColor);
 }
 
 .small-txt {
@@ -193,7 +149,7 @@ body {
 }
 
 .bg-transparent2 {
-    background-color: rgba(0, 0, 0, 0.199);
+    background-color: rgba(149, 139, 139, 0.199);
 }
 
 .steps {
@@ -247,16 +203,16 @@ body {
 .active>.page-link,
 .page-link.active,
 .page-link:hover {
-    color: #BF9B30 !important;
+    color: var(--secondColor) !important;
     background-color: transparent !important;
     border: none;
 }
 
 a[aria-label="Next page"],
 a[aria-label="Previous page"] {
-    border: 2px solid #BF9B30 !important;
+    border: 2px solid var(--secondColor) !important;
     border-radius: 50% !important;
-    color: #BF9B30 !important;
+    color: var(--secondColor) !important;
 }
 
 .page-item,
@@ -294,7 +250,7 @@ td {
 }
 
 .btn-cv {
-    background-color: #bf9b30;
+    background-color: var(--secondColor);
 }
 
 .btn-cv:hover {
@@ -317,7 +273,7 @@ td {
 
 .text-ww:hover,
 .link-f:hover {
-    color: #bf9b30;
+    color: var(--secondColor);
 }
 
 .select-item:hover {
