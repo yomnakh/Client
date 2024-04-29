@@ -12,10 +12,19 @@
 .quiz-container {
   margin-top: 100px !important;
   position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 750px !important;
+}
+.start-quiz{
+  margin-top: 100px !important;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -60%);
+  transform: translate(-50%, -90%);
   width: 750px !important;
+  text-align: center;
 }
 .quiz-card {
   height: 600px !important;
@@ -24,20 +33,16 @@
   unicode-bidi: isolate;
 }
 .question-title {
-  font-size: 30px !important;
+  font-size: 25px !important;
   font-weight: 600 !important;
   margin-bottom: 10px !important;
-}
-.question-title input {
-  /* -ms-transform: scale(1.5) !important; For IE 9 */
-  /* -webkit-transform: scale(1.5) !important; For Chrome, Safari */
 }
 
 .answer-input {
   transform: scale(2.5);
 }
 .quiz-ul {
-  font-size: xx-large;
+  font-size: x-large;
 }
 .quiz-answer {
   margin-left: 30px !important;
