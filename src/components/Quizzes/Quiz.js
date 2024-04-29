@@ -70,11 +70,6 @@
 
 // export default Quiz;
 
-
-
-
-
-
 // import React, { useState, useEffect } from 'react';
 // import { Card, Container, Row, Col, Button } from 'react-bootstrap';
 // import "./quiz.css"
@@ -104,7 +99,6 @@
 //       setSelectedAnswer(null); // Reset selected answer on previous question
 //     }
 //   }
-  
 
 //   const questions = [
 //     {
@@ -115,17 +109,17 @@
 //     {
 //         text: 'What is the capital of egypt?',
 //         answers: ['London', 'Paris', 'cairo'],
-        
+
 //       },
 //       {
 //         text: 'What is the capital of germeny?',
 //         answers: ['London', 'berlin', 'paris'],
-        
+
 //       },
 //       {
 //         text: 'What is the capital of aue?',
 //         answers: ['London', 'dubai', 'Berlin'],
-        
+
 //       },
 //     // Add more questions here
 //   ];
@@ -185,10 +179,9 @@
 
 // export default Quiz;
 
-
-import React, { useState, useEffect } from 'react';
-import { Card, Container, Row, Col, Button } from 'react-bootstrap';
-import './quiz.css'; // Import your CSS file
+import React, { useState, useEffect } from "react";
+import { Card, Container, Row, Col, Button, Badge } from "react-bootstrap";
+import "./quiz.css"; // Import your CSS file
 
 function Quiz() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -198,41 +191,42 @@ function Quiz() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeRemaining(prevTime => Math.max(0, prevTime - 1));
+      setTimeRemaining((prevTime) => Math.max(0, prevTime - 1));
     }, 1000);
     return () => clearInterval(timer);
   }, []);
 
   const handleNextQuestion = () => {
-    if (selectedAnswer) { // Check if user selected an answer
-      setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+    if (selectedAnswer) {
+      // Check if user selected an answer
+      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
       setSelectedAnswer(null); // Reset selected answer on next question
     }
   };
 
   const handlePreviousQuestion = () => {
     if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(prevIndex => prevIndex - 1);
+      setCurrentQuestionIndex((prevIndex) => prevIndex - 1);
       setSelectedAnswer(null); // Reset selected answer on previous question
     }
   };
 
   const questions = [
     {
-      text: 'What is the capital of France?',
-      answers: ['London', 'Paris', 'Berlin'],
+      text: "What is the capital of France?",
+      answers: ["London", "Paris", "Berlin"],
     },
     {
-      text: 'What is the capital of egypt?',
-      answers: ['London', 'Paris', 'cairo'],
+      text: "What is the capital of egypt?",
+      answers: ["London", "Paris", "cairo"],
     },
     {
-      text: 'What is the capital of germeny?',
-      answers: ['London', 'berlin', 'paris'],
+      text: "What is the capital of germeny?",
+      answers: ["London", "berlin", "paris"],
     },
     {
-      text: 'What is the capital of aue?',
-      answers: ['London', 'dubai', 'Berlin'],
+      text: "What is the capital of aue?",
+      answers: ["London", "dubai", "Berlin"],
     },
     // Add more questions here
   ];
@@ -246,8 +240,12 @@ function Quiz() {
           <Card.Header className="quiz-header" as="h5">
             Quiz
           </Card.Header>
-          <Card.Body className="m-5">
-            <div className="timer">Time: {timeRemaining} seconds</div>
+          <Card.Body className="m-1">
+            <Badge className="badge timer-Badge">
+              {" "}
+              Time: {timeRemaining} seconds
+            </Badge>
+
             {currentQuestion ? (
               <>
                 <Card.Title className="question-title mt-5">
@@ -264,7 +262,10 @@ function Quiz() {
                         value={answer}
                         onChange={() => setSelectedAnswer(answer)}
                       />
-                      <label className="quiz-answer" htmlFor={`answer-${index}`}>
+                      <label
+                        className="quiz-answer"
+                        htmlFor={`answer-${index}`}
+                      >
                         {answer}
                       </label>
                     </li>
@@ -272,13 +273,13 @@ function Quiz() {
                 </ul>
               </>
             ) : (
-              <div className="thank">Thank you :) You've completed the quiz!</div>
+              <div className="thank">
+                Thank you :) You've completed the quiz!
+              </div>
             )}
 
-
-{currentQuestion && timeRemaining > 0 && (
-
-<div className="form-buttons mt-5">
+            {currentQuestion && timeRemaining > 0 && (
+              <div className="form-buttons mt-5">
                 <button
                   type="button"
                   className="prev"
@@ -295,22 +296,18 @@ function Quiz() {
                   disabled={!selectedAnswer} // Disable if no answer selected
                   onClick={handleNextQuestion}
                 >
-                  {currentQuestionIndex === questions.length - 1 ? (
-                    'Submit'
-                  ) : (
-                    'Next Question'
-                  )}
+                  {currentQuestionIndex === questions.length - 1
+                    ? "Submit"
+                    : "Next Question"}
                   <i className="fa-solid fa-arrow-right"></i>
                 </button>
               </div>
-               )}
+            )}
           </Card.Body>
-
         </Card>
       </Container>
-
     </div>
-   );
- }
+  );
+}
 
-     export default Quiz;
+export default Quiz;
