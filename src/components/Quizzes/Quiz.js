@@ -237,10 +237,9 @@ function Quiz() {
     <div className="quiz-wrapper">
       <Container className="quiz-container">
         <Card className="quiz-card">
-          <Card.Header className="quiz-header" as="h5">
-            Quiz
-          </Card.Header>
+         
           <Card.Body className="m-1">
+            <Card.Title className="quiz-title"> Quiz </Card.Title>
             <Badge className="badge timer-Badge">
               {" "}
               Time: {timeRemaining} seconds
