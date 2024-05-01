@@ -122,3 +122,8 @@
     color: var(--secondColor);
   }
 }
+.userfeild{
+  font-weight: 700;
+  color:var(--firstColor);
+  font-size:20px;
+}

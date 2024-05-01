@@ -1,60 +1,118 @@
-import React from 'react';
-import "./AllCourses.css";
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Tabs, Tab, Button } from "react-bootstrap";
-import { courseData } from './CoursesData';
-import instructor from "../../Assets/instructor.png";
+import axios from 'axios';
+import { useParams, Link, useNavigate, json } from 'react-router-dom';
 import asidecourseimg from "../../Assets/asidecourseimg.png";
-import { useParams, Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import Api from "../../config/api";
+import CourseVideo from './CourseVideo';
 
-
-const CourseDesc = () => {
+const CourseDesc = ({course}) => {
   const { id } = useParams();
-  const course = courseData.courses.find(course => course.id === parseInt(id));
+  // const [course, setCourse] = useState(null);
+  const [isEnrolled, setIsEnrolled] = useState(false);
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  const userData = JSON.parse(localStorage.getItem('userData'));
+  const token = localStorage.getItem("access_token");
+  const [lectures, setLectures] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  // console.log(userData.token , userData._id);
+
+  // useEffect(() => {
+  //   const fetchCourse = async () => {
+  //     try {
+  //       const response = await axios.get(`https://edutrax.vercel.app/api/courses/${id}`);
+  //       setCourse(response.data);
+  //     } catch (error) {
+  //       console.error('Error fetching course:', error);
+  //     }
+  //   };
+  //   fetchCourse();
+  // }, [id]);
+
+  const handleEnrollClick = async () => {
+    if (!isLoggedIn) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'You need to be logged in to enroll in this course.'
+      });
+      navigate('/login');
+    } else {
+      try {
+        const response = await axios.post(
+          `https://edutrax.vercel.app/api/enroll-course/enroll/${userData._id}`,
+          { course: id },
+          {
+            headers: {
+              token: `${token}`
+            }
+          }
+        );
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: response.data.message
+        }).then(() => {
+          // Redirect to the course video page or perform enrollment logic
+          navigate(`/courses/coursedesc/${id}/coursevideo`);
+        });
+      } catch (error) {
+        console.error('Error enrolling in course:', error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.response.data.message || 'An error occurred while enrolling in the course.'
+        });
+        if(error.response.data.message === "Already enrolled in this course"){
+          navigate(`/courses/coursedesc/${id}/coursevideo`);
+        }
+      }
+    }
+  };
+
   if (!course) {
-    return <div>Course not found</div>;
+    return <div>Loading...</div>;
   }
+
+
   return (
     <div>
       <div className="CourseInfoMainData">
         <Container>
           <h2 className="CourseInfoMainData_header">{course.title}</h2>
 
-          <p class="text-12px px-5 me-1 created_by">{course.courseHeader} </p>
-          <div class="info-tag">
-            <img loading="lazy" width="35px" height="35px" class="rounded-circle object-fit-cover me-1" src={course.instructor.img} alt="instructor img" />
-            <p class="text-12px mt-5px me-1 created_by ">Created by</p>
+          <p className="text-12px px-5 me-1 created_by">{course.header}</p>
+          <div className="info-tag">
+            <img loading="lazy" width="35px" height="35px" className="rounded-circle object-fit-cover me-1" src={course.instructor.avatar.url} alt="instructor img" />
+            <p className="text-12px mt-5px me-1 created_by ">Created by</p>
             <p>
-              <a
-                class="created-by-instructor"
-                href="https://www.facebook.com/profile.php?id=100006483658713"
-              >
+              <a className="created-by-instructor" href={course.instructor.email}>
                 {course.instructor.name}
               </a>
             </p>
-            <br></br>
+            <br />
           </div>
-          <div class="selection">
-            <span class="language-icon">
-              <i class="fas fa-globe"></i>
+          <div className="selection">
+            <span className="language-icon">
+              <i className="fas fa-globe"></i>
             </span>
             <select>
               <option value="en" className="language">
                 English
               </option>
             </select>
-            <div class="last-updated">
-              {" "}
-              <i class="fa-solid fa-calendar-days calender-icon"></i>
-              <span>Last updated: 2024-04-04</span>
+            <div className="last-updated">
+              <i className="fa-solid fa-calendar-days calender-icon"></i>
+              <span>Last updated: {course.updatedAt}</span>
 
-              <i class="far fa-clock  -icon"></i>
+              <i className="far fa-clock  -icon"></i>
               <span> {course.hours} Hours</span>
-
             </div>
           </div>
         </Container>
       </div>
-      {/* /////////////////////////////////////////////////////////////////////////// */}
 
       <Container fluid>
         <Row>
@@ -69,9 +127,9 @@ const CourseDesc = () => {
                 <Tab eventKey="Overview" title="Overview">
                   <h3 className="overview_header">Course description</h3>
                   <p className="overview_content">
-                    {course.disc}
+                    {course.description}
                   </p>
-                  <h3 className="overview_what">What will i learn?</h3>
+                  <h3 className="overview_what">What will I learn?</h3>
                   <p className="overview_content">
                     {course.willLearn}
                   </p>
@@ -79,17 +137,16 @@ const CourseDesc = () => {
                   <p>
                     <ul>
                       <li className="overview_content">
-                        {course.require.r1}
+                        {course.requirement.r1}
                       </li>
                       <li className="overview_content">
-                        {course.require.r2}
+                        {course.requirement.r2}
                       </li>
                     </ul>
                   </p>
                 </Tab>
                 <Tab eventKey="Instructor" title="Instructor">
                   <div className="instructorinfo">
-                    {" "}
                     <Container className="instructor-info">
                       <Row>
                         <Col
@@ -102,10 +159,10 @@ const CourseDesc = () => {
                         >
                           <div>
                             <img
-                              src={course.instructor.img}
+                              src={course.instructor.avatar.url}
                               className="instructorimg rounded-circle object-fit-cover me-1"
                               alt="instructorimg"
-                              width="35px" height="35px" 
+                              width="35px" height="35px"
                             />
                           </div>
                         </Col>
@@ -125,23 +182,22 @@ const CourseDesc = () => {
                             <p className="instructorp">
                               {course.instructor.about}
                             </p>
-                            <ul class="instructor_social-icons">
+                            <ul className="instructor_social-icons">
                               <li>
-                                <a href="#" class="instructor_facebook">
-                                <i class="fa-brands fa-facebook"></i>
+                                <a href={course.instructor} className="instructor_facebook">
+                                  <i className="fa-brands fa-facebook"></i>
                                 </a>
                               </li>
                               <li>
-                                <a href="#" class="instructor_linkedin">
-                                  <i class="fa-brands fa-linkedin"></i>
+                                <a className="instructor_linkedin">
+                                  <i class="fa-solid fa-envelope" title='Mail Me'></i>
                                 </a>
                               </li>
                               <li>
-                                <a href="#" class="instructor_twitter">
+                                <a href={course.instructor} className="instructor_twitter">
                                   𝕏
                                 </a>
                               </li>
-
                               <button className="instructor_profile">
                                 View profile
                               </button>
@@ -159,7 +215,7 @@ const CourseDesc = () => {
           {/* //////////////////////////////////////////////////////////////////////////// */}
           <Col xs={12} sm={12} md={4} lg={3} xl={3} className="me-auto">
             <div className="custom-box">
-              <img src={asidecourseimg} className="asidecourseimg " />
+              <img src={asidecourseimg} className="asidecourseimg " alt={""} />
               <h3 className="price">Free</h3>
               <div class="info-card">
                 <div class="info-item">
@@ -183,17 +239,8 @@ const CourseDesc = () => {
                   <span>Yes</span>
                 </div>
               </div>
-              <Link to="/courses/coursevideo/:id">
-              <Button className="enrollbtn" type="enroll">
-                Enroll
-              </Button>
-              </Link>
 
-              {/* <ul class="social-icons">
-        <li><a href="#" class="facebook"> <i class="fa-brands fa-facebook"></i></a></li>
-        <li><a href="#" class="linkedin"><i class="fa-brands fa-linkedin" ></i></a></li>
-        <li><a href="#" class="youtube"><i class="fa-brands fa-youtube"></i></a></li>
-    </ul> */}
+              <Button className="enrollbtn" type="enroll" onClick={handleEnrollClick}>Enroll</Button>
             </div>
           </Col>
         </Row>
@@ -201,4 +248,5 @@ const CourseDesc = () => {
     </div>
   );
 };
-export default CourseDesc
+
+export default CourseDesc;

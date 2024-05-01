@@ -4,15 +4,79 @@ import Course from './Course';
 import { courseData } from './CoursesData';
 import FilterCoursesCategory from './FilterCoursesCategory';
 import { Link } from 'react-router-dom'
+import axios from 'axios';
+import Api from "../../config/api";
 
 const AllCourses = () => {
-    const [course, setcourse] = useState([]);
+    // const [course, setcourse] = useState([]);
+    // const [searchQuery, setSearchQuery] = useState('');
+    // const [selectedCategories, setSelectedCategories] = useState([]);
+
+    // useEffect(() => {
+    //     fetchCourses();
+    // }, []);
+
+    // const fetchCourses = async () => {
+    //     try {
+    //         const response = await axios.get('https://edutrax.vercel.app/api/courses/');
+    //         setcourse(response.data);
+    //     } catch (error) {
+    //         console.error('Error fetching courses:', error);
+    //     }
+    // };
+
+    // const handleSearchInputChange = (e) => {
+    //     setSearchQuery(e.target.value);
+    // };
+
+    // const handleCategoryChange = (category) => {
+    //     if (selectedCategories.includes(category)) {
+    //         setSelectedCategories(selectedCategories.filter(cat => cat !== category));
+    //     } else {
+    //         setSelectedCategories([...selectedCategories, category]);
+    //     }
+    // };
+
+    // const filteredCourses = course.filter(course => {
+    //     const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase());
+    //     const matchesCategory = selectedCategories.length === 0 ||
+    //         Array.isArray(course.category) && course.category.some(cat => selectedCategories.includes(cat));
+    //     return matchesSearch && matchesCategory;
+    // });
+
+    const [courses, setCourses] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCategories, setSelectedCategories] = useState([]);
+    const [allCategories, setAllCategories] = useState([]);
 
     useEffect(() => {
-        setcourse(courseData.courses);
+        fetchCourses();
     }, []);
+
+    useEffect(() => {
+        setAllCategories(extractCategories(courses));
+    }, [courses]);
+
+    const fetchCourses = async () => {
+        try {
+            const response = await axios.get('https://edutrax.vercel.app/api/courses/');
+            setCourses(response.data);
+        } catch (error) {
+            console.error('Error fetching courses:', error);
+        }
+    };
+
+    const extractCategories = (courses) => {
+        const allCategories = [];
+        courses.forEach(course => {
+            course.category.forEach(category => {
+                if (!allCategories.includes(category)) {
+                    allCategories.push(category);
+                }
+            });
+        });
+        return allCategories;
+    };
 
     const handleSearchInputChange = (e) => {
         setSearchQuery(e.target.value);
@@ -26,15 +90,12 @@ const AllCourses = () => {
         }
     };
 
-    useEffect(() => {
-        const filteredCourses = courseData.courses.filter(course => {
-            const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase());
-            const matchesCategory = selectedCategories.length === 0 ||
-                Array.isArray(course.category) && course.category.some((cat) => selectedCategories.includes(cat)); return matchesSearch && matchesCategory;
-        });
-        setcourse(filteredCourses);
-    }, [searchQuery, selectedCategories]);
-
+    const filteredCourses = courses.filter(course => {
+        const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesCategory = selectedCategories.length === 0 ||
+            course.category.some(cat => selectedCategories.includes(cat));
+        return matchesSearch && matchesCategory;
+    });
 
     return (
         <Container fluid className='w-100 p-0'>
@@ -48,10 +109,9 @@ const AllCourses = () => {
                 </div>
             </div>
             <div className='row m-0'>
-                <FilterCoursesCategory courseData={courseData} handleCategoryChange={handleCategoryChange} selectedCategories={selectedCategories}/>
-                <div className='col-lg-10 col-md-10 m-0'>
+            <FilterCoursesCategory handleCategoryChange={handleCategoryChange} selectedCategories={selectedCategories} allCategories={allCategories} />                <div className='col-lg-10 col-md-10 m-0'>
                     <div className='courses'>
-                        <Course course={course} />
+                    <Course course={filteredCourses} />
                     </div>
                 </div>
             </div>

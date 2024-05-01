@@ -18,12 +18,12 @@ const CourseDesign = ({ course }) => {
       className="mb-3 justify-content-center d-xl-block d-flex"
       style={{ margin: "auto" }}
     >
-      <Link to={`/courses/coursedesc/${course.id}`}>
+      <Link to={`/courses/coursedesc/${course._id}`}>
         <Card
           style={{ width: "20rem", border: "1px solid rgb(225, 220, 220)" }}
           className="course_card p-1"
         >
-          <Card.Img variant="top" className="cardImage" src={course.img} />
+          <Card.Img variant="top" className="cardImage" src={course.image.url} />
           <Card.Body>
             <Card.Text>
               <div className="d-flex flex-row justify-content-between">
