@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import RoadMaps from "./Pages/RoadMaps";
 import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -17,6 +17,8 @@ import InterviewAngular from "./components/Career/interview/InterviewsTracs/Inte
 import InterviewNext from "./components/Career/interview/InterviewsTracs/InterviewNext";
 import InterviewNetwork from "./components/Career/interview/InterviewsTracs/InterviewNetwork";
 import InterviewAndroid from "./components/Career/interview/InterviewsTracs/InterviewAndroid";
+import ParentComponent from "./components/All Courses/ParentComponent";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 
 const App = () => {
@@ -29,15 +31,17 @@ const App = () => {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<SignUpPage />} />
-        <Route path="/courses/coursedesc/:id" element={<CourseDescPage />} />
-        <Route path="/courses/coursevideo/:id" element={<CourseVideo />} />
+        {/**<Route path="/courses/coursedesc/:id" element={<CourseDescPage />} />
+        <Route path="/courses/coursedesc/coursevideo/:id" element={<CourseVideo />} /> */}
+        <Route path="/courses/coursedesc/:id/*" element={<ParentComponent />} />
         <Route path="/interview" element={<InterviewPage />}></Route>
         <Route path='/interview/react' element={<InterviewReact />} />
         <Route path='/interview/node' element={<InterviewNode />} />
         <Route path='/interview/angular' element={<InterviewAngular />} />
         <Route path='/interview/next' element={<InterviewNext />} />
-        <Route path='/interview/network' element={<InterviewNetwork/>} />
-        <Route path='/interview/android' element={<InterviewAndroid/>} />
+        <Route path='/interview/network' element={<InterviewNetwork />} />
+        <Route path='/interview/android' element={<InterviewAndroid />} />
+        <Route path="/admin/*"  element={<Dashboard/>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
