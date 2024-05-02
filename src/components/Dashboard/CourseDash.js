@@ -319,7 +319,7 @@ function CourseDash() {
   };
 
   return (
-    <>
+    <div>
       <Modal show={isAddFormVisible} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{editedIndex !== null ? "Edit Contact" : "Add Contact"}</Modal.Title>
@@ -403,7 +403,7 @@ function CourseDash() {
       <Button variant="primary" onClick={handleShow} className="m-auto">
         Add 
       </Button>
-    </>
+    </div>
   );
 }
 
