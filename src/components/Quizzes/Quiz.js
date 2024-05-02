@@ -1,4 +1,3 @@
-
 // import React, { useState, useEffect } from "react";
 // import { Card, Container, Button, Badge, ProgressBar } from "react-bootstrap";
 // import "./quiz.css"; // Import your CSS file
@@ -613,3 +612,6 @@ export default Quiz;
 // }
 
 // export default Quiz;
+
+
+

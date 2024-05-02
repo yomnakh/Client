@@ -1,0 +1,14 @@
+.custom-table {
+    font-size: 0.8rem; /* Reduce font size for a smaller table */
+    width: 900px !important;
+    height: 500px !important;
+    margin-top:200px !important ;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    padding: 0.5rem 1rem; /* Adjust padding for a more compact look */
+  }
+  .custom-table td {
+    background-color: white !important;
+  }
