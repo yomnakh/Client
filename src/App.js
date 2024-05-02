@@ -28,9 +28,16 @@ import CvPage8 from './components/Cv/CvPage8';
 import { Outlet } from 'react-router-dom';
 import Quiz from "./components/Quizzes/Quiz";
 import ParentComponent from "./components/All Courses/ParentComponent";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 
 const App = () => {
+  const [selectedQuiz, setSelectedQuiz] = useState(null);
+
+  const handleSelectQuiz = (quizType) => {
+    setSelectedQuiz(quizType);
+  };
+
   return (
     <BrowserRouter>
       <NavBar />
@@ -50,9 +57,8 @@ const App = () => {
         <Route path='/interview/next' element={<InterviewNext />} />
         <Route path='/interview/network' element={<InterviewNetwork />} />
         <Route path='/interview/android' element={<InterviewAndroid />} />
-
-        <Route path='Quiz' element={<Quiz />} />
-
+        <Route path='/admin/*' element={<Dashboard />} />
+        <Route path='/quiz/:type' element={<Quiz />} />
         <Route path='/CV' element={<Outlet />}>
           <Route path='' element={<CvPage1 />} />
           <Route path='Form2' element={<CvPage2 />} />

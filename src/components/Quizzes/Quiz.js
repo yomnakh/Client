@@ -328,6 +328,7 @@ function Quiz() {
           <Card className="quiz-card">
             <Card.Body className="m-1">
               <Card.Title className="quiz-title"> Quiz </Card.Title>
+
               <ProgressBar className="progressbar" now={progressPercentage} label={`<span class="math-inline">\{currentQuestionIndex \+ 1\}/</span>{questions.length}`} />
               {currentQuestion ? (
                 <div>
