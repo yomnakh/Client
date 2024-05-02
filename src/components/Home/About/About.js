@@ -13,7 +13,7 @@ const About = () => {
             <img className='aboutimg' src={AboutImage} />
           </Col>
           <Col className='col-lg-6 col-md-6 col-sm-12 col-12  aboutxt'>
-            <span class="badge rounded-pill "> Get More About Us </span>
+            <span class="badge rounded-pill ms-0 "> Get More About Us </span>
             <h1 className='h1badge' >Thousand Of Top <p className='course' > Courses</p> <br></br> Now in One Place  </h1>
             <p className='pbadge'>Groove’s intuitive shared inbox makes it easy for team members to <br></br> organize, prioritize and.In this episode of the Smashing Pod we’re <br></br> talking about Web Platform Baseline.</p>
             <i class="fas fa-check-circle abouticon"></i> <span className='abouticontxt'> The Most World Class Instructors
