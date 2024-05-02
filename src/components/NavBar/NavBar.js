@@ -209,12 +209,12 @@ const NavBar = () => {
                             </NavDropdown>
                             <Link to={'/courses'} className='homeNav'>Courses</Link>
                             <NavDropdown title="Quizzes" id="basic-nav-dropdown">
-                                <NavDropdown.Item >HTML</NavDropdown.Item>
-                                <NavDropdown.Item >CSS</NavDropdown.Item>
-                                <NavDropdown.Item >JavaScript</NavDropdown.Item>
-                                <NavDropdown.Item >React</NavDropdown.Item>
-                                <NavDropdown.Item >Security</NavDropdown.Item>
-                                <NavDropdown.Item >Node.Js</NavDropdown.Item>
+                                <NavDropdown.Item ><Link to={"/quiz/html"}>HTML</Link></NavDropdown.Item>
+                                <NavDropdown.Item ><Link to={"/quiz/css"}>CSS</Link></NavDropdown.Item>
+                                <NavDropdown.Item ><Link to={"/quiz/js"}>JavaScript</Link></NavDropdown.Item>
+                                <NavDropdown.Item ><Link to={"/quiz/react"}>React</Link></NavDropdown.Item>
+                                <NavDropdown.Item ><Link to={"/quiz/security"}>Security</Link></NavDropdown.Item>
+                                <NavDropdown.Item ><Link to={"/quiz/nodejs"}>Node.Js</Link></NavDropdown.Item>
                             </NavDropdown>
                             <NavDropdown title="About" id="basic-nav-dropdown">
                                 <NavDropdown.Item >CV</NavDropdown.Item>

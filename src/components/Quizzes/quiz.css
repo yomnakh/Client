@@ -15,8 +15,9 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 750px !important;
+  width: 900px !important;
 }
+
 .welcome-quiz-h{
 font-size: 50px !important;
 }
@@ -68,6 +69,7 @@ font-size: 50px !important;
   font-size: 25px !important;
   font-weight: 600 !important;
   margin-bottom: 10px !important;
+  margin-left: 30px !important;
 }
 
 .answer-input {
@@ -123,6 +125,7 @@ margin: auto !important;
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
+  
   transition: 0.5s all ease;
 }
 .form-buttons button i {
@@ -146,6 +149,7 @@ margin: auto !important;
 .form-buttons .next,
 .apply {
   background-color: var(--secondColor);
+ 
 }
 
 .thank {

@@ -219,22 +219,22 @@ const CourseDesc = ({course}) => {
               <h3 className="price">Free</h3>
               <div class="info-card">
                 <div class="info-item">
-                  <i class="icon">📚</i>
+                  <i class="icon ms-0">📚</i>
                   <span className="spanaside">Lectures</span>
                   <span>{course.lessons}</span>
                 </div>
                 <div class="info-item">
-                  <i class="icon">⭐</i>
+                  <i class="icon ms-0">⭐</i>
                   <span className="spanaside">Skill level</span>
                   <span>Beginner</span>
                 </div>
                 <div class="info-item">
-                  <i class="icon">🕒</i>
+                  <i class="icon ms-0">🕒</i>
                   <span className="spanaside">Expiry period</span>
                   <span>Lifetime</span>
                 </div>
                 <div class="info-item">
-                  <i class="icon">🎓</i>
+                  <i class="icon ms-0">🎓</i>
                   <span className="spanaside">Certificate</span>
                   <span>Yes</span>
                 </div>
