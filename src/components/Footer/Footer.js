@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Footer.css";
-import logo4 from "../../../src/Assets/logo4.png";
 
 const Footer = () => {
   return (
@@ -9,13 +8,11 @@ const Footer = () => {
       <Container>
         <Row>
           <Col md={4} sm={6}>
-            <img src={logo4} className="logo4 col-lg-7 my-md-4" />
-
-            {/* <h1 className="footerh1" style={{ marginTop: "15px" }}>
+            <h1 className="footer-h1" style={{ marginTop: "15px" }}>
               EduTrax
-            </h1> */}
+            </h1>
             <p
-              className="footerp col-lg-8 col-md-4 col-sm-12"
+              className="footer-p col-lg-8 col-md-4 col-sm-12"
               style={{ color: "white" }}
             >
               It is a long established fact that a reader will be distracted by
@@ -48,32 +45,34 @@ const Footer = () => {
           </Col>
 
           <Col md={4} sm={12}>
-            <h2> Quick Links </h2>
+            <h2 className="quicklinks-header"> Quick Links </h2>
             <ul className="quicklinks">
               <li className="Quicklinksp"> Latest Courses</li>
-              <li className="Quicklinksp">Mission & Vision</li>
+              {/* <li className="Quicklinksp">Mission & Vision</li> */}
               <li className="Quicklinksp">Our Approach</li>
-              <li className="Quicklinksp">Exclusive Advisors</li>
+              {/* <li className="Quicklinksp">Exclusive Advisors</li> */}
               <li className="Quicklinksp"> Join A Carrer </li>
             </ul>
           </Col>
           <Col md={4} sm={6}>
-            <h2>Contact Us</h2>
+            <h2 className="contactus-header">Contact Us</h2>
             <div className=" contacts py-1">
               <li>
                 <i class="fas fa-map-marker-alt contact contacticon"></i>
-                <span style={{ fontWeight: " 600" }}>
-                  123 Main Street, City, Country
+                <span className="connection-p" style={{ fontWeight: " 600" }}>
+                    123 Main Street, City, Country
                 </span>
               </li>
               <li>
                 <i class="fas fa-envelope contacticon"></i>
-                <span style={{ fontWeight: " 600" }}>
+                <span className="connection-p" style={{ fontWeight: " 600" }}>
                   Email: info@example.com
                 </span>
               </li>
               <i class="fas fa-phone contacticon"></i>
-              <span style={{ fontWeight: " 600" }}>Phone: +123 456 789</span>
+              <span className="connection-p" style={{ fontWeight: " 600" }}>
+                Phone: +123 456 789
+              </span>
             </div>
           </Col>
         </Row>
@@ -84,7 +83,7 @@ const Footer = () => {
             <hr></hr>
             <Col>
               <p className="text-center" style={{ color: "white" }}>
-                &copy; 2024 EduTrax. All Rights Reserved.
+                &copy; {new Date().getFullYear()} EduTrax. All Rights Reserved.
               </p>
             </Col>
           </Row>
