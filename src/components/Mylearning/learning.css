@@ -1,0 +1,17 @@
+.mylearning-header {
+    background-image: url('../../Assets/bgg.png');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    margin-top: 82px !important;
+    text-align: center;
+    padding-top: 80px !important;
+    position: relative;
+}
+
+.header-mylearning{
+    color: white !important;
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 10px !important;
+}
