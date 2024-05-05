@@ -1,30 +1,61 @@
 .mylearning-header {
-    background-image: url('../../Assets/bgg.png');
-    background-size: cover;
-    background-position: center;
-    height: 250px;
-    margin-top: 82px !important;
-    text-align: center;
-    padding-top: 80px !important;
-    position: relative;
+  background-image: url("../../Assets/bgg.png");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  margin-top: 82px !important;
+  text-align: center;
+  padding-top: 80px !important;
+  position: relative;
+}
+.mylearning-search {
+  width: 30% !important;
+  height: 50px !important;
+  padding: 40px 0px !important;
+  margin: auto !important;
+  position: relative;
+}
+.myleraning-search {
+  position: absolute;
+  margin-left: 480px !important;
+  margin-top: 9px !important;
+}
+.header-mylearning {
+  color: white !important;
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 10px !important;
+}
+.checked {
+  color: orange;
+}
+.unchecked {
+  color: aliceblue;
+}
+.mylearning-card:hover {
+  transform: scale(1.02);
 }
 
-.header-mylearning{
-    color: white !important;
-    font-size: 45px;
-    font-weight: 700;
-    margin-bottom: 10px !important;
+.mylearning-cards {
+  margin-top: 30px !important;
+  display: flex;
+  margin-left: 140px !important;
+  align-items: center;
 }
-.mylearning-cards{
-    margin-top: 60px !important;
-    display: flex;
-align-items: center;
-
- 
+.start-lesson-btn {
+  text-align: center;
+  margin: auto !important;
+  width: 100% !important;
+  background-color: var(--secondColor) !important;
+  border: none !important;
 }
-.start-lesson-btn{
-   text-align: center;
-   margin: auto !important;
-   background-color: var(--secondColor) !important;
+.start-lesson-btn:hover{
+    opacity: 0.9;
+    letter-spacing: 1.3px;
 }
-
+.mylearning-header {
+  margin-top: 90px !important;
+}
+.mylearning-bar{
+    height: 6px !important;
+}
