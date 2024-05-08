@@ -57,7 +57,7 @@ const App = () => {
         <Route path='/interview/next' element={<InterviewNext />} />
         <Route path='/interview/network' element={<InterviewNetwork />} />
         <Route path='/interview/android' element={<InterviewAndroid />} />
-        <Route path='/admin/*' element={<Dashboard />} />
+        <Route path='/dash/*' element={<Dashboard />} />
         <Route path='/quiz/:type' element={<Quiz />} />
         <Route path='/CV' element={<Outlet />}>
           <Route path='' element={<CvPage1 />} />

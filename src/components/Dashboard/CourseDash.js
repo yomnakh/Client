@@ -1,410 +1,397 @@
-// import React from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Api from '../../config/api';
+import { Button, Table, Modal, Form } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 
-// const CourseDash = () => {
-//     return (
-//         <div>CourseDash
+const CourseDash = () => {
+  const [courses, setCourses] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState(null);
+  const [instructors, setInstructors] = useState([]);
+  const allCategories = ['Front End', 'Back End', 'JavaScript', 'Full Stack', 'CS50', 'Security', 'Network', "AWS", 'ALL Courses'];
+  const [newCourse, setNewCourse] = useState({
+    title: '',
+    header: '',
+    instructor: '',
+    lessons: '',
+    hours: '',
+    category: [],
+    description: '',
+    type: '',
+    willLearn: '',
+    requirement: {
+      r1: '',
+      r2: ''
+    }
+  });
 
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const [selectedInstructorId, setSelectedInstructorId] = useState('');
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
-            
-//         </div>
-//     )
-// }
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await Api.get('/api/courses');
+        setCourses(response.data);
+      } catch (error) {
+        console.error('Error fetching courses:', error);
+        setError(error.response ? error.response.data.message : 'An error occurred');
+        setIsLoading(false);
+      }
+    };
 
-// export default CourseDash
+    const fetchInstructors = async () => {
+      try {
+        const response = await Api.get('/api/users/all-instructors');
+        setInstructors(response.data);
+      } catch (error) {
+        console.error('Error fetching instructors:', error);
+      }
+    };
 
+    fetchCourses();
+    fetchInstructors();
+  }, []);
 
-// import React from "react";
-// import { useState } from "react";
-// import { Table, Button, Modal, Form  } from "react-bootstrap";
-// import './Dashboard.css';
-
-// function CourseDash() {
-//   const [isAddFormVisible, setIsAddFormVisible] = useState(false)
-  // const contacts = [
-  //   { name: "Amit7777", email: "amit@gmail.com", mobile: "9307961978" },
-  //   { name: "Amit55555", email: "amit@gmail.com", mobile: "234567890" },
-  //   { name: "Amiit", email: "amit@gmail.com", mobile: "123456789" },
-  //   { name: "Amit", email: "amit@gmail.com", mobile: "123456789" },
-  //   { name: "Amit", email: "amit@gmail.com", mobile: "123456789" },
-  //   { name: "Admin", email: "admin@gmail.com", mobile: "7894561212" },
-  // ];
-
-//   const handleShow = () => setIsAddFormVisible(true);
-
-//   // Function to handle the closing of the modal
-//   const handleClose = () => setIsAddFormVisible(false);
-//   return (
-
-// <>
-//     <Button variant="primary" onClick={handleShow}>
-//     Add
-//   </Button>
-
-//   <Modal show={isAddFormVisible} onHide={handleClose}>
-//     <Modal.Header closeButton>
-//       <Modal.Title>Add Contact</Modal.Title>
-//     </Modal.Header>
-//     <Modal.Body>
-//       <Form>
-//         {/* Form fields go here */}
-//       </Form>
-//     </Modal.Body>
-//     <Modal.Footer>
-//       <Button variant="secondary" onClick={handleClose}>
-//         Close
-//       </Button>
-//       <Button variant="primary" onClick={/* TODO: Add submit handler */}>
-//         Save Changes
-//       </Button>
-//     </Modal.Footer>
-//   </Modal>
-
-
-    // <Table striped bordered hover className="custom-table">
-    //   <thead>
-    //     <tr>
-    //       <th>Name</th>
-    //       <th>Email</th>
-    //       <th>Mobile</th>
-    //       <th>Actions</th>
-    //     </tr>
-    //   </thead>
-    //   <tbody className="">
-    //     {contacts.map((contact) => (
-    //       <tr key={contact.name}>
-    //         <td>{contact.name}</td>
-    //         <td>{contact.email}</td>
-    //         <td>{contact.mobile}</td>
-    //         <td>
-    //           <Button variant="primary" size="sm">
-    //             Edit
-    //           </Button>{" "}
-    //           <Button variant="danger" size="sm">
-    //             Delete
-    //           </Button>
-    //         </td>
-    //       </tr>
-    //     ))}
-    //   </tbody>
-    // </Table>
-//     </>
-//   );
-// }
-
-// export default CourseDash;
-
-
-
-// import React from "react";
-// import { useState } from "react";
-// import { Table, Button, Modal, Form ,FormGroup } from "react-bootstrap";
-// import './Dashboard.css';
-
-// function CourseDash() {
-//   const [isAddFormVisible, setIsAddFormVisible] = useState(false);
-//   const [name, setName] = useState(""); // State for name input
-//   const [email, setEmail] = useState(""); // State for email input
-//   const [mobile, setMobile] = useState(""); // State for mobile input
-// const [contacts, setContacts] =useState ([
-//       { name: "Amit7777", email: "amit@gmail.com", mobile: "9307961978" },
-//       { name: "Amit55555", email: "amit@gmail.com", mobile: "234567890" },
-//       { name: "Amiit", email: "amit@gmail.com", mobile: "123456789" },
-//       { name: "Amit", email: "amit@gmail.com", mobile: "123456789" },
-//       { name: "Amit", email: "amit@gmail.com", mobile: "123456789" },
-//       { name: "Admin", email: "admin@gmail.com", mobile: "7894561212" },
-//     ]);
-
-//   const handleShow = () => setIsAddFormVisible(true);
-
-//   const handleClose = () => setIsAddFormVisible(false);
-
-//   const handleInputChange = (event) => {
-//     const { target } = event;
-//     const value = target.type === "email" ? target.value.toLowerCase() : target.value; // Lowercase email for consistency
-//     switch (target.name) {
-//       case "name":
-//         setName(value);
-//         break;
-//       case "email":
-//         setEmail(value);
-//         break;
-//       case "mobile":
-//         setMobile(value);
-//         break;
-//       default:
-//         break;
-//     }
-//   };
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//     // Add validation logic here if needed
-//     const newContact = { name, email, mobile };
-//     // Add the new contact to your contacts array (implement your logic here)
-//     setContacts([...contacts, newContact]);
-//     setName("");
-//     setEmail("");
-//     setMobile("");
-//     handleClose(); // Close the modal after successful submission
-//   };
-
-//   return (
-//     <>
-//       <Button variant="primary" onClick={handleShow}>
-//         Add Contact
-//       </Button>
-
-//       <Modal show={isAddFormVisible} onHide={handleClose}>
-//         <Modal.Header closeButton>
-//           <Modal.Title>Add Contact</Modal.Title>
-//         </Modal.Header>
-//         <Modal.Body>
-//           <Form onSubmit={handleSubmit}>
-//             <FormGroup className="mb-3">
-//               <Form.Label htmlFor="name">Name</Form.Label>
-//               <Form.Control
-//                 type="text"
-//                 placeholder="Enter Name"
-//                 id="name"
-//                 name="name"
-//                 value={name}
-//                 onChange={handleInputChange}
-//               />
-//             </FormGroup>
-//             <FormGroup className="mb-3">
-//               <Form.Label htmlFor="email">Email</Form.Label>
-//               <Form.Control
-//                 type="email"
-//                 placeholder="Enter Email"
-//                 id="email"
-//                 name="email"
-//                 value={email}
-//                 onChange={handleInputChange}
-//               />
-//             </FormGroup>
-//             <FormGroup className="mb-3">
-//               <Form.Label htmlFor="mobile">Mobile</Form.Label>
-//               <Form.Control
-//                 type="text"
-//                 placeholder="Enter Mobile Number"
-//                 id="mobile"
-//                 name="mobile"
-//                 value={mobile}
-//                 onChange={handleInputChange}
-//               />
-//             </FormGroup>
-//           </Form>
-//         </Modal.Body>
-//         <Modal.Footer>
-//           <Button variant="secondary" onClick={handleClose}>
-//             Close
-//           </Button>
-//           <Button variant="primary" type="submit" onClick={handleSubmit}>
-//             Save Changes
-//           </Button>
-//         </Modal.Footer>
-//       </Modal>
-
-//       <Table striped bordered hover className="custom-table">
-//       <Table striped bordered hover className="custom-table">
-//       <thead>
-//         <tr>
-//           <th>Name</th>
-//           <th>Email</th>
-//           <th>Mobile</th>
-//           <th>Actions</th>
-//         </tr>
-//       </thead>
-//       <tbody className="">
-//         {contacts.map((contact) => (
-//           <tr key={contact.name}>
-//             <td>{contact.name}</td>
-//             <td>{contact.email}</td>
-//             <td>{contact.mobile}</td>
-//             <td>
-//               <Button variant="primary" size="sm">
-//                 Edit
-//               </Button>{" "}
-//               <Button variant="danger" size="sm">
-//                 Delete
-//               </Button>
-//             </td>
-//           </tr>
-//         ))}
-//       </tbody>
-//     </Table>
-//       </Table>
-//     </>
-//   );
-// }
-// export default CourseDash;
- 
-
-import React, { useState } from "react";
-import { Table, Button, Modal, Form, FormGroup } from "react-bootstrap";
-import './Dashboard.css';
-
-function CourseDash() {
-  const [isAddFormVisible, setIsAddFormVisible] = useState(false);
-  const [name, setName] = useState(""); // State for name input
-  const [email, setEmail] = useState(""); // State for email input
-  const [mobile, setMobile] = useState(""); // State for mobile input
-  const [contacts, setContacts] = useState([
-    { name: "Amit7777", email: "amit@gmail.com", mobile: "9307961978" },
-    { name: "Amit55555", email: "amit@gmail.com", mobile: "234567890" },
-    { name: "Amiit", email: "amit@gmail.com", mobile: "123456789" },
-    { name: "Amit", email: "amit@gmail.com", mobile: "123456789" },
-    { name: "Amit", email: "amit@gmail.com", mobile: "123456789" },
-    { name: "Admin", email: "admin@gmail.com", mobile: "7894561212" },
-  ]);
-  const [editedIndex, setEditedIndex] = useState(null); // State to track the index of the contact being edited
-
-  const handleShow = () => setIsAddFormVisible(true);
-
-  const handleClose = () => {
-    setIsAddFormVisible(false);
-    setEditedIndex(null); // Clear the edited index when closing the modal
-  };
-
-  const handleInputChange = (event) => {
-    const { target } = event;
-    const value = target.type === "email" ? target.value.toLowerCase() : target.value; // Lowercase email for consistency
-    switch (target.name) {
-      case "name":
-        setName(value);
-        break;
-      case "email":
-        setEmail(value);
-        break;
-      case "mobile":
-        setMobile(value);
-        break;
-      default:
-        break;
+  const handleDelete = async (id) => {
+    try {
+      setIsLoading(true);
+      await Api.delete(`/api/courses/${id}`);
+      setCourses(courses.filter(course => course._id !== id));
+    } catch (error) {
+      console.error('Error deleting course:', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const newContact = { name, email, mobile };
-    if (editedIndex !== null) {
-      // If editing an existing contact, update it in the contacts array
-      const updatedContacts = [...contacts];
-      updatedContacts[editedIndex] = newContact;
-      setContacts(updatedContacts);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    // Check if the changed field is inside the requirement object
+    if (name.startsWith('requirement.')) {
+      // If it is, update the nested state
+      const requirementField = name.split('.')[1];
+      setNewCourse(prevState => ({
+        ...prevState,
+        requirement: {
+          ...prevState.requirement,
+          [requirementField]: value
+        }
+      }));
     } else {
-      // If adding a new contact, add it to the contacts array
-      setContacts([...contacts, newContact]);
+      // If it's not a nested field, update normally
+      setNewCourse(prevState => ({
+        ...prevState,
+        [name]: value
+      }));
     }
-    setName("");
-    setEmail("");
-    setMobile("");
-    handleClose();
   };
 
-  const handleEdit = (index) => {
-    // Open the modal with the details of the contact to be edited
-    const contactToEdit = contacts[index];
-    setName(contactToEdit.name);
-    setEmail(contactToEdit.email);
-    setMobile(contactToEdit.mobile);
-    setEditedIndex(index);
-    setIsAddFormVisible(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      setIsLoading(true);
+      const newCourseData = {
+        title: newCourse.title,
+        header: newCourse.header,
+        instructor: selectedInstructorId,
+        lessons: newCourse.lessons,
+        hours: newCourse.hours,
+        category: Array.isArray(newCourse.category) ? newCourse.category : [newCourse.category], // Ensure category is an array
+        description: newCourse.description,
+        type: newCourse.type,
+        willLearn: newCourse.willLearn,
+        requirement: {
+          r1: newCourse.requirement.r1,
+          r2: newCourse.requirement.r2
+        }
+      };
+
+      // Make the API request to add the new course
+      const response = await Api.post('/api/courses', newCourseData);
+      const addedCourse = response.data;
+
+      // Update the courses state with the new course
+      setCourses([...courses, addedCourse]);
+
+      // Close the modal and show success message
+      closeModal();
+      Swal.fire('Success', 'Course added successfully', 'success');
+    } catch (error) {
+      console.error('Error adding course:', error);
+      console.error('Error adding course:', error.response.data.details);
+      Swal.fire('Error', `${error.response.data.details}`, 'error');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const handleDelete = (index) => {
-    // Remove the contact at the specified index from the contacts array
-    const updatedContacts = contacts.filter((_, i) => i !== index);
-    setContacts(updatedContacts);
+  const handleInstructorChange = (e) => {
+    const { value } = e.target;
+    setSelectedInstructorId(value); // Save selected instructor ID
+    setNewCourse(prevState => ({
+      ...prevState,
+      instructor: value
+    }));
   };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setNewCourse({
+      title: '',
+      header: '',
+      instructor: '',
+      lessons: '',
+      hours: '',
+      category: [],
+      description: '',
+      type: '',
+      willLearn: '',
+      requirement: {
+        r1: '',
+        r2: ''
+      }
+    });
+    setSelectedCourse(null);
+  };
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  // const handleAddCourse = async () => {
+  //   try {
+  //     setIsLoading(true);
+  //     const newCourseData = {
+  //       title: newCourse.title,
+  //       header: newCourse.header,
+  //       instructor: selectedInstructorId,
+  //       lessons: newCourse.lessons,
+  //       hours: newCourse.hours,
+  //       category: newCourse.category,
+  //       description: newCourse.description,
+  //       type: newCourse.type,
+  //       willLearn: newCourse.willLearn,
+  //       requirement: {
+  //         r1: newCourse.requirement.r1,
+  //         r2: newCourse.requirement.r2
+  //       }
+  //     };
+
+  //     const response = await Api.post('/api/courses', newCourseData);
+  //     const addedCourse = response.data;
+  //     setCourses([...courses, addedCourse]);
+  //     closeModal();
+  //     Swal.fire('Success', 'Course added successfully', 'success');
+  //   } catch (error) {
+  //     console.error('Error adding course:', error.response.data.details);
+  //     Swal.fire('Error', 'Failed to add course', 'error');
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+
+  const handleCategoryChange = (e, category) => {
+    const isChecked = e.target.checked;
+    if (isChecked) {
+      setNewCourse(prevState => ({
+        ...prevState,
+        category: [...prevState.category, category]
+      }));
+    } else {
+      setNewCourse(prevState => ({
+        ...prevState,
+        category: prevState.category.filter(item => item !== category)
+      }));
+    }
+  };
+
+  const handleUpdate = (course) => {
+    setSelectedCourse(course);
+    setNewCourse({
+      title: course.title,
+      header: course.header,
+      instructor: course.instructor,
+      lessons: course.lessons,
+      hours: course.hours,
+      category: course.category,
+      description: course.description,
+      type: course.type,
+      willLearn: course.willLearn,
+      requirement: {
+        r1: course.requirement.r1,
+        r2: course.requirement.r2
+      }
+    });
+    setShowModal(true);
+  };
+
+  const handleUpdateCourse = async (e) => {
+    e.preventDefault();
+    try {
+      setIsLoading(true);
+
+      // Make the API request to update the course
+      const response = await Api.put(`/api/courses/${selectedCourse._id}`, {
+        ...newCourse,
+        instructor: selectedCourse.instructor._id // Use instructor ID from selected course
+      });
+      const updatedCourse = response.data.Course;
+
+      // Update the courses state with the updated course
+      const updatedCourses = courses.map((course) =>
+        course._id === updatedCourse._id ? updatedCourse : course
+      );
+      setCourses(updatedCourses);
+
+      // Close the modal and show success message
+      closeModal();
+      Swal.fire('Success', 'Course updated successfully', 'success');
+    } catch (error) {
+      console.error('Error updating course:', error.response.data.details);
+      Swal.fire('Error', 'Failed to update course', 'error');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const filteredCourses = courses.filter(course =>
+    course.type.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div>
-      <Modal show={isAddFormVisible} onHide={handleClose}>
+      <div className=" mb-3 w-75 mx-auto mt-5 d-flex">
+        <input
+          type="search"
+          placeholder="Search by Course Name"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-100 mx-auto border rounded me-5"
+        />
+        <Button onClick={openModal} className='w-25'>Add Course</Button>
+      </div>
+      <Modal show={showModal} onHide={closeModal}>
         <Modal.Header closeButton>
-          <Modal.Title>{editedIndex !== null ? "Edit Contact" : "Add Contact"}</Modal.Title>
+          <Modal.Title>{selectedCourse ? "Update Course" : "Add New Course"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={handleSubmit}>
-            <FormGroup className="mb-3">
-              <Form.Label htmlFor="name">Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Name"
-                id="name"
-                name="name"
-                value={name}
-                onChange={handleInputChange}
-              />
-            </FormGroup>
-            <FormGroup className="mb-3">
-              <Form.Label htmlFor="email">Email</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter Email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={handleInputChange}
-              />
-            </FormGroup>
-            <FormGroup className="mb-3">
-              <Form.Label htmlFor="mobile">Mobile</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Mobile Number"
-                id="mobile"
-                name="mobile"
-                value={mobile}
-                onChange={handleInputChange}
-              />
-            </FormGroup>
+          <Form onSubmit={selectedCourse ? handleUpdateCourse : handleSubmit}>
+            <Form.Group controlId="formTitle">
+              <Form.Label>Title</Form.Label>
+              <Form.Control type="text" name="title" value={newCourse.title} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group controlId="formHeader">
+              <Form.Label>Header</Form.Label>
+              <Form.Control type="text" name="header" value={newCourse.header} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group controlId="formInstructor">
+              <Form.Label>Instructor</Form.Label>
+              <Form.Control as="select" name="instructor" value={selectedInstructorId} onChange={handleInstructorChange}>
+                <option value="">Select Instructor</option>
+                {instructors.map((instructor, index) => (
+                  <option key={index} value={instructor._id}>{instructor.name}</option>
+                ))}
+              </Form.Control>
+            </Form.Group>
+            <Form.Group controlId="formLessons">
+              <Form.Label>Lessons</Form.Label>
+              <Form.Control type="text" name="lessons" value={newCourse.lessons} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group controlId="formHours">
+              <Form.Label>Hours</Form.Label>
+              <Form.Control type="text" name="hours" value={newCourse.hours} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group controlId="formCategory">
+              <Form.Label>Category</Form.Label>
+              {allCategories.map((category, index) => (
+                <Form.Check
+                  key={index}
+                  type="checkbox"
+                  id={`category-checkbox-${index}`}
+                  label={category}
+                  value={category}
+                  checked={newCourse.category.includes(category)}
+                  onChange={(e) => handleCategoryChange(e, category)}
+                />
+              ))}
+            </Form.Group>
+            <Form.Group controlId="formDescription">
+              <Form.Label>Description</Form.Label>
+              <Form.Control as="textarea" rows={3} name="description" value={newCourse.description} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group controlId="formType">
+              <Form.Label>Type</Form.Label>
+              <Form.Control type="text" name="type" value={newCourse.type} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group controlId="formWillLearn">
+              <Form.Label>Will Learn</Form.Label>
+              <Form.Control as="textarea" rows={3} name="willLearn" value={newCourse.willLearn} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group controlId="formRequirementR1">
+              <Form.Label>Requirement R1</Form.Label>
+              <Form.Control type="text" name="requirement.r1" value={newCourse.requirement.r1} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group controlId="formRequirementR2">
+              <Form.Label>Requirement R2</Form.Label>
+              <Form.Control type="text" name="requirement.r2" value={newCourse.requirement.r2} onChange={handleChange} />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              {selectedCourse ? "Update Course" : "Add Course"}
+            </Button>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" type="submit" onClick={handleSubmit}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
 
-
-      <Table striped bordered hover className="custom-table m-auto">
+      <Table striped bordered hover className='mx-auto' style={{ width: "85%" }}>
         <thead>
-          <tr>
+          <tr className='text-center'>
+            <th>Course</th>
+            <th>ID</th>
             <th>Name</th>
-            <th>Email</th>
-            <th>Mobile</th>
-            <th>Actions</th>
+            <th>Instructor</th>
+            <th colSpan={2}>Actions</th>
           </tr>
         </thead>
         <tbody>
-          {contacts.map((contact, index) => (
-            <tr key={index}>
-              <td>{contact.name}</td>
-              <td>{contact.email}</td>
-              <td>{contact.mobile}</td>
-              <td>
-                <Button variant="primary" size="sm" onClick={() => handleEdit(index)}>
-                  Edit
-                </Button>{" "}
-                <Button variant="danger" size="sm" onClick={() => handleDelete(index)}>
-                  Delete
-                </Button>
+          {isLoading ? (
+            <tr>
+              <td colSpan="5" className='text-dark bg-light'>
+                <div className="d-flex justify-content-center">
+                  <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                </div>
               </td>
             </tr>
-          ))}
+          ) : (
+            filteredCourses.map((course, index) => (
+              <tr key={index}>
+                <td className='text-dark bg-light text-center'><img className='h-50 w-50 rounded' src={course.image.url} alt='course' /></td>
+                <td className='text-dark bg-light'>{course._id}</td>
+                <td className='text-dark bg-light'>{course.type}</td>
+                <td className='text-dark bg-light'>{course.instructor.name}</td>
+                <td className='text-dark bg-light'>
+                  <Button variant="primary" type="button" onClick={() => handleUpdate(course)}>
+                    Update
+                  </Button>
+                </td>
+                <td className='text-dark bg-light'>
+                  <Button variant="danger" size="sm" onClick={() => handleDelete(course._id)}>
+                    Delete
+                  </Button>
+                </td>
+              </tr>
+            ))
+          )}
         </tbody>
       </Table>
-
-      <Button variant="primary" onClick={handleShow} className="m-auto">
-        Add 
-      </Button>
     </div>
   );
-}
+};
 
 export default CourseDash;
