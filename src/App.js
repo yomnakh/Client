@@ -29,6 +29,7 @@ import { Outlet } from 'react-router-dom';
 import Quiz from "./components/Quizzes/Quiz";
 import ParentComponent from "./components/All Courses/ParentComponent";
 import Dashboard from "./components/Dashboard/Dashboard";
+import MyLearning from "./components/Mylearning/Learning"
 
 
 const App = () => {
@@ -59,6 +60,7 @@ const App = () => {
         <Route path='/interview/android' element={<InterviewAndroid />} />
         <Route path='/dash/*' element={<Dashboard />} />
         <Route path='/quiz/:type' element={<Quiz />} />
+        <Route path="/mylearning" element={<MyLearning/>} />
         <Route path='/CV' element={<Outlet />}>
           <Route path='' element={<CvPage1 />} />
           <Route path='Form2' element={<CvPage2 />} />

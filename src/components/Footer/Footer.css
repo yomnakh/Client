@@ -1,6 +1,10 @@
 .footer {
-  background-color: var(--secondColor);
+ background-image: url(../../Assets/bgg.png);
   color: white;
+  height: 55vh ;
+}
+.footer-h1, .quicklinks-header,.contactus-header{
+  padding: 20px 0px !important;
 }
 
 .google {
@@ -17,11 +21,12 @@
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
-.footerp{
+.footer-p{
   text-align: left !important;
+  color: rgb(203, 203, 203) !important;
 }
 .linkedin {
-  color: rgb(34, 34, 143);
+  color: rgb(45, 45, 169);
 }
 
 .iconspace {
@@ -34,22 +39,22 @@
 
 .Quicklinksp {
   font-weight: 500;
-  color: white;
+  color: rgb(203, 203, 203);
   line-height: 35px;
   text-align: left;
+}
+.connection-p{
+  margin-left: 10px !important;
 }
 dl,
   ol,
   ul {
     padding: 0 !important;
   }
-.Quicklinks {
-  /* padding-left: 32px; */
-  padding: 0 !important;
+.connection-p{
+  color: rgb(203, 203, 203) !important;
 }
-.logo4 {
-  width:100% ;
-}
+
 @media screen and (max-width: 768px) {
   .footerp {
     text-align: left !important;
@@ -110,13 +115,3 @@ dl,
   }
 }
 
-/* @media (max-width: 768px) {
-  footer p {
-    flex-basis: 100%;
-  }
-
-  footer a {
-    flex-basis: 100%;
-    margin-left: 0;
-  }
-} */
