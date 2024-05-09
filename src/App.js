@@ -30,6 +30,7 @@ import Quiz from "./components/Quizzes/Quiz";
 import ParentComponent from "./components/All Courses/ParentComponent";
 import Dashboard from "./components/Dashboard/Dashboard";
 import MyLearning from "./components/Mylearning/Learning"
+import Resetpassword from "./components/Resetpassword/Reset"
 
 
 const App = () => {
@@ -61,6 +62,8 @@ const App = () => {
         <Route path='/admin/*' element={<Dashboard />} />
         <Route path='/quiz/:type' element={<Quiz />} />
         <Route path="/mylearning" element={<MyLearning/>} />
+        <Route path="/Resetpassword" element={<Resetpassword/>} />
+
         <Route path='/CV' element={<Outlet />}>
           <Route path='' element={<CvPage1 />} />
           <Route path='Form2' element={<CvPage2 />} />

@@ -15,14 +15,12 @@ import bootstrap from "../../Assets/bootstarpleaning.jpeg";
 import "./learning.css";
 
 const Learning = () => {
-  const progress = 60; 
+  const progress = 60;
   const [searchTerm, setSearchTerm] = useState("");
   const [courses, setCourses] = useState([
     { id: 1, name: "FrontEnd", image: front },
     { id: 2, name: "BackEnd", image: back },
     { id: 3, name: "Bootstrap", image: bootstrap },
-    { id: 3, name: 'Bootstrap', image: bootstrap },
-   
   ]);
 
   const handleSearch = (event) => {
@@ -41,7 +39,7 @@ const Learning = () => {
         </div>
       </div>
       <Form className=" mylearning-search">
-      <i class="fa-solid fa-magnifying-glass myleraning-search"></i>
+        <i class="fa-solid fa-magnifying-glass mylearning-search-icon"></i>
         <FormControl
           type="text"
           placeholder="Search my courses"
@@ -62,14 +60,19 @@ const Learning = () => {
               xxl="4"
               className="mb-3 d-xl-block d-flex"
             >
-              <Card  className="mylearning-card" style={{ width: "17rem" }}>
+              <Card className="mylearning-card" style={{ width: "17rem" }}>
                 <Card.Img variant="top" src={course.image} />
                 <Card.Body>
                   <Card.Title>{course.name}</Card.Title>
                   <Card.Text>
                     <p>track your progress</p>
-                    <ProgressBar variant="success" className="mylearning-bar" now={progress} label={`${progress}%`} visuallyHidden  />
-          
+                    <ProgressBar
+                      variant="success"
+                      className="mylearning-bar"
+                      now={progress}
+                      label={`${progress}%`}
+                      visuallyHidden
+                    />
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star unchecked"></span>
