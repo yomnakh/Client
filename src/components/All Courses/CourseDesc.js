@@ -17,20 +17,7 @@ const CourseDesc = ({course}) => {
   const [lectures, setLectures] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  // console.log(userData.token , userData._id);
-
-  // useEffect(() => {
-  //   const fetchCourse = async () => {
-  //     try {
-  //       const response = await axios.get(`https://edutrax.vercel.app/api/courses/${id}`);
-  //       setCourse(response.data);
-  //     } catch (error) {
-  //       console.error('Error fetching course:', error);
-  //     }
-  //   };
-  //   fetchCourse();
-  // }, [id]);
-
+  
   const handleEnrollClick = async () => {
     if (!isLoggedIn) {
       Swal.fire({

@@ -1,4 +1,85 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+// import {
+//   Card,
+//   Col,
+//   Row,
+//   Button,
+//   Container,
+//   Form,
+//   FormControl,
+//   ProgressBar,
+// } from "react-bootstrap";
+// import front from "../../Assets/frontlearning.jpeg";
+// import back from "../../Assets/backlearing.png";
+// import bootstrap from "../../Assets/bootstarpleaning.jpeg";
+// import "./learning.css";
+
+// const Learning = () => {
+//   const progress = 60; 
+//   const [searchTerm, setSearchTerm] = useState("");
+//   const [courses, setCourses] = useState([
+//     { id: 1, name: "FrontEnd", image: front },
+//     { id: 2, name: "BackEnd", image: back },
+//     { id: 3, name: "Bootstrap", image: bootstrap }
+
+//   ]);
+
+//   const handleSearch = (event) => {
+//     setSearchTerm(event.target.value);
+//   };
+
+//   const filteredCourses = courses.filter((course) =>
+//     course.name.toLowerCase().includes(searchTerm.toLowerCase())
+//   );
+
+//   return (
+//     <div className="col">
+//       <div className="mylearning-header">
+//         <div className="d-flex justify-content-center align-content-center flex-column">
+//           <h2 className="header-mylearning">My Learning </h2>
+//           <Form className=" mylearning-search">
+//           <i class="fa-solid fa-magnifying-glass myleraning-search"></i>
+//             <FormControl
+//               type="text"
+//               placeholder="Search my courses"
+//               value={searchTerm}
+//               onChange={handleSearch}
+//             />
+//           </Form>
+//         </div>
+//       </div>
+//       <Container>
+//         <Row className="d-flex  mylearning-cards">
+//           {filteredCourses.map((course) => (
+//             <Col
+//               key={course.id}
+//               xs="12"
+//               sm="12"
+//               md={6}
+//               lg="6"
+//               xl="4"
+//               xxl="4"
+//               className="mb-3 d-xl-block d-flex"
+//             >
+//               <Card  className="mylearning-card" style={{ width: "17rem" }}>
+//                 <Card.Img variant="top" src={course.image} />
+//                 <Card.Body>
+//                   <Card.Title className="text-center">{course.name}</Card.Title>
+//                   <Button className="start-lesson-btn">Start Lesson</Button>
+//                 </Card.Body>
+//               </Card>
+//             </Col>
+//           ))}
+//         </Row>
+//       </Container>
+//     </div>
+//   );
+// };
+
+// export default Learning;
+
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   Card,
   Col,
@@ -7,53 +88,57 @@ import {
   Container,
   Form,
   FormControl,
-  ProgressBar,
 } from "react-bootstrap";
-import front from "../../Assets/frontlearning.jpeg";
-import back from "../../Assets/backlearing.png";
-import bootstrap from "../../Assets/bootstarpleaning.jpeg";
+import { Link } from "react-router-dom";
+
 import "./learning.css";
+import Api from "../../config/api";
 
 const Learning = () => {
-  const progress = 60; 
   const [searchTerm, setSearchTerm] = useState("");
-  const [courses, setCourses] = useState([
-    { id: 1, name: "FrontEnd", image: front },
-    { id: 2, name: "BackEnd", image: back },
-    { id: 3, name: "Bootstrap", image: bootstrap },
-    { id: 3, name: 'Bootstrap', image: bootstrap },
-   
-  ]);
+  const [courses, setCourses] = useState([]);
+  const userData = JSON.parse(localStorage.getItem("userData"));
+  const userID = userData._id;
+
+  // Function to fetch enrolled courses
+  const fetchEnrolledCourses = async () => {
+    try {
+      const userId = userID;
+      const response = await Api.get(`/api/enroll-course/allenrollment/${userId}`);
+      setCourses(response.data["Enrolled Courses"]);
+    } catch (error) {
+      console.error("Error fetching enrolled courses:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchEnrolledCourses();
+  }, []);
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
 
   const filteredCourses = courses.filter((course) =>
-    course.name.toLowerCase().includes(searchTerm.toLowerCase())
+    course.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="col">
       <div className="mylearning-header">
-        <div className="d-flex justify-content-center align-content-center">
+        <div className="d-flex justify-content-center align-content-center flex-column learningContainer mx-auto">
           <h2 className="header-mylearning">My Learning </h2>
+          <div className='searchDiv mx-auto my-3'>
+            <input placeholder='Search Course.....' type='search' value={searchTerm} onChange={handleSearch} />
+            <button className='my-auto'>Search</button>
+          </div>
         </div>
       </div>
-      <Form className=" mylearning-search">
-      <i class="fa-solid fa-magnifying-glass myleraning-search"></i>
-        <FormControl
-          type="text"
-          placeholder="Search my courses"
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-      </Form>
       <Container>
-        <Row className="d-flex  mylearning-cards">
+        <Row className="d-flex mylearning-cards">
           {filteredCourses.map((course) => (
             <Col
-              key={course.id}
+              key={course._id}
               xs="12"
               sm="12"
               md={6}
@@ -62,21 +147,28 @@ const Learning = () => {
               xxl="4"
               className="mb-3 d-xl-block d-flex"
             >
-              <Card  className="mylearning-card" style={{ width: "17rem" }}>
-                <Card.Img variant="top" src={course.image} />
-                <Card.Body>
-                  <Card.Title>{course.name}</Card.Title>
+              <Card
+                style={{ width: "20rem", border: "1px solid rgb(225, 220, 220)" }}
+                className="course_card p-2"
+              >
+                <Card.Img variant="top" className="cardImage" src={course.image.url} />
+                <Card.Body className="text-center">
                   <Card.Text>
-                    <p>track your progress</p>
-                    <ProgressBar variant="success" className="mylearning-bar" now={progress} label={`${progress}%`} visuallyHidden  />
-          
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star unchecked"></span>
-                    <span class="fa fa-star unchecked"></span>
-                    <span class="fa fa-star unchecked"></span>{" "}
+                    <div className="d-flex flex-row justify-content-between">
+                      <h6 style={{ color: "#018883" }} className="fw-bold">
+                        Enrolled
+                      </h6>
+                      <h6 style={{ color: "#018883" }} className="fw-bold">
+                        {course.type}
+                      </h6>
+                    </div>
                   </Card.Text>
-                  <Button className="start-lesson-btn">Start Lesson</Button>
+                  <p className="text-start fw-bold px-2 text-center" style={{ color: "#1B3F6B" }}>
+                    {course.title}
+                  </p>
+                  <Link to={`/courses/coursedesc/${course._id}/coursevideo`} >
+                    <Button className="start-lesson-btn w-75 mx-auto">Start Lesson</Button>
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>

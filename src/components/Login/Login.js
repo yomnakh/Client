@@ -73,6 +73,9 @@ const Login = () => {
                     <a href="/forgot-password" className="loginlinks">
                       Forgot Password?
                     </a>
+                    <Link to="/forgot-password" className="loginlinks">
+                    forgetpassword
+                  </Link>
                   </Form.Text>
                 </Form.Group>
                 <Button className="submitbtn" type="submit" disabled={loading}>
