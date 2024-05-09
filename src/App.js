@@ -30,6 +30,7 @@ import Quiz from "./components/Quizzes/Quiz";
 import ParentComponent from "./components/All Courses/ParentComponent";
 import Dashboard from "./components/Dashboard/Dashboard";
 import MyLearning from "./components/Mylearning/Learning"
+import Resetpassword from "./components/Resetpassword/Reset"
 
 
 const App = () => {
