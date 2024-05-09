@@ -2,29 +2,20 @@
   background-image: url("../../Assets/bgg.png");
   background-size: cover;
   background-position: center;
-  height: 250px;
+  height: 260px;
   margin-top: 82px !important;
   text-align: center;
   padding-top: 80px !important;
-  position: relative;
+  width: 100%;
 }
-.mylearning-search {
-  width: 30% !important;
-  height: 50px !important;
-  padding: 40px 0px !important;
-  margin: auto !important;
-  position: relative;
-}
-.myleraning-search {
-  position: absolute;
-  margin-left: 480px !important;
-  margin-top: 9px !important;
-}
+
+
 .header-mylearning {
   color: white !important;
   font-size: 45px;
   font-weight: 700;
-  margin-bottom: 10px !important;
+  margin-bottom: 20px !important;
+  margin-top: -25px;
 }
 .checked {
   color: orange;
@@ -37,15 +28,12 @@
 }
 
 .mylearning-cards {
-  margin-top: 30px !important;
+  margin-top: 20px !important;
   display: flex;
   margin-left: 140px !important;
   align-items: center;
 }
 .start-lesson-btn {
-  text-align: center;
-  margin: auto !important;
-  width: 100% !important;
   background-color: var(--secondColor) !important;
   border: none !important;
 }
@@ -58,4 +46,41 @@
 }
 .mylearning-bar{
     height: 6px !important;
+}
+
+.learningContainer .searchDiv {
+  width: 40%;
+  padding: 10px;
+  border-radius: 40px;
+  background-color: rgb(255, 255, 255);
+
+}
+
+.learningContainer .searchDiv input,
+.learningContainer .searchDiv button {
+  border-radius: 25px !important;
+  outline: 0;
+  border: 0;
+}
+
+.learningContainer .searchDiv input {
+  width: 75%;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.learningContainer .searchDiv button {
+  width: 22%;
+  height: 50px;
+  background-color: var(--firstColor);
+  color: white;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 1.2px;
+  transition: .5s all ease;
+}
+
+.learningContainer .searchDiv button:hover {
+  background-color: var(--secondColor) !important;
+  letter-spacing: 0px !important;
 }

@@ -137,7 +137,6 @@ const CourseVideo = ({ lectures , course }) => {
         <div className="col-8 vidcontainer ">
           <div className="video-player">
             <div className="col-8 video_title ">
-              {/* Display the title above the video */}
               <h4 style={{marginTop:"-85px",marginBottom:"-10px"}}>{selectedVideo ? selectedVideo.name : "Select a video"}</h4>
             </div>
             {selectedVideo && (
@@ -157,7 +156,7 @@ const CourseVideo = ({ lectures , course }) => {
         </div>
         <div className="side-video-content col-4" style={{ height: "100vh", overflow: "scroll", position: "static", top: 0, scrollbarWidth: "none", msOverflowStyle: "none", paddingBottom:"120px" }}>
           <div className="course-sidebar-head">
-            <h2 className="playlist_header">{course.title}</h2>
+            <h2 className="playlist_header">{course ? course.title : "Course Title"}</h2>
           </div>
           <ul className="fixed-video-list">
             {lectures.map((video) => (

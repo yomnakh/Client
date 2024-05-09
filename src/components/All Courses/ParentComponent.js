@@ -5,6 +5,7 @@ import { useParams, Route, Routes, Navigate } from 'react-router-dom';
 import CourseDesc from './CourseDesc';
 import CourseVideo from './CourseVideo';
 import axios from 'axios';
+import Learning from '../Mylearning/Learning';
 
 const ParentComponent = () => {
     const { id } = useParams();
@@ -46,8 +47,7 @@ const ParentComponent = () => {
     return (
         <Routes>
             <Route path="/" element={<CourseDesc lectures={lectures} course={course} />} />
-            <Route path="/coursevideo" element={<CourseVideo lectures={lectures} course={course}/>} />
-
+            <Route path="/coursevideo" element={<CourseVideo lectures={lectures} course={course} />} />
         </Routes>
     );
 };

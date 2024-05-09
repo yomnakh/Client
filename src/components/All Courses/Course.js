@@ -6,7 +6,6 @@ import { courseData } from './CoursesData';
 import Container from 'react-bootstrap/esm/Container';
 import CourseDesign from './CourseDesign';
 import CourseError from './CourseError';
-import CourseDesc from './CourseDesc';
 
 
 const Course = ({ course }) => {

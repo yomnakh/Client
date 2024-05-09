@@ -9,13 +9,13 @@ import LessonDash from './LessonDash';
 
 const Dashboard = () => {
     const userData = JSON.parse(localStorage.getItem('userData'));
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const userRole = userData ? userData.role : null;
     return (
         <div className='container-fluid' style={{ height: "100vh" }}>
             <div className='row'>
-                <div className={`interview shadow col-auto col-md-2 min-vh-100 d-flex justify-content-between flex-column`}>
-                    {userData.role === "admin" && (
-                        <div>
+                    {isLoggedIn && userData.role === "admin" && (
+                        <div className={`interview shadow col-auto col-md-2 min-vh-100 d-flex justify-content-between flex-column`}>
                             <div className='interviewSide'>
                                 <hr className='text-secondary' />
                                 <Link className='text-decoration-none text-white  d-flex justify-content-evenly align-content-center' style={{ marginTop: "100px" }}>
@@ -82,8 +82,8 @@ const Dashboard = () => {
 
                         </div>
                     )}
-                    {userData.role === "instructor" && (
-                        <div>
+                    {isLoggedIn && userData.role === "instructor" && (
+                        <div className={`interview shadow col-auto col-md-2 min-vh-100 d-flex justify-content-between flex-column`}>
                             <div className='interviewSide'>
                                 <hr className='text-secondary' />
                                 <Link className='text-decoration-none text-white  d-flex justify-content-evenly align-content-center' style={{ marginTop: "120px" }}>
@@ -122,7 +122,13 @@ const Dashboard = () => {
                             </div>
                         </div>
                     )}
-                </div>
+                    {
+                        isLoggedIn&& userData.role === "student"&&(
+                            <div style={{height:"100vh"}}>
+                            <ErrorPage/>
+                            </div>
+                        )
+                    }
                 <div style={{ marginTop: "100px" }} className='dashContent col-auto col-md-10'>
                     {
                         userData.role === "admin" && (<Routes>
@@ -137,12 +143,8 @@ const Dashboard = () => {
                         <Route path="/courses" element={<CourseDash />} />
                         <Route path="/course-quizzes" element={<CourseQuizeDash />} />
                         <Route path="/lessons" element={<LessonDash />} />
-                    </Routes>)
-                    }
-                    {
-                        userData.role === "student" && (<ErrorPage />)
-                    }
-
+                    </Routes>)}
+                    
                 </div>
             </div>
         </div>

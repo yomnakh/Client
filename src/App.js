@@ -39,6 +39,7 @@ const App = () => {
     setSelectedQuiz(quizType);
   };
 
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
   return (
     <BrowserRouter>
       <NavBar />
@@ -48,8 +49,6 @@ const App = () => {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<SignUpPage />} />
-        {/**<Route path="/courses/coursedesc/:id" element={<CourseDescPage />} />
-        <Route path="/courses/coursedesc/coursevideo/:id" element={<CourseVideo />} /> */}
         <Route path="/courses/coursedesc/:id/*" element={<ParentComponent />} />
         <Route path="/interview" element={<InterviewPage />}></Route>
         <Route path='/interview/react' element={<InterviewReact />} />
@@ -58,9 +57,9 @@ const App = () => {
         <Route path='/interview/next' element={<InterviewNext />} />
         <Route path='/interview/network' element={<InterviewNetwork />} />
         <Route path='/interview/android' element={<InterviewAndroid />} />
-        <Route path='/dash/*' element={<Dashboard />} />
+        {isLoggedIn ? (<Route path='/dash/*' element={<Dashboard />} />) : (  <Route path="*" element={<ErrorPage />} />)}
         <Route path='/quiz/:type' element={<Quiz />} />
-        <Route path="/mylearning" element={<MyLearning/>} />
+        <Route path="/mylearning" element={<MyLearning />} />
         <Route path='/CV' element={<Outlet />}>
           <Route path='' element={<CvPage1 />} />
           <Route path='Form2' element={<CvPage2 />} />
