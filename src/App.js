@@ -30,7 +30,9 @@ import Quiz from "./components/Quizzes/Quiz";
 import ParentComponent from "./components/All Courses/ParentComponent";
 import Dashboard from "./components/Dashboard/Dashboard";
 import MyLearning from "./components/Mylearning/Learning"
-import Resetpassword from "./components/Resetpassword/Reset"
+// import Resetpassword from "./components/Login/ForgetPassword"
+import ForgetPage from "./Pages/ForgetPage";
+import ResetPage from "./Pages/ResetPage";
 
 
 const App = () => {
@@ -50,6 +52,9 @@ const App = () => {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<SignUpPage />} />
+        <Route path="/forget-password" element={<ForgetPage />} />
+        <Route path="/reset-password" element={<ResetPage />} />
+
         <Route path="/courses/coursedesc/:id/*" element={<ParentComponent />} />
         <Route path="/interview" element={<InterviewPage />}></Route>
         <Route path='/interview/react' element={<InterviewReact />} />
