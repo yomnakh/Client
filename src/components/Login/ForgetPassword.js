@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import axios from 'axios';
-import { Container, Row, Col, Form, Button, Spinner } from "react-bootstrap";
-import "./Regestiration.css";
+import React from 'react'
+import { Button, Container, Form, Spinner } from 'react-bootstrap'
+import { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
-import loginimg from "../../Assets/login-security.gif";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Api from "../../config/api";
+import "./Regestiration.css"
+// import Resetpassword from './../../Pages/Resetpassword';
 
-const Login = () => {
+const Forgetpassword = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -40,17 +40,12 @@ const Login = () => {
   }
 
   return (
-    <div className="Logincontainer">
-      <Container>
-        <Row>
-          <Col xlg={6} lg={6} md={6} s={12} xs={12}>
-            <img className="loginimg" src={loginimg} alt="Login" />
-          </Col>
-
-          <Col xlg={6} lg={6} md={6} s={12} xs={12}>
-            <div className="login-form">
+  
+         <div className="Forgetcontainer">
+      <Container className="Forgetcontainer">
+            <div className="forget-form">
               <Form className="form" onSubmit={handleSubmit} method="post">
-                <h2 className="loginword"> Login </h2>
+                <h2 className="loginword"> Forget Passowrd </h2>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Control
                     className="logininput"
@@ -70,10 +65,6 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                   <Form.Text className="text-muted">
-                    
-                    <Link to="/forget-password" className="loginlinks">
-                    forget password? 
-                  </Link>
                   </Form.Text>
                 </Form.Group>
                 <Button className="submitbtn" type="submit" disabled={loading}>
@@ -83,23 +74,16 @@ const Login = () => {
                       Loading...
                     </div>
                   ) : (
-                    'Login'
+                    'Submit'
                   )}
                 </Button>
-                <Form.Text className="text-muted newaccount">
-                  Don't have an account?{" "}
-                  <Link to="/register" className="loginlinks">
-                    Sign up
-                  </Link>
-                </Form.Text>
               </Form>
             </div>
-          </Col>
-        </Row>
       </Container>
       <ToastContainer />
     </div>
-  );
-};
+  
+  )
+}
 
-export default Login;
+export default Forgetpassword
