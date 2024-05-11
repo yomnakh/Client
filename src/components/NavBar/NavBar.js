@@ -85,7 +85,7 @@ const NavBar = () => {
                                         <NavDropdown.Item ><Link to={"/quiz/nodejs"}>Node.Js</Link></NavDropdown.Item>
                                     </NavDropdown>
                                     <NavDropdown title="Career" id="basic-nav-dropdown">
-                                        <NavDropdown.Item >CV</NavDropdown.Item>
+                                        <NavDropdown.Item ><Link to={"/cv"}>cv</Link></NavDropdown.Item>
                                         <NavDropdown.Item ><Link to={"/interview"}>Interview</Link></NavDropdown.Item>
                                         <NavDropdown.Item >Jobs</NavDropdown.Item>
                                     </NavDropdown>
