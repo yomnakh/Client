@@ -93,7 +93,16 @@ Form {
   transform: translate(-50%, -50%);
   width: 800px !important;
 }
+.profile-pic{
+  width: 50px !important;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+}
 
+.NavItem{
+border-bottom: 1px solid black;
+}
 @media (max-width: 567px) {
   .loginimg {
     width: 300px !important;
