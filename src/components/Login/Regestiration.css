@@ -81,15 +81,15 @@ Form {
   color: rgb(145, 147, 147) !important;
 }
 
-.Forgetcontainer{
+/* .Forgetcontainer{
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1) !important;
   border-radius: 10px !important;
-}
-.forget-form{
+} */
+.forget-form {
   margin-top: 100px !important;
   position: absolute;
   top: 40%;
-  left: 48%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 800px !important;
 }

@@ -33,6 +33,7 @@ import MyLearning from "./components/Mylearning/Learning"
 // import Resetpassword from "./components/Login/ForgetPassword"
 import ForgetPage from "./Pages/ForgetPage";
 import ResetPage from "./Pages/ResetPage";
+import VerifyEmail from "./Pages/Verification/VerifyEmail";
 
 
 const App = () => {
@@ -52,8 +53,9 @@ const App = () => {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<SignUpPage />} />
+        <Route path="/users/:userId/verify/:token" element={<VerifyEmail/>} />
         <Route path="/forget-password" element={<ForgetPage />} />
-        <Route path="/reset-password" element={<ResetPage />} />
+        <Route path="/password/reset-password/:userId/:token" element={<ResetPage />} />
 
         <Route path="/courses/coursedesc/:id/*" element={<ParentComponent />} />
         <Route path="/interview" element={<InterviewPage />}></Route>
