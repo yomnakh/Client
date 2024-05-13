@@ -99,10 +99,9 @@ Form {
   border-radius: 50%;
   display: block;
 }
-
-.NavItem{
+/* .NavItem{
 border-bottom: 1px solid black;
-}
+} */
 @media (max-width: 567px) {
   .loginimg {
     width: 300px !important;
