@@ -159,32 +159,6 @@
 .Add-Answer-btn:hover {
   opacity: 0.8;
 }
-.text-dark {
-  color: black !important;
-}
-.lessons-dropdown-option {
-  background-color: #f0f0f0 !important;
-  color: #333 !important;
-  font-weight: bold !important;
-  padding: 8px 12px !important;
-}
-.lessons-dropdown-option:hover {
-  background-color: #ccc !important;
-}
-
-.lessons-dropdown {
-  background-color: #fff !important;
-  color: #555 !important;
-  padding: 10px 15px !important;
-  border: 1px solid #ccc !important;
-  width: 200px !important;
-}
-
-.lessons-dropdown:focus {
-  outline: none !important;
-  border-color: #888 !important;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) !important;
-}
 .save-changes-btn {
   background-color: var(--secondColor) !important;
 }
@@ -200,4 +174,15 @@
 }
 .dash-header{
   font-size: 30px !important;
+}
+.select-alert {
+  background-color: #cde3cd !important;
+}
+select option{
+  color: var(--secondColor) !important; 
+}
+select option:nth-child(1){
+  color: var(--secondColor) !important;
+
+
 }

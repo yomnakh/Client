@@ -82,7 +82,7 @@ const LessonDash = () => {
             <div>
                 <Alert variant="success" className='w-75 mx-auto mt-2 d-flex justify-content-between'>
                     <h6>Select Course To Show , ADD , Update and Delete Course Lessons </h6>
-                    <select onChange={(e) => handleSelectCourse(e.target.value)} className='text-dark '>
+                    <select variant="success" onChange={(e) => handleSelectCourse(e.target.value)} className='text-dark select-alert  '>
                         <option className='lessons-dropdown-option' value="">Select Course</option>
                         {courses.map((course) => (
                             <option className='lessons-dropdown' key={course._id} value={course._id}>{course.type}</option>

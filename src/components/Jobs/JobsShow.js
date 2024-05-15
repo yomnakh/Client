@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 //bootstrap
 import { Col, Container, Row, Button ,Form} from "react-bootstrap";
-import itlogo from "../../Assets/itlogo.jpg";
+import jobimg from "../../Assets/job.png";
 
 //style
 import "./jobs.css";
@@ -22,26 +22,13 @@ const JobsShow = () => {
   return (
     <>
       {/* <Header /> */}
-
-      <section className="job-screen-show1 bg-dark">
-        <div className="bg-layer1">
+      
+      <section className="job-screen-show1">
+        
         <Container className="pt-3">
-          <Row className="justify-content-md-center">
-            <Col className="job-title1">
-              <span style={{ disply: "none" }} className="mt-0 h5">
-                Job
-              </span>
-               <div>
-
-               </div>
-              <p className="line1 mb-1"></p>
-              <span>
-                <small>6th jun 2023</small>
-              </span>
-            </Col>
-          </Row>
+          
           <Row>
-            <Col className="Looking-job1 my-2" xs={12} md={6}>
+            <Col className="Looking-job1 my-2 " style={{color: "#1B3F6B"}} xs={12} md={6}>
               <h2>Looking For a Job?</h2>
               <span>
                 Hear ypu can find your beast match between 1000s of updated and
@@ -75,7 +62,6 @@ const JobsShow = () => {
           <Row>
             <Col md={4} className='menujobshow'>
 
-              {/* <MenuCheckBoxs /> */}
               <>
       {" "}
       <div className="menu-job-box1 my-3">
@@ -168,7 +154,7 @@ const JobsShow = () => {
                 <div className="comp-name1 mt-3 d-flex justify-content-between align-items-center  ">
                   <div className="job-company-post1 d-flex  ">
                     <span className="col-xs-12">
-                      <img src={itlogo} alt="company logo" />
+                      <img src={jobimg} alt="company logo" />
                     </span>
                     <div className="col-xs-12 ms-2 ">
                       <p className="job-titel1 mb-0 h3 fw-bolder">Frontend Developer</p>
@@ -256,7 +242,7 @@ const JobsShow = () => {
             </Col>
           </Row>
         </Container>
-        </div>
+        
       </section>
       {/* <ButtonTop /> */}
       {/* <Footer /> */}

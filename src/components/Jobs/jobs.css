@@ -1,15 +1,27 @@
+:root {
+  --firstColor: #018883;
+  --secondColor: #1B3F6B;
+}
 .menu-job-component1{
     background-color: rgba(0, 0, 0, 0.19);
     width: 362px;
-    /* height: 775px; */
     color: var(--white);
     border-radius: 5px;
   }
   .menu-job-component1 .menu-section1 {
     padding: 20px;
   }
+  .job-p{
+    color: var(--white);
+  }
+  .p-subtitle{
+    color: var(--white);
+  }
+  .create-cv-btn {
+    background-color: var(--secondColor) !important;
+  }
   .menu-job-component1 .contacts-job1 {
-    background-color: rgba(0, 0, 0, 0.19);
+    background-color: var(--firstColor) !important;
     width: 891px;
     height: 775px;
   }
@@ -18,23 +30,36 @@
     height: 62px;
     background-color: rgba(17, 17, 17, 0.56);
   }
-  /* .filter {
-  } */
   .menu-job-component1 .clear-all1 {
-    color: var(--Primary);
+    color: var(--secondColor) 1 !important;
     border-radius: 5px;
   }
-  /* .location-form {
-    width: 100%;
-    color: #fff;
-  } */
-  /*--------Select form*/
+
+
+  /* //////////////////////////////////////////////////second page////////////////////////// */
+  .job-screen-show1 .contacts-job1 {        /* background el card */   
+    background-color: rgb(203, 223, 231) !important;
+    flex: 70%;
+    height: 90%;
+    padding: 20px;
+    flex-shrink: 0;
+  }
+ 
+  .job-screen-show1 .menu-section1 {         /* background el side */  
+    padding: 20px;
+    background-color: rgb(203, 223, 231) !important;
+  }
+  .menu-job-component1 .clear-all1 {
+    color: var(--secondColor) 1 !important;
+    border-radius: 5px;
+  }
+
+ 
   .menu-job-component1 .form-select1 {
     width: 95%;
     height: 49px;
     border-radius: 5px;
     color: #fff;
-    background-color: rgba(86, 85, 85, 0.079);
     --bs-form-select-bg-img: url(data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3e%3cpath fill=%27none%27 stroke=%27%23343a40%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27m2 5 6 6 6-6%27/%3e%3c/svg%3e);
 
     border-color: #00000000 !important;
@@ -61,7 +86,7 @@
   }
 
   .menu-job-component1 .input-group {
-    width: 80%;
+    width: 100% !important;
   }
   .menu-job-component1 .input-group-text {
     text-align: center;
@@ -115,14 +140,15 @@
   border: none !important;
 }
 
+
 /* body{height: 3000px;} */
-.job-card-component  {
-    background-color: rgba(26, 25, 25, 0.8) !important;
+.job-card-component {
+    background-color:var(--secondColor) !important;
   
     color: white !important;
   }
   .job-card-component .btn1 {
-    background-color: var(--btn-defauit) !important;
+    background-color: var(--firstColor) !important;
     border: none !important;
   }
   .job-card-component .card-text  {
@@ -134,7 +160,7 @@
     float: "right";
   }
   
-  .job-card-component .itlogo {
+  .job-card-component .jobimg {
     width: 3.3rem;
     height: 40px;
   }
@@ -143,6 +169,9 @@
   }
   .job-card-component .card-subtitle {
     font-size: var(--p-14);
+  }
+  .firstpage-jop-bg,.job-screen-show1{
+    background-image: url(../../Assets/slider-bg.png)
   }
   @import '//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css';
 .job-screen1 {
@@ -187,27 +216,23 @@
   }
 }
 .job-screen1 .input-sub1 {
-  background: rgba(128, 128, 128, 0.438);
   border: none;
-  color: var(--white);
+  color: var(--secondColor) !important;
   border-radius: 6px;
 }
 
 .job-screen1 .input-sub1:focus {
   border: 1px solid var(--btn-defauit);
   box-shadow: none;
-  background-color: var(--Gradient-bg);
   color: var(--white);
 }
 .job-screen1 .btn-subscribe1 {
-  background-color: var(--btn-defauit);
+  background-color: var(--secondColor) !important;
   border: 0px;
   font-weight: var(--fw-600);
   text-transform: uppercase;
   font-size: 16px;
-  /* padding: 10px 20px; */
   box-shadow: none;
-  /* margin-left: -15px !important; */
   border-radius: 6px;
   transition: var(--transition-1);
   text-align: center;
@@ -216,11 +241,11 @@
 
 .job-screen1 .btn-subscribe1:focus,
 .job-screen1 .btn-subscribe1:hover {
-  background-color: var(--btn-hover) !important;
+  opacity: 0.9;
 }
 
 .job-screen1 .input-sub1::placeholder {
-  color: white;
+  color: rgb(128, 128, 128);
   font-size: 20px;
 }
 
@@ -315,29 +340,8 @@
     --p-22:22px;
     --p-24:24px;
 }
-body {
-  margin: 0;
-  font-family: var(--font-family);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-::-webkit-scrollbar {
-  width: 10px;
-}
 
-::-webkit-scrollbar-track {
-  background-color: rgb(250, 244, 244);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color:var(--Primary);
-  border-radius: 20px;
-}
 
 
 
@@ -355,13 +359,6 @@ code {
   color: #fff !important;
   background-color: var(--btn-hover) !important;
 }
-/* .menu-job-box  .job-screen {
-  background-color: rgb(34, 33, 33);
-  color: #fff;
-  font-family: var(--font-family);
-} */
-/*Search section */
-
 .menu-job-box1  .form-control {
   width: 70%;
   border-radius: 5px 0px 0px 5px / 5px 0px 0px 5px;
@@ -448,7 +445,7 @@ code {
 /* .filter {
 } */
 .menu-job-box1  .clear-all1 {
-  color: var(--Primary);
+  color: var(--secondColor) !important;
   border-radius: 5px;
 }
 /* .location-form {
@@ -493,7 +490,7 @@ code {
 
 /* */
 .menu-job-box1  .contacts-job1 {
-  background-color: rgba(0, 0, 0, 0.19);
+ 
   flex: 70%;
   /* padding: 2rem 2rem 5rem 2rem; */
   height: 90%;
@@ -626,16 +623,7 @@ code {
     background-color: var(--Primary);
   }
   
-  .job-screen-show1 .bg-layer1 {
-    /* background: linear-gradient(
-      180deg,
-      rgba(24, 24, 24, 0.89) 0%,
-      rgba(27, 26, 26, 0.93) 47.92%,
-      #1a1919 100%
-    ); */
-    padding-top: 180px;
-    padding-bottom: 20px;
-  }
+ 
   .job-screen-show1 .Looking-job1 span {
     display: block;
     width: 78%;
@@ -707,15 +695,12 @@ code {
     height: 90%;
     border-radius: 5px;
   }
-  .job-screen-show1 .menu-section1 {
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.19);
-  }
+ 
   
   .job-screen-show1 .fitter-container1 {
     width: 95%;
     height: 62px;
-    background-color: rgba(17, 17, 17, 0.56);
+
   }
   
   .job-screen-show1 .clear-all1 {
@@ -757,12 +742,6 @@ code {
     height: 50px;
   }
   
-  .job-screen-show1 .contacts-job1 {
-    background-color: rgba(0, 0, 0, 0.19);
-    flex: 70%;
-    height: 90%;
-    padding: 20px;
-  }
   
   .job-screen-show1 span img {
     width: 66px;
@@ -851,11 +830,6 @@ code {
   
     .job-screen-show1 .menu-job1 {
       display: none;
-    }
-    .job-screen-show1 .contacts-job1{
-      flex-shrink: 0;
-      width: 353px;
-      height: 1015px;
     }
     .job-screen-show1 .btn-apply1 button {
       width: 100%;

@@ -4,9 +4,14 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     scrollbar-width: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
 }
 
-
+input{
+    box-shadow: none !important;
+}
 html {
     scroll-behavior: smooth;
 }
