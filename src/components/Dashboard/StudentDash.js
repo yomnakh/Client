@@ -53,16 +53,16 @@ const StudentDash = () => {
         placeholder="Search by Student ID"
         value={searchQuery}
         onChange={handleSearch}
-        className='w-50 mx-auto my-3'
+        className='w-50 mx-auto  dashboard-search'
 
       />
-      <Table striped bordered hover className='w-75 mx-auto'>
+      <Table striped bordered className='w-75 mx-auto'>
         <thead>
           <tr className='text-center'>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Actions</th>
+            <th className='tablehead'>ID</th>
+            <th className='tablehead'>Name</th>
+            <th className='tablehead'>Email</th>
+            <th className='tablehead'>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -78,12 +78,13 @@ const StudentDash = () => {
             </tr>
           ) : filteredStudents.length > 0 ? filteredStudents.map((student, index) => (
             <tr key={student._id}>
-              <td className='text-dark bg-light'>{student._id}</td>
-              <td className='text-dark bg-light'>{student.name}</td>
-              <td className='text-dark bg-light'>{student.email}</td>
+              <td className='text-dark bg-light table-id'>{student._id}</td>
+              <td className='text-dark bg-light table-name'>{student.name}</td>
+              <td className='text-dark bg-light table-email'>{student.email}</td>
               <td className='text-dark bg-light text-center'>
                 <Button
-                  variant="danger"
+                className='delete-btn'
+                
                   size="sm"
                   onClick={() => deleteStudent(student._id)}
                 >

@@ -271,26 +271,27 @@ const CourseDash = () => {
           placeholder="Search by Course Name"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-100 mx-auto border rounded me-5"
+          className="w-100 mx-auto border rounded me-5 dashboard-search"
+         
         />
-        <Button onClick={openModal} className='w-25'>Add Course</Button>
+        <Button  onClick={openModal} className='w-25 add-course-btn'>Add Course</Button>
       </div>
-      <Modal show={showModal} onHide={closeModal}>
+      <Modal  className='dash-model' show={showModal} onHide={closeModal}>
         <Modal.Header closeButton>
           <Modal.Title>{selectedCourse ? "Update Course" : "Add New Course"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={selectedCourse ? handleUpdateCourse : handleSubmit}>
-            <Form.Group controlId="formTitle">
-              <Form.Label>Title</Form.Label>
+            <Form.Group className='body-form-group' controlId="formTitle">
+              <Form.Label className='modal-data'  >Title</Form.Label>
               <Form.Control type="text" name="title" value={newCourse.title} onChange={handleChange} />
             </Form.Group>
             <Form.Group controlId="formHeader">
-              <Form.Label>Header</Form.Label>
+              <Form.Label className='modal-data' >Header</Form.Label>
               <Form.Control type="text" name="header" value={newCourse.header} onChange={handleChange} />
             </Form.Group>
             <Form.Group controlId="formInstructor">
-              <Form.Label>Instructor</Form.Label>
+              <Form.Label className='modal-data' >Instructor</Form.Label>
               <Form.Control as="select" name="instructor" value={selectedInstructorId} onChange={handleInstructorChange}>
                 <option value="">Select Instructor</option>
                 {instructors.map((instructor, index) => (
@@ -299,15 +300,15 @@ const CourseDash = () => {
               </Form.Control>
             </Form.Group>
             <Form.Group controlId="formLessons">
-              <Form.Label>Lessons</Form.Label>
+              <Form.Label className='modal-data' >Lessons</Form.Label>
               <Form.Control type="text" name="lessons" value={newCourse.lessons} onChange={handleChange} />
             </Form.Group>
             <Form.Group controlId="formHours">
-              <Form.Label>Hours</Form.Label>
-              <Form.Control type="text" name="hours" value={newCourse.hours} onChange={handleChange} />
+              <Form.Label className='modal-data'>Hours</Form.Label>
+              <Form.Control  className='input-modal' type="text" name="hours" value={newCourse.hours} onChange={handleChange} />
             </Form.Group>
             <Form.Group controlId="formCategory">
-              <Form.Label>Category</Form.Label>
+              <Form.Label className='modal-data' >Category</Form.Label>
               {allCategories.map((category, index) => (
                 <Form.Check
                   key={index}
@@ -317,44 +318,45 @@ const CourseDash = () => {
                   value={category}
                   checked={newCourse.category.includes(category)}
                   onChange={(e) => handleCategoryChange(e, category)}
+                  className='check'
                 />
               ))}
             </Form.Group>
             <Form.Group controlId="formDescription">
-              <Form.Label>Description</Form.Label>
+              <Form.Label className='modal-data' >Description</Form.Label>
               <Form.Control as="textarea" rows={3} name="description" value={newCourse.description} onChange={handleChange} />
             </Form.Group>
             <Form.Group controlId="formType">
-              <Form.Label>Type</Form.Label>
+              <Form.Label className='modal-data' >Type</Form.Label>
               <Form.Control type="text" name="type" value={newCourse.type} onChange={handleChange} />
             </Form.Group>
             <Form.Group controlId="formWillLearn">
-              <Form.Label>Will Learn</Form.Label>
+              <Form.Label className='modal-data' >Will Learn</Form.Label>
               <Form.Control as="textarea" rows={3} name="willLearn" value={newCourse.willLearn} onChange={handleChange} />
             </Form.Group>
             <Form.Group controlId="formRequirementR1">
-              <Form.Label>Requirement R1</Form.Label>
+              <Form.Label className='modal-data' >Requirement R1</Form.Label>
               <Form.Control type="text" name="requirement.r1" value={newCourse.requirement.r1} onChange={handleChange} />
             </Form.Group>
             <Form.Group controlId="formRequirementR2">
-              <Form.Label>Requirement R2</Form.Label>
+              <Form.Label className='modal-data' >Requirement R2</Form.Label>
               <Form.Control type="text" name="requirement.r2" value={newCourse.requirement.r2} onChange={handleChange} />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button className='submit-btn-modal' type="submit">
               {selectedCourse ? "Update Course" : "Add Course"}
             </Button>
           </Form>
         </Modal.Body>
       </Modal>
 
-      <Table striped bordered hover className='mx-auto' style={{ width: "85%" }}>
+      <Table striped bordered className='mx-auto' style={{ width: "85%" }}>
         <thead>
           <tr className='text-center'>
-            <th>Course</th>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Instructor</th>
-            <th colSpan={2}>Actions</th>
+            <th className='tablehead'>Course</th>
+            <th className='tablehead'>ID</th>
+            <th className='tablehead'>Name</th>
+            <th className='tablehead'>Instructor</th>
+            <th className='tablehead' colSpan={2}>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -372,16 +374,16 @@ const CourseDash = () => {
             filteredCourses.map((course, index) => (
               <tr key={index}>
                 <td className='text-dark bg-light text-center'><img className='h-50 w-50 rounded' src={course.image.url} alt='course' /></td>
-                <td className='text-dark bg-light'>{course._id}</td>
-                <td className='text-dark bg-light'>{course.type}</td>
-                <td className='text-dark bg-light'>{course.instructor.name}</td>
+                <td className='text-dark bg-light table-id'>{course._id}</td>
+                <td className='text-dark bg-light table-type'>{course.type}</td>
+                <td className='text-dark bg-light table-name'>{course.instructor.name}</td>
                 <td className='text-dark bg-light'>
-                  <Button variant="primary" type="button" onClick={() => handleUpdate(course)}>
+                  <Button className='update-btn' type="button" onClick={() => handleUpdate(course)}>
                     Update
                   </Button>
                 </td>
                 <td className='text-dark bg-light'>
-                  <Button variant="danger" size="sm" onClick={() => handleDelete(course._id)}>
+                  <Button className='delete-btn' size="sm" onClick={() => handleDelete(course._id)}>
                     Delete
                   </Button>
                 </td>
