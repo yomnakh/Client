@@ -6,21 +6,22 @@ import CourseDash from './CourseDash';
 import CourseQuizeDash from './CourseQuizeDash';
 import ErrorPage from '../../Pages/ErrorPage';
 import LessonDash from './LessonDash';
+import './Dashboard.css'
 
 const Dashboard = () => {
     const userData = JSON.parse(localStorage.getItem('userData'));
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const userRole = userData ? userData.role : null;
     return (
-        <div className='container-fluid' style={{ height: "100vh" }}>
+        <div className='container-fluid dshh' style={{ height: "100vh" }}>
             <div className='row'>
                     {isLoggedIn && userData.role === "admin" && (
                         <div className={`interview shadow col-auto col-md-2 min-vh-100 d-flex justify-content-between flex-column`}>
                             <div className='interviewSide'>
                                 <hr className='text-secondary' />
                                 <Link className='text-decoration-none text-white  d-flex justify-content-evenly align-content-center' style={{ marginTop: "100px" }}>
-                                    <i class="fa-solid fa-gauge interviewIcon"></i>
-                                    <span className=' d-none d-sm-inline interviewSpan '>Dashboard</span>
+                                    {/* <i class="fa-solid fa-gauge interviewIcon"></i> */}
+                                    <span className=' d-none d-sm-inline interviewSpan dash-header m-auto'>Dashboard</span>
                                 </Link>
                                 <hr className='text-secondary' />
                                 <ul className="nav nav-pills flex-column">

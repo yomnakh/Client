@@ -82,10 +82,10 @@ const LessonDash = () => {
             <div>
                 <Alert variant="success" className='w-75 mx-auto mt-2 d-flex justify-content-between'>
                     <h6>Select Course To Show , ADD , Update and Delete Course Lessons </h6>
-                    <select onChange={(e) => handleSelectCourse(e.target.value)} className='text-dark'>
-                        <option value="">Select Course</option>
+                    <select onChange={(e) => handleSelectCourse(e.target.value)} className='text-dark '>
+                        <option className='lessons-dropdown-option' value="">Select Course</option>
                         {courses.map((course) => (
-                            <option key={course._id} value={course._id}>{course.type}</option>
+                            <option className='lessons-dropdown' key={course._id} value={course._id}>{course.type}</option>
                         ))}
                     </select>
                 </Alert>
@@ -95,9 +95,9 @@ const LessonDash = () => {
                     <Table striped bordered hover className='w-75 mx-auto'>
                         <thead>
                             <tr className='text-center'>
-                                <th>Name</th>
-                                <th>Link</th>
-                                <th colSpan={2}>Action</th>
+                                <th className='tablehead'>Name</th>
+                                <th className='tablehead'>Link</th>
+                                <th className='tablehead' colSpan={2}>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -123,9 +123,9 @@ const LessonDash = () => {
                 </div>
             )}
 
-            <Modal show={showAddModal} onHide={() => setShowAddModal(false)}>
+            <Modal  className='dash-model' show={showAddModal} onHide={() => setShowAddModal(false)}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Add Lecture</Modal.Title>
+                    <Modal.Title className='modal-title'>Add Lecture</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='d-flex flex-column'>
                     <input type="text" className='border rounded my-4 p-2' placeholder="Lesson Name......." value={newLecture.name} onChange={(e) => setNewLecture({ ...newLecture, name: e.target.value })} />

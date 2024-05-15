@@ -1,25 +1,203 @@
 .custom-table {
-    font-size: 0.8rem; /* Reduce font size for a smaller table */
-    width: 900px !important;
-    height: 500px !important;
-    margin-top:200px !important ;
-  }
-  
-  .custom-table th,
-  .custom-table td {
-    padding: 0.5rem 1rem; /* Adjust padding for a more compact look */
-  }
-  .custom-table td {
-    background-color: white !important;
-  }
+  font-size: 0.8rem;
+  width: 900px !important;
+  height: 500px !important;
+  margin-top: 200px !important ;
+}
 
-  .addCourseBtn{
-    position: fixed;
-    z-index: 11000;
-    bottom: 20px;
-    right: 30px;
-    height: 50px;
-    width: 50px;
-border-radius: 50% !important;
-line-height: 50px;
-  }
+.custom-table th,
+.custom-table td {
+  padding: 0.5rem 1rem;
+}
+.custom-table td {
+  background-color: white !important;
+}
+
+.addCourseBtn {
+  position: fixed;
+  z-index: 11000;
+  bottom: 20px;
+  right: 30px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50% !important;
+  line-height: 50px;
+}
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #fbfeff !important;
+}
+.dshh {
+  background-image: url(../../Assets/header-bg.jpg);
+  height: 150vh !important;
+}
+
+.delete-btn {
+  background-color: rgb(189, 4, 4) !important;
+}
+.delete-btn:hover {
+  opacity: 0.8 !important;
+}
+.tablehead {
+  color: var(--secondColor) !important;
+  letter-spacing: 3px !important;
+}
+.table-id,
+.table-email,
+.table-type {
+  font-size: 17px !important;
+}
+.table-name {
+  text-align: center;
+  font-size: 18px !important;
+  letter-spacing: 0.5px !important;
+}
+.dashboard-search {
+  margin: 30px !important;
+  height: 40px !important;
+  outline: none !important;
+}
+
+.Table {
+  outline: none !important;
+}
+.add-instructor-btn,
+.add-course-btn,
+.add-quiz-btn {
+  background-color: var(--secondColor) !important;
+
+  margin: 30px !important;
+}
+.add-instructor-btn:hover,
+.add-course-btn:hover,
+.add-quiz-btn:hover {
+  opacity: 0.9;
+}
+.instuctor-img {
+  width: 90px !important;
+  height: 120px !important;
+}
+.update-btn {
+  background-color: var(--secondColor) !important;
+}
+.update-btn:hover {
+  background-color: #30598c !important ;
+}
+.quiz-edit-btn {
+  background-color: var(--secondColor) !important;
+
+  margin-right: 90px !important;
+}
+.dash-model {
+  margin-top: 30px !important;
+}
+.save-model-btn,
+.save-btn {
+  background-color: #30598c !important ;
+}
+.save-model-btn:hover,
+.save-btn:hover {
+  background-color: var(--secondColor) !important;
+}
+.close-model-btn,
+.close-btn {
+  background-color: #029e99 !important ;
+}
+.close-model-btn:hover,
+.close-btn:hover {
+  background-color: var(--firstColor) !important;
+}
+.body-form-group {
+  margin-top: -90px !important;
+}
+.modal-data {
+  font-size: 18px !important;
+  margin-top: 10px !important;
+}
+.input-modal {
+  height: 40px !important;
+  width: 420px !important;
+  position: relative;
+}
+.submit-btn-modal {
+  background-color: var(--secondColor) !important;
+
+  margin-left: 140px !important;
+  margin-top: 40px !important;
+}
+.save-btn {
+  background-color: var(--secondColor) !important;
+}
+.add-question-btn {
+  background-color: var(--secondColor) !important;
+
+  margin-top: 60px !important;
+  margin-left: 150px !important;
+}
+.add-question-btn:hover,.save-changes-btn:hover{
+  opacity: 0.9;
+}
+.Delete-Answer-btn {
+  background-color: rgb(189, 4, 4) !important;
+
+  margin-top: 20px !important;
+  position: absolute;
+  margin-left: 360px !important;
+  margin-top: -40px !important;
+}
+.Delete-Answer-btn:hover {
+  opacity: 0.8;
+}
+.Add-Answer-btn {
+  background-color: rgb(24, 116, 24) !important;
+
+  padding: 0px 20px !important;
+  position: absolute;
+  margin-left: 360px !important;
+  margin-top: -55px !important;
+}
+.Add-Answer-btn:hover {
+  opacity: 0.8;
+}
+.text-dark {
+  color: black !important;
+}
+.lessons-dropdown-option {
+  background-color: #f0f0f0 !important;
+  color: #333 !important;
+  font-weight: bold !important;
+  padding: 8px 12px !important;
+}
+.lessons-dropdown-option:hover {
+  background-color: #ccc !important;
+}
+
+.lessons-dropdown {
+  background-color: #fff !important;
+  color: #555 !important;
+  padding: 10px 15px !important;
+  border: 1px solid #ccc !important;
+  width: 200px !important;
+}
+
+.lessons-dropdown:focus {
+  outline: none !important;
+  border-color: #888 !important;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) !important;
+}
+.save-changes-btn {
+  background-color: var(--secondColor) !important;
+}
+.close-btn {
+  margin-right: 240px !important;
+}
+.modal-title {
+  text-align: center !important;
+  color: var(--secondColor) !important;
+}
+.interview {
+  background-color: var(--secondColor) !important;
+}
+.dash-header{
+  font-size: 30px !important;
+}

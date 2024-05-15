@@ -123,20 +123,21 @@ const InstructorDash = () => {
           placeholder="Search by Instructor Name"
           value={searchQuery}
           onChange={handleSearch}
+          className='dashboard-search'
         />
-        <Button variant="primary" onClick={handleShow} className='ms-4' style={{ width: "200px" }}>
+        <Button  onClick={handleShow} className='ms-4  add-instructor-btn' style={{ width: "200px" }}>
           Add Instructor
         </Button>
       </div>
 
-      <Table striped bordered hover className='w-75 mx-auto'>
+      <Table striped bordered className='w-75 mx-auto'>
         <thead>
           <tr className='text-center'>
-            <th>Instructor</th>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Actions</th>
+            <th className='tablehead'>Instructor</th>
+            <th className='tablehead'>ID</th>
+            <th className='tablehead'>Name</th>
+            <th className='tablehead'>Email</th>
+            <th className='tablehead'>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -153,13 +154,13 @@ const InstructorDash = () => {
           ) : (
             filteredInstructors.map((instructor, index) => (
               <tr key={index}>
-                <td className='text-dark bg-light'>  {instructor.avatar && <img className='h-100 w-100 rounded-circle' src={instructor.avatar.url} alt='img' />}</td>
-                <td className='text-dark bg-light'>{instructors[index]._id}</td>
-                <td className='text-dark bg-light'>{instructor.name}</td>
-                <td className='text-dark bg-light'>{instructor.email}</td>
+                <td className='text-dark bg-light instuctor-img'>  {instructor.avatar && <img className='h-100 w-100 rounded-circle' src={instructor.avatar.url} alt='img' />}</td>
+                <td className='text-dark bg-light table-id'>{instructors[index]._id}</td>
+                <td className='text-dark bg-light table-name'>{instructor.name}</td>
+                <td className='text-dark bg-light table-email'>{instructor.email}</td>
                 <td className='text-dark bg-light'>
                   <Button
-                    variant="danger"
+                     className='delete-btn'
                     size="sm"
                     onClick={() => deleteInstructor(instructor._id)}
                   >
@@ -171,14 +172,14 @@ const InstructorDash = () => {
           )}
         </tbody>
       </Table>
-      <Modal show={isAddFormVisible} onHide={handleClose}>
+      <Modal className='dash-model' show={isAddFormVisible} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add Instructor</Modal.Title>
+          <Modal.Title className='modal-title'>Add Instructor</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
-            <FormGroup className="mb-3">
-              <Form.Label htmlFor="name">Name</Form.Label>
+            <FormGroup className="mb-3 body-form-group" >
+              <Form.Label className='modal-data' htmlFor="name">Name</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter Name"
@@ -186,10 +187,11 @@ const InstructorDash = () => {
                 name="name"
                 value={name}
                 onChange={handleInputChange}
+                className='modal-input'
               />
             </FormGroup>
             <FormGroup className="mb-3">
-              <Form.Label htmlFor="email">Email</Form.Label>
+              <Form.Label className='modal-data' htmlFor="email">Email</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Enter Email"
@@ -197,10 +199,11 @@ const InstructorDash = () => {
                 name="email"
                 value={email}
                 onChange={handleInputChange}
+                className='modal-input'
               />
             </FormGroup>
             <FormGroup className="mb-3">
-              <Form.Label htmlFor="password">Password</Form.Label>
+              <Form.Label className='modal-data' htmlFor="password">Password</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter Instructor Password"
@@ -208,17 +211,19 @@ const InstructorDash = () => {
                 name="password"
                 value={password}
                 onChange={handleInputChange}
+                className='modal-input'
               />
             </FormGroup>
           </Form>
         </Modal.Body>
         <Modal.Footer className='d-flex justify-content-around'>
-          <Button variant="primary" type="submit" onClick={handleSubmit}>
-            Save
-          </Button>
-          <Button variant="secondary" onClick={handleClose}>
+        <Button className='close-model-btn' onClick={handleClose}>
             Close
           </Button>
+          <Button className='save-model-btn' type="submit" onClick={handleSubmit}>
+            Save
+          </Button>
+         
         </Modal.Footer>
       </Modal>
     </div>
