@@ -29,7 +29,6 @@ import { Outlet } from 'react-router-dom';
 import Quiz from "./components/Quizzes/Quiz";
 import JobShow from "../src/components/Jobs/JobsShow";
 import JobsApp from "../src/components/Jobs/JobsApp";
-
 import ParentComponent from "./components/All Courses/ParentComponent";
 import Dashboard from "./components/Dashboard/Dashboard";
 import MyLearning from "./components/Mylearning/Learning"
@@ -37,6 +36,7 @@ import MyLearning from "./components/Mylearning/Learning"
 import ForgetPage from "./Pages/ForgetPage";
 import ResetPage from "./Pages/ResetPage";
 import Jobs from "../src/components/Jobs/Jobs"
+import VerifyEmail from "./Pages/Verification/VerifyEmail";
 
 
 const App = () => {
@@ -56,8 +56,9 @@ const App = () => {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<SignUpPage />} />
+        <Route path="/users/:userId/verify/:token" element={<VerifyEmail/>} />
         <Route path="/forget-password" element={<ForgetPage />} />
-        <Route path="/reset-password" element={<ResetPage />} />
+        <Route path="/password/reset-password/:userId/:token" element={<ResetPage />} />
 
         <Route path="/courses/coursedesc/:id/*" element={<ParentComponent />} />
         <Route path="/interview" element={<InterviewPage />}></Route>

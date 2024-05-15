@@ -1,0 +1,18 @@
+.verifyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.verify-email-icon {
+    font-size: 100px;
+    color: var(--firstColor);
+}
+
+.verfiy-email-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--secondColor);
+}
