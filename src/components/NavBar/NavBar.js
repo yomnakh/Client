@@ -205,6 +205,7 @@
 //     </Nav>
 //   )}
 
+
 //             <div className="d-flex auth-div mt-3">
 //               {userName ? (
 //                 <div className="d-flex">
@@ -439,6 +440,7 @@ import { Modal, Button, Form,Nav } from "react-bootstrap";
 import profilePicture from "../../Assets/AbeerHosni.jpg";
 import Api from "../../config/api";
 
+
 const NavBar = () => {
   const navigate = useNavigate();
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
@@ -643,7 +645,9 @@ const NavBar = () => {
         <NavDropdown.Item>
           <Link to={"/interview"}>Interview</Link>
         </NavDropdown.Item>
-        <NavDropdown.Item>Jobs</NavDropdown.Item>
+        <NavDropdown.Item>
+        <Link to={"/Jobs"}>Jobs</Link>
+        </NavDropdown.Item>
       </NavDropdown>
     </Nav>
   )}
@@ -722,49 +726,7 @@ const NavBar = () => {
               )}
             </div>
             {/* Profile dropdown */}
-            <NavDropdown 
-              id="profile-dropdown"
-              open={isProfileDropdownOpen}
-              onToggle={() => setIsProfileDropdownOpen(!isProfileDropdownOpen)}
-              title={
-                <div className="d-flex align-items-center">
-                  {/* {userData && userData.profilePicture && ( */}
-                  <img
-                    src={/* userData. */ profilePicture}
-                    alt="Profile Picture"
-                    className="profile-pic me-2"
-                  />
-                  {/* <img
-                    src={profilePicture}
-                    alt="Profile Picture"
-                    className="profile-pic me-2"
-                    onClick={() =>
-                      handleUpdateProfilePicture(newProfilePicture)
-                    }
-                  /> */}
-                  {/* //   )} */}
-                  {userName || "Profile"}
-                </div>
-              }
-            >
-              <NavDropdown.Item className="NavItem" disabled>
-                <span className="d-flex align-items-center">
-                  {userName} <br></br>
-                  {userEmail}
-                </span>
-              </NavDropdown.Item>
-              <NavDropdown.Item className="NavItem" as={Link} to="/mylearning">
-                My Courses
-              </NavDropdown.Item>
-
-              <NavDropdown.Item className="NavItem" onClick={handleUpdateData}>
-                Update Data
-              </NavDropdown.Item>
-              <NavDropdown.Item className="NavItem" onClick={handleLogout}>
-                Log Out
-              </NavDropdown.Item>
-              {/* </NavDropdown.Menu> */}
-            </NavDropdown>
+            
           </Offcanvas.Body>
         </Navbar.Offcanvas>
       </Container>

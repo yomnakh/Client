@@ -27,12 +27,16 @@ import CvPage7 from './components/Cv/CvPage7';
 import CvPage8 from './components/Cv/CvPage8';
 import { Outlet } from 'react-router-dom';
 import Quiz from "./components/Quizzes/Quiz";
+import JobShow from "../src/components/Jobs/JobsShow";
+import JobsApp from "../src/components/Jobs/JobsApp";
+
 import ParentComponent from "./components/All Courses/ParentComponent";
 import Dashboard from "./components/Dashboard/Dashboard";
 import MyLearning from "./components/Mylearning/Learning"
 // import Resetpassword from "./components/Login/ForgetPassword"
 import ForgetPage from "./Pages/ForgetPage";
 import ResetPage from "./Pages/ResetPage";
+import Jobs from "../src/components/Jobs/Jobs"
 
 
 const App = () => {
@@ -65,6 +69,11 @@ const App = () => {
         <Route path='/interview/android' element={<InterviewAndroid />} />
         {isLoggedIn ? (<Route path='/dash/*' element={<Dashboard />} />) : (  <Route path="*" element={<ErrorPage />} />)}
         <Route path='/quiz/:type' element={<Quiz />} />
+                <Route path='/Jobs' element={<Jobs />} />
+                <Route path="/jobsShow" element={<JobShow />} />
+                <Route path="/jobApp" element={<JobsApp />} />
+
+
         <Route path="/mylearning" element={<MyLearning />} />
         <Route path='/CV' element={<Outlet />}>
           <Route path='' element={<CvPage1 />} />
