@@ -190,8 +190,9 @@ function QuizzesDash() {
     return questions.map((question, index) => (
       <div key={index}>
         <FormGroup className="mb-3">
-          <Form.Label htmlFor={`question-${index}`}>Question</Form.Label>
+          <Form.Label className='modal-data' htmlFor={`question-${index}`}>Question</Form.Label>
           <Form.Control
+          className="input-modal"
             type="text"
             placeholder="Enter Question"
             id={`question-${index}`}
@@ -202,7 +203,7 @@ function QuizzesDash() {
         </FormGroup>
         {question.answers.map((answer, answerIndex) => (
           <FormGroup key={answerIndex} className="mb-3">
-            <Form.Label htmlFor={`answer-${index}-${answerIndex}`}>Answer</Form.Label>
+            <Form.Label className='modal-data' htmlFor={`answer-${index}-${answerIndex}`}>Answer</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter Answer"
@@ -211,13 +212,15 @@ function QuizzesDash() {
               data-index={answerIndex}
               value={answer.text}
               onChange={(event) => handleInputChange(event, index)}
+              className="input-modal"
             />
-            <Button variant="danger" onClick={() => handleDeleteAnswer(index, answerIndex)}>Delete Answer</Button>
+            <Button className="Delete-Answer-btn" onClick={() => handleDeleteAnswer(index, answerIndex)}>Delete</Button>
           </FormGroup>
         ))}
         <FormGroup className="mb-3">
-          <Form.Label htmlFor={`correctAnswerIndex-${index}`}>Correct Answer Index</Form.Label>
+          <Form.Label className='modal-data' htmlFor={`correctAnswerIndex-${index}`}>Correct Answer Index</Form.Label>
           <Form.Control
+          className="input-modal"
             as="select"
             id={`correctAnswerIndex-${index}`}
             name="correctAnswerIndex"
@@ -229,7 +232,7 @@ function QuizzesDash() {
             ))}
           </Form.Control>
         </FormGroup>
-        <Button variant="secondary" onClick={() => handleAddAnswer(index)}>Add Answer</Button>
+        <Button className="Add-Answer-btn" onClick={() => handleAddAnswer(index)}>Add</Button>
       </div>
     ));
   };
@@ -248,18 +251,18 @@ function QuizzesDash() {
           onChange={(e) => setSearchQuery(e.target.value)}
           className="w-75 mx-auto border rounded"
         />
-        <Button variant="primary" onClick={handleShow} className="m-auto ">
+        <Button onClick={handleShow} className="m-auto add-quiz-btn ">
           Add Quiz
         </Button>
       </div>
-      <Modal show={isAddFormVisible} onHide={handleClose}>
+      <Modal  className='dash-model' show={isAddFormVisible} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{editedIndex !== null ? "Edit Quiz" : "Add Quiz"}</Modal.Title>
+          <Modal.Title className='modal-title text-center'>{editedIndex !== null ? "Edit Quiz" : "Add Quiz"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
-            <FormGroup className="mb-3">
-              <Form.Label htmlFor="name">Name</Form.Label>
+            <FormGroup className="mb-3 body-form-group">
+              <Form.Label className='modal-data' htmlFor="name">Name</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter Name"
@@ -267,10 +270,11 @@ function QuizzesDash() {
                 name="name"
                 value={name}
                 onChange={handleInputChange}
+                className='input-modal'
               />
             </FormGroup>
             <FormGroup className="mb-3">
-              <Form.Label htmlFor="type">Type</Form.Label>
+              <Form.Label className='modal-data' htmlFor="type">Type</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter Type"
@@ -278,28 +282,29 @@ function QuizzesDash() {
                 name="type"
                 value={type}
                 onChange={handleInputChange}
+                className='input-modal'
               />
             </FormGroup>
             {renderQuestions()}
-            <Button variant="secondary" onClick={handleAddQuestion}>Add Question</Button>
+            <Button className="add-question-btn" onClick={handleAddQuestion}>Add Question</Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button className="close-btn" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" type="submit" onClick={handleSubmit}>
+          <Button className="save-btn" type="submit" onClick={handleSubmit}>
             Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
 
-      <Table striped bordered hover className="custom-table m-auto">
+      <Table striped bordered className='w-75 mx-auto'>
         <thead>
           <tr className="text-center">
-            <th>ID</th>
-            <th>Name</th>
-            <th colSpan={2}>Actions</th>
+            <th className="tablehead">ID</th>
+            <th className="tablehead">Name</th>
+            <th className="tablehead" colSpan={2}>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -308,12 +313,12 @@ function QuizzesDash() {
               <td>{quiz._id}</td>
               <td>{quiz.name}</td>
               <td>
-                <Button variant="primary" size="sm" onClick={() => handleEdit(quiz)}>
+                <Button className="quiz-edit-btn px-3 m-auto" size="sm" onClick={() => handleEdit(quiz)}>
                   Edit
                 </Button>
               </td>
               <td>
-                <Button variant="danger" size="sm" onClick={() => handleDelete(quiz._id)}>
+                <Button className="delete-btn" size="sm" onClick={() => handleDelete(quiz._id)}>
                   Delete
                 </Button>
               </td>

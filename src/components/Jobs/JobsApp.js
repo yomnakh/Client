@@ -25,18 +25,7 @@ const JobsApp = () => {
     <div className=" bg-image">
       <div className="bg-layer">
       <Container className="pt-3">
-        <Row className="justify-content-md-center">
-          <Col className='mb-4'>
-            <p className="mt-0 h4 line-after">
-              Jobs
-            </p>
-
-            {/* <p className="line mb-1 "></p> */}
-            <span>
-              <small>6th june 2023</small>
-            </span>
-          </Col>
-        </Row>
+        
         <Row className="align-items-center">
           <Col xs={12} md={6}>
             <h2>Locating For a Job</h2>
