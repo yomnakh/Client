@@ -20,6 +20,25 @@
   border-top: 0.3em solid var(--firstColor) !important;
 }
 
+.dropImag {
+  display: flex;
+  justify-content: baseline;
+  margin-top: -10px;
+}
+
+.dropImag .dropdown-menu{
+  width: 200px;
+}
+
+.dropImag .dropdown-menu[data-bs-popper]{
+  left: -100px;
+  top: 65px !important; 
+}
+
+.dropImag .dropdown-toggle::after {
+  display: none !important;
+}
+
 .dropdown-menu {
   top: 55px !important;
 }
@@ -122,8 +141,9 @@
     color: var(--secondColor);
   }
 }
-.userfeild{
+
+.userfeild {
   font-weight: 700;
-  color:var(--firstColor);
-  font-size:20px;
+  color: var(--firstColor);
+  font-size: 20px;
 }

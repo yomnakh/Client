@@ -17,6 +17,20 @@ Api.interceptors.request.use(
     },
     (error) => Promise.reject(error)
 );
+
+const uploadProfilePicture = async (formData, token) => {
+    try {
+        const response = await Api.post('/profile/profile-photo-upload', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                'Authorization': `Bearer ${token}`, // Include the token for authentication if needed
+            },
+        });
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
 export default Api;
 
 // Api.interceptors.response.use(

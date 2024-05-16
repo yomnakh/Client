@@ -1,5 +1,5 @@
 import React from "react";
-
+import JobsData from "./JobsData";  // Import the JobsData
 import {FaRegClock} from 'react-icons/fa6';
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -137,6 +137,8 @@ const JobsShow = () => {
 
             </Col>
             <Col md={8} xs={10}>
+            {JobsData.jobscard.map((job, index) => (
+
               <div className="contacts-job1 my-3">
                 <div className="comp-name1 mt-3 d-flex justify-content-between align-items-center  ">
                   <div className="job-company-post1 d-flex  ">
@@ -147,25 +149,28 @@ const JobsShow = () => {
                       <p className="job-titel1 mb-0 h3 fw-bolder">Frontend Developer</p>
                       <p className="minmiz-font1 text-light">
                         <small>Lorem ipsum dolor sit.</small>
+                      <p className="job-titel1 mb-0 h3 fw-bolder"> {job.jobsTitle}</p>
+                      <p className="minmiz-font1">
+                        <small>{job.companyName}, {job.jobLocation}</small>
                       </p>
                     </div>
                   </div>
 
                   <div className="">
                     <div className="mb-0 content-onsite1">
-                      <strong>5000 EGP - 8000 EGP</strong> Per Month{" "}
+                      <strong>{job.salary} EGP</strong> Per Month{" "}
                       <span className="onsite-mob-view1 mt-0 onsite">
                         <span className="onsite-icon1">
                           <FontAwesomeIcon icon={faLocationDot} className="loctaion-icon1" />
                         </span>
-                        Onsite
+                        {/* Onsite */}
                       </span>
                     </div>
                     <p className="mt-0 onsite1 onsite-web-view1 text-light">
                       <span className="onsite-icon1 ">
                         <FontAwesomeIcon icon={faLocationDot} />
                       </span>
-                      Onsite
+                    {job.jobType}
                     </p>
                   </div>
                 </div>
@@ -226,6 +231,7 @@ const JobsShow = () => {
                   </Button>
                 </div>
               </div>
+            ))}
             </Col>
           </Row>
         </Container>
