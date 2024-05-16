@@ -7,14 +7,11 @@ import { Card, Button, Container, Col, Row, Form, Stack } from "react-bootstrap"
 import { Link } from "react-router-dom";
 
 const Jobs = () => {
-
     const [Data, setData] = useState(Array.from({ length: 5 }));
      const navigate=useNavigate();
     return (
         <>
           <div className="firstpage-jop-bg">
-          
-              {/* <Header /> */}
               <div style={{ height: "100px" }}></div>
               <>
       <section className="job-screen1" >
@@ -25,7 +22,7 @@ const Jobs = () => {
           <Row>
             <Col   md={12} lg={6} className="mb-4 contentjobscreen" style={{color: "#1B3F6B"}}>
               <h2>Looking For a Job ? </h2>
-              <span className="">
+              <span >
                 Hear ypu can find your beast match between 1000s <br></br>
                 and updated and
                 available positions.
@@ -36,7 +33,7 @@ const Jobs = () => {
 
                                 <div className='d-flex  flex-lg-row mt-4  p-3 '>
                                     <Form.Control className='input-sub1 my-2 w-100' size="lg" type="text " placeholder="Search for job" ></Form.Control>
-                                    <Button className=' btn-subscribe1 my-2 h-100' >subscribe</Button>
+                                    <Button className=' btn-subscribe1 my-2 h-100' >Search</Button>
                                 </div>
                             </Col>
 
@@ -45,23 +42,22 @@ const Jobs = () => {
         </Container>
       </section>
      </>
-              <div></div>
               <div className="container d-flex justify-content-center">
           <>
       <div>
 
-        <div className="menu-job-component1 d-lg-block d-none">
+        <div className="menu-job-component1 d-lg-block d-none ">
           <br></br>
           {/* Fillter */}
           <div className="m-auto menu-section1  ">
-            <div className="fitter-container1 p-3 d-flex justify-content-between align-items-center bg-light">
+            {/* <div className="fitter-container1 p-3 d-flex justify-content-between align-items-center bg-light">
               <div className="filter1 h5 fw-bold ">Filter</div>
               <div className="clear-all1">Clear All</div>
-            </div>
+            </div> */}
 
 
             <div className="location1">
-              <div className="location1 fw-bold">Location</div>
+              {/* <div className="location1 fw-bold">Location</div> */}
               <div className="location-form1 mt-3">
                 <Form.Group controlId="custom-select">
                   <Form.Label>Location</Form.Label>
@@ -142,7 +138,7 @@ const Jobs = () => {
 
         </div>
         <Link to="/cv">
-          <Button  className=" Create-your-cv text-white mt-5 w-100  hover-bg-color transition mt-4 d-lg-block d-none">
+          <Button  className=" Create-your-cv text-white mt-5 w-100  transition mt-4 d-lg-block d-none">
             Create your cv</Button>
         </Link>
       </div>
@@ -195,13 +191,13 @@ const Jobs = () => {
                 sit amet, consectetur adipiscing elit. Integer posuere erat a
                 ante.
               </p>
-
+{/* 
             <div className="d-flex ">
               <Button className="btn2">React Js</Button>
               <Button className="btn2" style={{ marginLeft: "10px" }}>
                 Development
               </Button>
-            </div>
+            </div> */}
 
             <div className="row mt-4 ">
               <div className="col-lg-7 col-5 ms-2">
@@ -230,15 +226,7 @@ const Jobs = () => {
                   </Row>
                 </Container>
               </div>
-                 <div className="container ">
-            <Stack  gap={2} className="col  d-block d-lg-none p-3 mt-4">
-                  <Link to="/app">
-                    <Button  className="create-cv-btn text-white transition mb-4 w-100">
-                      Create your cv
-                    </Button>
-                  </Link>
-            </Stack>
-          </div>
+           
             
     
     

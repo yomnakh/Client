@@ -21,40 +21,27 @@ const JobsShow = () => {
 
   return (
     <>
-      {/* <Header /> */}
+     
       
       <section className="job-screen-show1">
         
         <Container className="pt-3">
           
-          <Row>
-            <Col className="Looking-job1 my-2 " style={{color: "#1B3F6B"}} xs={12} md={6}>
+          <Row className="jobshow-row">
+            <Col className="Looking-job1 my-2 mt-4 " style={{color: "#1B3F6B"}} xs={12} md={6}>
               <h2>Looking For a Job?</h2>
               <span>
                 Hear ypu can find your beast match between 1000s of updated and
                 available positions.
               </span>
             </Col>
-            <Col xs={12} md={6}>
-              <form className="form-inline my-1 my-lg-0 mt-3">
-                <input
-                  className="form-control mr-sm-2 mainLoginInput"
-                  type="search"
-                  placeholder="&#xF002; Search for a job "
-                  aria-label="Search"
-                />
-                <button
-                  className="btn btn-outline-success my-2 my-sm-0"
-                  type="submit"
-                >
-                  Search
-                </button>
-                <span className="bar-icon1">
-                  <FontAwesomeIcon icon={faBars}  />{" "}
+            <Col lg={6} className='  my-4 '>
 
-                </span>
-              </form>
-            </Col>
+<div className='d-flex  flex-lg-row mt-4  p-3 '>
+    <Form.Control className='input-sub1 my-2 w-100' size="lg" type="text " placeholder="Search for job" ></Form.Control>
+    <Button className=' btn-search-show my-2 h-100 py-3' >Search</Button>
+</div>
+</Col>
           </Row>
         </Container>
 
@@ -68,10 +55,10 @@ const JobsShow = () => {
         <Container>
         {/* Fillter */}
         <div className="m-auto menu-section1 ">
-          <div className="fitter-container1 px-3 d-flex justify-content-between align-items-center">
+          {/* <div className="fitter-container1 px-3 d-flex justify-content-between align-items-center">
             <div className="filter1 h5 fw-bolder">Filters</div>
             <div className="clear-all1">Clear All</div>
-          </div>
+          </div> */}
           {/* location */}
           <div className="location1">
             <div className="location-form1 mt-3">
@@ -158,7 +145,7 @@ const JobsShow = () => {
                     </span>
                     <div className="col-xs-12 ms-2 ">
                       <p className="job-titel1 mb-0 h3 fw-bolder">Frontend Developer</p>
-                      <p className="minmiz-font1">
+                      <p className="minmiz-font1 text-light">
                         <small>Lorem ipsum dolor sit.</small>
                       </p>
                     </div>
@@ -174,8 +161,8 @@ const JobsShow = () => {
                         Onsite
                       </span>
                     </div>
-                    <p className="mt-0 onsite1 onsite-web-view1">
-                      <span className="onsite-icon1">
+                    <p className="mt-0 onsite1 onsite-web-view1 text-light">
+                      <span className="onsite-icon1 ">
                         <FontAwesomeIcon icon={faLocationDot} />
                       </span>
                       Onsite
@@ -183,7 +170,7 @@ const JobsShow = () => {
                   </div>
                 </div>
                 <div className="comp-post1 my-3">
-                  <p>
+                  <p className="text-light">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Sunt tenetur nobis minima officia minus perferendis
                     accusantium incidunt iure, ab nesciunt provident eaque ex
@@ -191,16 +178,16 @@ const JobsShow = () => {
                   </p>
                 </div>
                 <div className="search-key1">
-                  <span>
+                  {/* <span>
                     <Button className=" " variant="outline-warning">
                       React Js
                     </Button>
-                  </span>
-                  <span>
+                  </span> */}
+                  {/* <span>
                     <Button className=" mx-3" variant="outline-warning">
                       Development
                     </Button>
-                  </span>
+                  </span> */}
                 </div>
                 <div className="posted-time1 my-2">
                   <span className="me-2 time-icon">
@@ -211,7 +198,7 @@ const JobsShow = () => {
                 <div className="about-comp1 my-4">
                   <h4 className="mb-2 fw-bolder">About Us</h4>
 
-                  <p className="info-font-size1">
+                  <p className="info-font-size1 text-light">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Minus quia error ullam tenetur quos blanditiis cupiditate
                     molestias deleniti reprehenderit nobis!
@@ -219,7 +206,7 @@ const JobsShow = () => {
                 </div>
                 <div className="job-desc1 my-4">
                   <h4 className="mb-2 fw-bolder">Job Description </h4>
-                  <p className="info-font-size">
+                  <p className="info-font-size text-light">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Voluptatem nobis illum optio commodi explicabo iusto ea
                     similique a laborum saepe!
@@ -227,14 +214,14 @@ const JobsShow = () => {
                 </div>
                 <div className="job-requermnets1 my-4">
                   <h4 className="mb-2 fw-bolder">Job Requermnets </h4>
-                  <p className="info-font-size1 pb-5">
+                  <p className="info-font-size1 pb-5 text-light">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Rerum rem repellendus, id maxime ex quae enim neque eaque
                     fugit commodi.
                   </p>
                 </div>
                 <div className="btn-apply1">
-                  <Button style={{ colo: "#fff" }} variant="warning" onClick={()=>navigate('/jobApp')}>
+                  <Button style={{ colo: "#fff" }} onClick={()=>navigate('/jobApp')}>
                     Apply
                   </Button>
                 </div>
