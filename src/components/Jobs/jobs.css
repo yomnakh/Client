@@ -40,9 +40,10 @@
   .job-screen-show1 .contacts-job1 {        /* background el card */   
     background-color: rgb(203, 223, 231) !important;
     flex: 70%;
-    height: 90%;
+    height: fit-content;
     padding: 20px;
     flex-shrink: 0;
+
   }
  
   .job-screen-show1 .menu-section1 {         /* background el side */  
@@ -248,23 +249,6 @@
   color: rgb(128, 128, 128);
   font-size: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :root{
     /* Colors */
     --Primary: #BF9B30;

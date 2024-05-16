@@ -238,8 +238,6 @@ const JobsShow = () => {
         </Container>
         
       </section>
-      {/* <ButtonTop /> */}
-      {/* <Footer /> */}
     </>
   );
 };

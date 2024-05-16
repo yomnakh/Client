@@ -3,9 +3,10 @@ import React from 'react'
 export const JobsData = {
     jobscard: [
         {
+            id: 1,
             jobsTitle:"Frontend Developer",
             salary: 5000,
-            jobLocation:"Cairo, Cairo Governorate, Egypt",
+            jobLocation:"Cairo, Egypt",
             jobType:"Hybrid",
             jobDescription1:"A FullTime Job As a front-end software developer, you'll be responsible for coding our innovative designs and layouts into well-written, best-practice JavaScript components. Senior front-end development responsibilities include refining our client-side architecture, being a role model for maintainable and testable code, and implementing working web-based solutions from mockups.",
             companyLogo:"",
@@ -16,6 +17,7 @@ export const JobsData = {
 
         }, 
         {
+            id: 2,
             jobsTitle:"Backend Developer",
             salary:6000,
             jobLocation:"Cairo, Egypt",
@@ -28,6 +30,7 @@ export const JobsData = {
             jobrequirements:"Proficient in TypeScript/Javascript Strong Experience with Node.js frameworks like ( Express - Nestjs ) Strong experience with performance tuning, debugging, and monitoring. Strong understanding of RESTful API design principles. Hands-on experience with microservices architecture. Hands-on experience with MongoDB or similar NoSQL databases. Familiarity with CI/CD principles and active involvement in issue resolution. Familiarity with either of: Go (Golang) or gRPC or Java is a plus. Familiarity with Single-Sign-on or token-based authentication (Rest, JWT, Auth). Familiarity with Agile methodologies and practices. ",
         },
         {
+            id: 3,
             jobsTitle:"Network Engineer",
             salary: 7000,
             jobLocation:"Cairo, Egypt",
@@ -35,6 +38,7 @@ export const JobsData = {
             jobDescription1:"Bitrion is seeking a skilled a FullTime Job As  Network Administrator responsible for maintaining and enhancing our network infrastructure. The ideal candidate will design and support network systems to optimize performance and provide troubleshooting in Linux and Windows environments.",
             companyLogo:"",
             companyName:"Bitrion",
+            jobDescription2:"Qualifications: Bachelor's Degree in Computer Science or related area 2 - 4 years' of experience with network administration in a Linux or Windows environment Holder of valid Network & Security certifications such as CCNA, CCNP, CCIE, RHCSA, RHCE ,CEH . ",
             aboutus:"The ideal candidate will be responsible for maintaining and intermittently improving our current network configuration and infrastructure. You will design our revamped network infrastructure with the goal of maximizing our network performance. You will also provide troubleshooting and configuration support by using your strong technical skills in Linux and Windows environments and IP networking.  ",
             jobrequirements:" Proficient in implementing IGP/EGP, BGP & VRF for both IPV4 & IPV6 protocols in Cisco networks . Deeply Knowledge of IP networking fundamentals. Deeply Knowledge of TCP/IP fundamentals. Deeply Knowledge of VPN fundamentals . Strong knowledge with Linux OS and administration .Skilled in securing IP core networks against various risks, including Net-flow/Fastnetmon DOS handling .SDWAN networking knowledge or experince .Strong knowledge of scripting and automation using languages like Python . ",
         },
