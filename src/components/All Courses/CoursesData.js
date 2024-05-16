@@ -43,7 +43,7 @@ export const courseData = {
         about:"I'm a fornt-end web developer and designer with a passion for building beautiful web interfaces from scratch. " ,
       
           img: Abdelrahman
-      },
+          },
     },
 
     {

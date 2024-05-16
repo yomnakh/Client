@@ -1,5 +1,5 @@
 import React from "react";
-
+import JobsData from "./JobsData";  // Import the JobsData
 import {FaRegClock} from 'react-icons/fa6';
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -164,6 +164,8 @@ const JobsShow = () => {
 
             </Col>
             <Col md={8} xs={10}>
+            {JobsData.jobscard.map((job, index) => (
+
               <div className="contacts-job1 my-3">
                 <div className="comp-name1 mt-3 d-flex justify-content-between align-items-center  ">
                   <div className="job-company-post1 d-flex  ">
@@ -171,37 +173,34 @@ const JobsShow = () => {
                       <img src={itlogo} alt="company logo" />
                     </span>
                     <div className="col-xs-12 ms-2 ">
-                      <p className="job-titel1 mb-0 h3 fw-bolder">Frontend Developer</p>
+                      <p className="job-titel1 mb-0 h3 fw-bolder"> {job.jobsTitle}</p>
                       <p className="minmiz-font1">
-                        <small>Lorem ipsum dolor sit.</small>
+                        <small>{job.companyName}, {job.jobLocation}</small>
                       </p>
                     </div>
                   </div>
 
                   <div className="">
                     <div className="mb-0 content-onsite1">
-                      <strong>5000 EGP - 8000 EGP</strong> Per Month{" "}
+                      <strong>{job.salary} EGP</strong> Per Month{" "}
                       <span className="onsite-mob-view1 mt-0 onsite">
                         <span className="onsite-icon1">
                           <FontAwesomeIcon icon={faLocationDot} className="loctaion-icon1" />
                         </span>
-                        Onsite
+                        {/* Onsite */}
                       </span>
                     </div>
                     <p className="mt-0 onsite1 onsite-web-view1">
                       <span className="onsite-icon1">
                         <FontAwesomeIcon icon={faLocationDot} />
                       </span>
-                      Onsite
+                    {job.jobType}
                     </p>
                   </div>
                 </div>
                 <div className="comp-post1 my-3">
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sunt tenetur nobis minima officia minus perferendis
-                    accusantium incidunt iure, ab nesciunt provident eaque ex
-                    quo cupiditate sit! Odio, a.
+                  {job.jobDescription1}
                   </p>
                 </div>
                 <div className="search-key1">
@@ -226,25 +225,19 @@ const JobsShow = () => {
                   <h4 className="mb-2 fw-bolder">About Us</h4>
 
                   <p className="info-font-size1">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Minus quia error ullam tenetur quos blanditiis cupiditate
-                    molestias deleniti reprehenderit nobis!
+                    {job.aboutus}
                   </p>
                 </div>
                 <div className="job-desc1 my-4">
                   <h4 className="mb-2 fw-bolder">Job Description </h4>
                   <p className="info-font-size">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Voluptatem nobis illum optio commodi explicabo iusto ea
-                    similique a laborum saepe!
+                    {job.jobDescription2}
                   </p>
                 </div>
                 <div className="job-requermnets1 my-4">
-                  <h4 className="mb-2 fw-bolder">Job Requermnets </h4>
+                  <h4 className="mb-2 fw-bolder">Job requirements </h4>
                   <p className="info-font-size1 pb-5">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Rerum rem repellendus, id maxime ex quae enim neque eaque
-                    fugit commodi.
+                    {job.jobrequirements}
                   </p>
                 </div>
                 <div className="btn-apply1">
@@ -253,6 +246,7 @@ const JobsShow = () => {
                   </Button>
                 </div>
               </div>
+            ))}
             </Col>
           </Row>
         </Container>
