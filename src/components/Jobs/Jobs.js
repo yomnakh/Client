@@ -5,9 +5,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, Button, Container, Col, Row, Form, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import JobsData from "./JobsData";
 
 const Jobs = () => {
-    const [Data, setData] = useState(Array.from({ length: 5 }));
+    const [Data, setData] = useState(Array.from({ length: 3 }));
      const navigate=useNavigate();
   const [selectedJobId, setSelectedJobId] = useState(null); // State to store clicked job ID
   const handleShowDetails = (jobId) => {
@@ -85,7 +86,7 @@ const Jobs = () => {
               <div className="job-type1">
                 <Form>
                   <Form.Label className='fw-bold'>Jop Type</Form.Label>
-                  {["Full Time", "Part Time", "Remot"].map(
+                  {["Full Time", "Part Time", "Remote"].map(
                     (type, index) => (
                       <div key={`default-${index}`} className="mb-3">
                         <Form.Check // prettier-ignore
@@ -157,7 +158,7 @@ const Jobs = () => {
 
 
             <>
-      {Data.map((items, index) => (
+        {JobsData.jobscard.map((job, index) => (
         <Card className="job-card-component gy-4 p-2 mb-4">
           <Card.Body className="text-withe ">
             <div className="row">
@@ -165,22 +166,22 @@ const Jobs = () => {
                 <img src={jobimg} className="jobimg" />
               </div>
               <div className="col-lg-6 col-12 ms-2">
-                <h3 className="h3">Front-End Developer</h3>
+                <h3 className="h3">{job.jobsTitle}</h3>
                 <Card.Subtitle className="mb-2">
-                  <p className="p-subtitle" >Eptikar IT-solutions, obour city</p>
+                  <p className="p-subtitle" >{job.jobLocation}</p>
                 </Card.Subtitle>
               </div>
               <div className="col-lg-4 col-12 ">
                 <div className="jobs-details row" style={{ textAlign: "end" }}>
                   <div className="col-lg-12 col-6 ">
-                    <strong>5000 EGP - 8000 EGP </strong>per month
+                <strong>{job.salary} EGP per month</strong>
                   </div>
                   <div className="col-lg-12 col-6 ">
                     <span className="mt-0 col-lg-12 col-1">
                       <span>
                         <i class="fas fa-map-marker-alt main-color m-2"></i>
                       </span>
-                      Onsite
+                      {job.jobType}
                     </span>
                   </div>
                 </div>
@@ -189,11 +190,7 @@ const Jobs = () => {
 
 
               <p className="col-lg-10 col-12 my-3 job-p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                posuere erat a ante. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. Integer posuere erat a
-                ante.
+              {job.jobDescription1}
               </p>
 {/* 
             <div className="d-flex ">
@@ -325,107 +322,107 @@ const Jobs = () => {
 //             </div>
 //           </>
 
-          <Container>
-            <Row>
-              <Col md={12} xs={12}>
-                <>
-                  {/* {Data.map((items, index) => ( */}
-                    {JobsData.jobscard.map((job, index) => (
+//           <Container>
+//             <Row>
+//               <Col md={12} xs={12}>
+//                 <>
+//                   {/* {Data.map((items, index) => ( */}
+//                     {JobsData.jobscard.map((job, index) => (
                    
-                    <Card
-                     key={job.id}
-                      job={job}
-                      handleShowDetails={handleShowDetails}
-                     className="job-card-component gy-4 p-2 mb-4">
-                      <Card.Body className="text-withe ">
-                        <div className="row">
-                          <div className="col-lg-1 col-12">
-                            <img src={jobimg} className="jobimg" />
-                          </div>
-                          <div className="col-lg-6 col-12 ms-2">
-                            <h3 className="h3">{job.jobsTitle}</h3>
-                            <Card.Subtitle className="mb-2">
-                              <p className="p-subtitle">
-                              {job.companyName}, {job.jobLocation}
-                              </p>
-                            </Card.Subtitle>
-                          </div>
-                          <div className="col-lg-4 col-12 ">
-                            <div
-                              className="jobs-details row"
-                              style={{ textAlign: "end" }}
-                            >
-                              <div className="col-lg-12 col-6 ">
-                                <strong>{job.salary}  EGP </strong>per month
-                              </div>
-                              <div className="col-lg-12 col-6 ">
-                                <span className="mt-0 col-lg-12 col-1">
-                                  <span>
-                                    <i class="fas fa-map-marker-alt main-color m-2"></i>
-                                  </span>
-                                  {job.jobType}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+//                     <Card
+//                      key={job.id}
+//                       job={job}
+//                       handleShowDetails={handleShowDetails}
+//                      className="job-card-component gy-4 p-2 mb-4">
+//                       <Card.Body className="text-withe ">
+//                         <div className="row">
+//                           <div className="col-lg-1 col-12">
+//                             <img src={jobimg} className="jobimg" />
+//                           </div>
+//                           <div className="col-lg-6 col-12 ms-2">
+//                             <h3 className="h3">{job.jobsTitle}</h3>
+//                             <Card.Subtitle className="mb-2">
+//                               <p className="p-subtitle">
+//                               {job.companyName}, {job.jobLocation}
+//                               </p>
+//                             </Card.Subtitle>
+//                           </div>
+//                           <div className="col-lg-4 col-12 ">
+//                             <div
+//                               className="jobs-details row"
+//                               style={{ textAlign: "end" }}
+//                             >
+//                               <div className="col-lg-12 col-6 ">
+//                                 <strong>{job.salary}  EGP </strong>per month
+//                               </div>
+//                               <div className="col-lg-12 col-6 ">
+//                                 <span className="mt-0 col-lg-12 col-1">
+//                                   <span>
+//                                     <i class="fas fa-map-marker-alt main-color m-2"></i>
+//                                   </span>
+//                                   {job.jobType}
+//                                 </span>
+//                               </div>
+//                             </div>
+//                           </div>
+//                         </div>
 
-                        <p className="col-lg-10 col-12 my-3 job-p">
-                        {job.jobDescription1}
-                        </p>
+//                         <p className="col-lg-10 col-12 my-3 job-p">
+//                         {job.jobDescription1}
+//                         </p>
 
-                        <div className="d-flex ">
-                          <Button className="btn2">React Js</Button>
-                          <Button
-                            className="btn2"
-                            style={{ marginLeft: "10px" }}
-                          >
-                            Development
-                          </Button>
-                        </div>
+//                         <div className="d-flex ">
+//                           <Button className="btn2">React Js</Button>
+//                           <Button
+//                             className="btn2"
+//                             style={{ marginLeft: "10px" }}
+//                           >
+//                             Development
+//                           </Button>
+//                         </div>
 
-                        <div className="row mt-4 ">
-                          <div className="col-lg-7 col-5 ms-2">
-                            <span>
-                              <i
-                                class="far fa-clock p-2 fs-4"
-                                style={{ color: "#e1e1e16e", fontSize: "18px" }}
-                              ></i>{" "}
-                              <span className="">2h ago</span>
-                            </span>
-                          </div>
-                          <div
-                            className="col-lg-4 col-6 mb-0"
-                            style={{ textAlign: "right" }}
-                          >
-                            <Button
-                              className="btn1"
-                              onClick={() => navigate("/JobsShow")}
-                            >
-                              View Details
-                            </Button>
-                          </div>
-                        </div>
-                      </Card.Body>
-                    </Card>
-                  ))}
-                </>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-        <div className="container ">
-          <Stack gap={2} className="col  d-block d-lg-none p-3 mt-4">
-            <Link to="/app">
-              <Button className="create-cv-btn text-white transition mb-4 w-100">
-                Create your cv
-              </Button>
-            </Link>
-          </Stack>
-        </div>
-      </div>
-    </>
-  );
-};
+//                         <div className="row mt-4 ">
+//                           <div className="col-lg-7 col-5 ms-2">
+//                             <span>
+//                               <i
+//                                 class="far fa-clock p-2 fs-4"
+//                                 style={{ color: "#e1e1e16e", fontSize: "18px" }}
+//                               ></i>{" "}
+//                               <span className="">2h ago</span>
+//                             </span>
+//                           </div>
+//                           <div
+//                             className="col-lg-4 col-6 mb-0"
+//                             style={{ textAlign: "right" }}
+//                           >
+//                             <Button
+//                               className="btn1"
+//                               onClick={() => navigate("/JobsShow")}
+//                             >
+//                               View Details
+//                             </Button>
+//                           </div>
+//                         </div>
+//                       </Card.Body>
+//                     </Card>
+//                   ))}
+//                 </>
+//               </Col>
+//             </Row>
+//           </Container>
+//         </div>
+//         <div className="container ">
+//           <Stack gap={2} className="col  d-block d-lg-none p-3 mt-4">
+//             <Link to="/app">
+//               <Button className="create-cv-btn text-white transition mb-4 w-100">
+//                 Create your cv
+//               </Button>
+//             </Link>
+//           </Stack>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
 
 export default Jobs;
