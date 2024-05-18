@@ -52,16 +52,8 @@ const JobsShow = () => {
                     <span className="col-xs-12">
                       <img src={jobimg} alt="company logo" />
                     </span>
-<<<<<<< HEAD
-                    <div className="col-xs-12 ms-2 ">
-                      <p className="job-titel1 mb-0 h3 fw-bolder">Frontend Developer</p>
-                      <p className="minmiz-font1 text-light"></p>
-                        <small>Lorem ipsum dolor sit.</small>
-                      <p className="job-titel1 mb-0 h3 fw-bolder"> {job.jobsTitle}</p>
-=======
                     <div className="col-xs-12 ms-2">
                       <p className="job-titel1 mb-0 h3 fw-bolder"> {jobDetails.jobsTitle}</p>
->>>>>>> 4b0fb0918fdd68c5d0249ff72bbb2780b11398e3
                       <p className="minmiz-font1">
                         <small>{jobDetails.companyName}, {jobDetails.jobLocation}</small>
                       </p>
