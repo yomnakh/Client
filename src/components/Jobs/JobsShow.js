@@ -147,7 +147,7 @@ const JobsShow = () => {
                     </span>
                     <div className="col-xs-12 ms-2 ">
                       <p className="job-titel1 mb-0 h3 fw-bolder">Frontend Developer</p>
-                      <p className="minmiz-font1 text-light">
+                      <p className="minmiz-font1 text-light"></p>
                         <small>Lorem ipsum dolor sit.</small>
                       <p className="job-titel1 mb-0 h3 fw-bolder"> {job.jobsTitle}</p>
                       <p className="minmiz-font1">

@@ -4,7 +4,7 @@
 }
 
 .EduLogo {
-  width: 200px;
+  width: 160px;
 }
 
 .navbar-nav .homeNav,
@@ -12,7 +12,7 @@
   color: var(--secondColor) !important;
   padding: 7px !important;
   margin: 0 15px !important;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 18px;
 }
 
@@ -72,7 +72,7 @@
 
 .auth {
   padding: 10px 20px !important;
-  background-color: var(--secondColor);
+  background-color: var(--thirdColor);
   border-radius: 7px;
   transition: 0.6s all ease;
 }

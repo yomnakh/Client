@@ -26,7 +26,7 @@
 }
 
 .submitbtn {
-  background-color: var(--secondColor) !important;
+  background-color: var(--thirdColor) !important;
   border: none !important;
   margin-top: 30px;
   width: 100% !important;
