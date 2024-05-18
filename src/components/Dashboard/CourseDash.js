@@ -36,7 +36,14 @@ const CourseDash = () => {
     const fetchCourses = async () => {
       try {
         const response = await Api.get('/api/courses');
-        setCourses(response.data);
+        const coursesWithInstructorName = response.data.map(course => {
+          const instructor = instructors.find(instructor => instructor._id === course.instructor);
+          return {
+            ...course,
+            instructorName: instructor ? instructor.name : 'Unknown' // Use 'Unknown' if instructor is not found
+          };
+        });
+        setCourses(coursesWithInstructorName);
       } catch (error) {
         console.error('Error fetching courses:', error);
         setError(error.response ? error.response.data.message : 'An error occurred');
@@ -62,6 +69,8 @@ const CourseDash = () => {
       setIsLoading(true);
       await Api.delete(`/api/courses/${id}`);
       setCourses(courses.filter(course => course._id !== id));
+      console.log('Course deleted:', id);
+      Swal.fire("success","Course Deleted Successfully" , "success")
     } catch (error) {
       console.error('Error deleting course:', error);
     } finally {
@@ -111,18 +120,16 @@ const CourseDash = () => {
         }
       };
 
-      // Make the API request to add the new course
       const response = await Api.post('/api/courses', newCourseData);
       const addedCourse = response.data;
 
       // Update the courses state with the new course
       setCourses([...courses, addedCourse]);
-
+      console.log('Course added:', addedCourse); // Log the added course
       // Close the modal and show success message
       closeModal();
       Swal.fire('Success', 'Course added successfully', 'success');
     } catch (error) {
-      console.error('Error adding course:', error);
       console.error('Error adding course:', error.response.data.details);
       Swal.fire('Error', `${error.response.data.details}`, 'error');
     } finally {
@@ -235,20 +242,17 @@ const CourseDash = () => {
     try {
       setIsLoading(true);
 
-      // Make the API request to update the course
       const response = await Api.put(`/api/courses/${selectedCourse._id}`, {
         ...newCourse,
-        instructor: selectedCourse.instructor._id // Use instructor ID from selected course
+        instructor: selectedCourse.instructor._id
       });
       const updatedCourse = response.data.Course;
 
-      // Update the courses state with the updated course
       const updatedCourses = courses.map((course) =>
         course._id === updatedCourse._id ? updatedCourse : course
       );
       setCourses(updatedCourses);
-
-      // Close the modal and show success message
+      console.log('Course updated:', updatedCourse);
       closeModal();
       Swal.fire('Success', 'Course updated successfully', 'success');
     } catch (error) {
@@ -272,11 +276,11 @@ const CourseDash = () => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="w-100 mx-auto border rounded me-5 dashboard-search"
-         
+
         />
-        <Button  onClick={openModal} className='w-25 add-course-btn'>Add Course</Button>
+        <Button onClick={openModal} className='w-25 add-course-btn'>Add Course</Button>
       </div>
-      <Modal  className='dash-model' show={showModal} onHide={closeModal}>
+      <Modal className='dash-model' show={showModal} onHide={closeModal}>
         <Modal.Header closeButton>
           <Modal.Title>{selectedCourse ? "Update Course" : "Add New Course"}</Modal.Title>
         </Modal.Header>
@@ -305,7 +309,7 @@ const CourseDash = () => {
             </Form.Group>
             <Form.Group controlId="formHours">
               <Form.Label className='modal-data'>Hours</Form.Label>
-              <Form.Control  className='input-modal' type="text" name="hours" value={newCourse.hours} onChange={handleChange} />
+              <Form.Control className='input-modal' type="text" name="hours" value={newCourse.hours} onChange={handleChange} />
             </Form.Group>
             <Form.Group controlId="formCategory">
               <Form.Label className='modal-data' >Category</Form.Label>

@@ -56,7 +56,7 @@ const App = () => {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<SignUpPage />} />
-        <Route path="/users/:userId/verify/:token" element={<VerifyEmail/>} />
+        <Route path="/verify-email" element={<VerifyEmail/>} />
         <Route path="/forget-password" element={<ForgetPage />} />
         <Route path="/password/reset-password/:userId/:token" element={<ResetPage />} />
 

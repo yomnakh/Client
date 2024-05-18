@@ -1,0 +1,161 @@
+.chat-window {
+    max-width: 500px;
+    margin: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0 !important;
+    border: none !important;
+    outline: none !important;
+    background-color: var(--secondColor);
+}
+
+/* Header */
+.geminiHeader {
+    background-color: var(--secondColor);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.geminiHeader h2 {
+    margin: 0;
+    font-size: 30px;
+}
+
+/* Chat container */
+.geminicontainer {
+    padding: 10px;
+    overflow-y: scroll;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: none;
+    margin-top: 10px;
+    background-color: rgb(244, 244, 244);
+}
+
+/* Messages */
+.message {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 95%;
+    text-align: start !important;
+    line-height: 1.6;
+}
+
+.user .message-text {
+    max-width: 40%;
+    margin-left: auto;
+    background-color: rgba(128, 128, 128, 0.11);
+    align-self: flex-end;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--secondColor);
+    font-weight: 600;
+}
+
+.ai .message-text,
+.aiwelcom {
+    background-color: #fff;
+    width: 85%;
+    margin-right: auto;
+    text-align: start;
+    background-color: rgba(255, 192, 203, 0.29);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: -28px;
+    color: var(--secondColor) !important;
+    font-weight: 500;
+}
+
+.aiwelcom {
+    margin-top: 10px;
+    width: 65%;
+}
+
+.aiwelcom p {
+    margin: 5px;
+    color: var(--secondColor) !important;
+    font-weight: 500;
+}
+
+.GeminiInputBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.GeminiInputBox input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin-right: 10px;
+    width: 90%;
+    margin: auto;
+}
+
+.GeminiInputBox button {
+    background-color: #075e54;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Hide scrollbar */
+.chat-container::-webkit-scrollbar {
+    display: none;
+}
+
+.geminiTyping {
+    width: 90%;
+    padding: 10px 20px;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    right: 25%;
+    transform: translate(50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    z-index: 9999;
+    width: 500px;
+}
+
+
+.geminiBtn {
+    position: fixed;
+    right: 7px;
+    bottom: 60px;
+    background-color: transparent;
+    height: 65px;
+    width: 65px;
+    background-color: var(--secondColor);
+    border-radius: 50%;
+}
+
+.geminiRobotImg {
+    height: 100px;
+    width: 100px;
+    margin-left: -18px;
+    margin-top: -20px;
+    animation: geminiRobot 1.5s alternate infinite;
+}
+
+@keyframes geminiRobot {
+    0% {
+        margin-top: -20px;
+    }
+
+    100% {
+        margin-top: -12px;
+    }
+}
