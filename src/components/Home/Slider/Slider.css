@@ -1,5 +1,6 @@
+
 header {
-    background-image: url("../../../Assets/slider-bg.png");
+    background-image: url("../../../Assets/changebg2.png");
     background-size: cover;
     height: 100vh !important;
     margin-top: 0px !important;
@@ -10,13 +11,14 @@ header {
 }
 
 .himg {
-    width: 70% !important;
+    width: 75% !important;
     animation: animate 2s alternate infinite;
+   margin-top: 30px !important;
 
 }
 
 .header-info {
-    font-size: 50px;
+    font-size: 58px;
     font-weight: 700;
     color: var(--secondColor);
     margin-top: 90px !important;
@@ -26,13 +28,13 @@ header {
 }
 
 .headerBtn {
-    background-color: var(--firstColor) !important;
+    background-color: var(--thirdColor) !important;
     padding: 0 30px !important;
     height: 55px;
     text-align: center;
     text-transform: uppercase;
     color: white !important;
-    opacity: 0.8;
+    /* opacity: 0.8; */
     font-weight: 600 !important;
 }
 

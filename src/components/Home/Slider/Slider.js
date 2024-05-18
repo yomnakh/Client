@@ -1,6 +1,7 @@
+
 import React, { Fragment } from 'react';
 import '../Slider/Slider.css';
-import himg from "../../../Assets/HeaderImage.png"
+import himg from "../../../Assets/change1.png"
 import { Link } from 'react-router-dom';
 
 const Slider = () => {

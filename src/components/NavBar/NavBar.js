@@ -105,7 +105,7 @@ const NavBar = () => {
       };
 
   return (
-        <Navbar expand="xl" className="p-3 shadow" fixed="top">
+        <Navbar expand="xl" className=" shadow" fixed="top">
           <Container className="mx-auto">
             <Link to={"/"}>
               <Navbar.Brand>
@@ -175,7 +175,9 @@ const NavBar = () => {
                       <NavDropdown.Item>
                         <Link to={"/interview"}>Interview</Link>
                       </NavDropdown.Item>
-                      <NavDropdown.Item><Link to="/jobs">Jobs</Link></NavDropdown.Item>
+                      <NavDropdown.Item>
+                        <Link to={"/jobs"}>jobs</Link>
+                      </NavDropdown.Item>
                     </NavDropdown>
                   </Nav>
                 )}
@@ -232,7 +234,9 @@ const NavBar = () => {
                       <NavDropdown.Item>
                         <Link to={"/interview"}>Interview</Link>
                       </NavDropdown.Item>
-                      <NavDropdown.Item><Link to="/jobs">Jobs</Link></NavDropdown.Item>
+                      <NavDropdown.Item>
+                        <Link to={"/jobs"}>jobs</Link>
+                      </NavDropdown.Item>
                     </NavDropdown>
                   </Nav>
                 )}
