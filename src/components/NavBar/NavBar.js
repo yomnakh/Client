@@ -175,7 +175,9 @@ const NavBar = () => {
                       <NavDropdown.Item>
                         <Link to={"/interview"}>Interview</Link>
                       </NavDropdown.Item>
-                      <NavDropdown.Item>Jobs</NavDropdown.Item>
+                      <NavDropdown.Item>
+                        <Link to={"/jobs"}>jobs</Link>
+                      </NavDropdown.Item>
                     </NavDropdown>
                   </Nav>
                 )}
@@ -232,7 +234,9 @@ const NavBar = () => {
                       <NavDropdown.Item>
                         <Link to={"/interview"}>Interview</Link>
                       </NavDropdown.Item>
-                      <NavDropdown.Item>Jobs</NavDropdown.Item>
+                      <NavDropdown.Item>
+                        <Link to={"/jobs"}>jobs</Link>
+                      </NavDropdown.Item>
                     </NavDropdown>
                   </Nav>
                 )}

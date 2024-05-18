@@ -27,7 +27,7 @@ import CvPage7 from './components/Cv/CvPage7';
 import CvPage8 from './components/Cv/CvPage8';
 import { Outlet } from 'react-router-dom';
 import Quiz from "./components/Quizzes/Quiz";
-import JobShow from "../src/components/Jobs/JobsShow";
+import JobsShow from "../src/components/Jobs/JobsShow";
 import JobsApp from "../src/components/Jobs/JobsApp";
 import ParentComponent from "./components/All Courses/ParentComponent";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -71,7 +71,7 @@ const App = () => {
         {isLoggedIn ? (<Route path='/dash/*' element={<Dashboard />} />) : (  <Route path="*" element={<ErrorPage />} />)}
         <Route path='/quiz/:type' element={<Quiz />} />
                 <Route path='/Jobs' element={<Jobs />} />
-                <Route path="/jobsShow" element={<JobShow />} />
+                <Route path="/jobsShow/:jobId" element={<JobsShow />} />
                 <Route path="/jobApp" element={<JobsApp />} />
 
 

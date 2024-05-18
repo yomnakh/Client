@@ -1,19 +1,25 @@
 
 .form-check-label {
   margin-left: -40px !important;
-  color:#e1e1e1 !important;
+  /* color:#e1e1e1 !important; */
   font-size: 17px;
   font-weight: 500;
 }
+.form-check-input[type=checkbox]{
+background-color: grey !important;
+}
+.fw-bold{
+  color: var(--secondColor);
+}
 .menu-job-component1{
-  background-color:var(--secondColor) !important;
+  /* background-color:var(--secondColor) !important; */
     width: 362px;
     color: var(--white);
     border-radius: 5px;
   }
   .job-card-component {
-    background-color:var(--secondColor) !important;
-    color: white !important;
+    color: var(--secondColor) !important; 
+    /* color: white !important; */
   }
   .menu-job-component1 .menu-section1 {
     padding: 20px;
@@ -59,11 +65,13 @@
 }
   /* //////////////////////////////////////////////////second page////////////////////////// */
   .job-screen-show1 .contacts-job1 {        /* background el card */   
-    background-color: var(--secondColor) !important;
+    /* background-color: var(--secondColor) !important; */
     flex: 70%;
-    height: 90%;
+    height: fit-content;
     padding: 20px;
     flex-shrink: 0;
+    color: var(--secondColor);
+
   }
  
   .job-screen-show1 .menu-section1 {         /* background el side */  
@@ -271,23 +279,6 @@
   color: rgb(128, 128, 128);
   font-size: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :root{
   /* Colors */
   --Primary: #BF9B30;
@@ -712,6 +703,8 @@
     }
     .job-screen-show1 .minmiz-font1 {
       font-size: 15px;
+      color: var(--secondColor) !important;
+
     }
     .job-screen-show1 .job-company-post1 span {
       display: block;
