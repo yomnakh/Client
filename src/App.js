@@ -71,7 +71,7 @@ const App = () => {
         {isLoggedIn ? (<Route path='/dash/*' element={<Dashboard />} />) : (  <Route path="*" element={<ErrorPage />} />)}
         <Route path='/quiz/:type' element={<Quiz />} />
                 <Route path='/Jobs' element={<Jobs />} />
-                <Route path="/jobsShow" element={<JobsShow />} />
+                <Route path="/jobsShow/:jobId" element={<JobsShow />} />
                 <Route path="/jobApp" element={<JobsApp />} />
 
 

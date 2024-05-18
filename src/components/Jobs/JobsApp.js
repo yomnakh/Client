@@ -46,11 +46,6 @@ const JobsApp = () => {
         <Container >
       
         <div className="m-auto menu-section1">
-          {/* <div className="fitter-container1 px-3 d-flex justify-content-between align-items-center">
-            <div className="filter1 h5 fw-bolder">Filters</div>
-            <div className="clear-all1">Clear All</div>
-          </div> */}
-          {/* location */}
           <div className="location1">
             <div className="location-form1 mt-3">
               <Form.Group controlId="custom-select">
@@ -69,12 +64,11 @@ const JobsApp = () => {
               </Form.Group>
             </div>
           </div>
-          {/* ********Check Box Section  */}
           <div className="mt-5 icons1">
             <div className="job-type1 mt-4">
               <Form>
                 <Form.Label className='fw-bold h6'>Jop Type</Form.Label>
-                {["Full Time", "Part Time", "Remot"].map((type, index) => (
+                {["On-Site", "Remot"].map((type, index) => (
                   <div key={`default-${index}`} className="mb-3">
                     <Form.Check // prettier-ignore
                       type="checkbox"
@@ -83,23 +77,6 @@ const JobsApp = () => {
                     />
                   </div>
                 ))}
-              </Form>
-            </div>
-
-            <div className="level1 mt-4">
-              <Form>
-                <Form.Label className='fw-bold h6'>Level</Form.Label>
-                {["Entery Level", "Intermediate", "Expert"].map(
-                  (type, index) => (
-                    <div key={`default-${index}`} className="mb-3">
-                      <Form.Check // prettier-ignore
-                        type="checkbox"
-                        id={`default-${type}`}
-                        label={type}
-                      />
-                    </div>
-                  )
-                )}
               </Form>
             </div>
             <div className="salary-range1 mt-4">
@@ -125,8 +102,6 @@ const JobsApp = () => {
         </Container>
       </div>
     </>
-
-
           </Col>
           <Col md={8} xs={10}>
             <div className="contacts-job">
@@ -230,21 +205,13 @@ const JobsApp = () => {
                 <span className="mx-3  ">
                   <Button className='btn-submit-app'> Submit</Button>
                 </span>
-                {/* <span>
-                  <Button >
-                    Cancel
-                  </Button>
-                </span> */}
               </div>
             </div>
           </Col>
         </Row>
       </Container>
-          
             </div>
     </section>
-    {/* <ButtonTop /> */}
-    {/* <Footer /> */}
   </>
   )
 }
