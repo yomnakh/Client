@@ -206,9 +206,6 @@ const NavBar = () => {
                     <Link to={"/courses"} className="homeNav">
                       Courses
                     </Link>
-                    <Link to={"/mylearning"} className="homeNav">
-                      MyLearning
-                    </Link>
                     <NavDropdown title="Quizzes" id="basic-nav-dropdown">
                       <NavDropdown.Item>
                         <Link to={"/quiz/html"}>HTML</Link>
@@ -340,7 +337,7 @@ const NavBar = () => {
                           >
                             <NavDropdown.Item className="NavItem d-flex justify-content-around" as={Link} to="/mylearning">
                               <i className="fa-regular fa-file-video fs-5"></i>
-                              <span className="me-3">My Courses </span>
+                              <span className="me-3">My Learning </span>
                             </NavDropdown.Item>
 
                             <NavDropdown.Item className="NavItem d-flex justify-content-around" onClick={handleUpdateProfile}>
