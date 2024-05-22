@@ -106,7 +106,12 @@
   background-image: url("../../Assets/coursebreadcramb.png");
   background-size: cover;
 }
-
+.homeCoursesSection{
+  background-image: url("../../Assets/slider-bg.png");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size: cover;
+}
 
 /*                 */
 

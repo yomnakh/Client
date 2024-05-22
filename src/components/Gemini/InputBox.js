@@ -3,7 +3,7 @@ import "./gemini.css"
 
 const InputBox = ({ sendMessage, loading }) => {
     const [input, setInput] = useState("");
-    const [isTyping, setIsTyping] = useState(false);
+    const [isTyping, setIsTyping] = useState(true);
 
     const handleKeyPress = (e) => {
         if (e.key === "Enter" && input.trim() !== "") {
@@ -15,7 +15,7 @@ const InputBox = ({ sendMessage, loading }) => {
     return (
         <div className="GeminiInputBox">
             {loading && (
-                <span className="geminiTyping">{isTyping ? "EduTrax is Typing....." : ""}</span>
+                <span className="geminiTyping text-light">{isTyping && "EduTrax is Typing....."}</span>
             )}
             <input
                 disabled={loading}
