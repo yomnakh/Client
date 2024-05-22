@@ -1,66 +1,9 @@
-.aboutimg {
-  width: 650px;
-  height: 650px;
-}
-
-.badge {
-  margin-bottom: 20px !important;
-  padding: 15px !important;
-  background-color: var(--secondColor) !important;
-  font-size: 11px;
-  
-}
-
-.aboutxt {
-  right: 30px;
-}
-
-.h1badge {
-  font-weight: bold;
-}
-
-.pbadge {
-  font-size: 18px;
-  color: gray;
-}
-
-.course {
-  color: var(--firstColor);
-  display: inline;
-}
-
-.abouticon {
-  font-size: 25px;
-  margin: 15px 0px;
-  color: var(--thirdColor);
-}
-
-.abouticontxt {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.aboutbuttonicon:hover {
-  scale: 1.5;
-}
-
-@media (max-width: 576px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  .aboutimg {
-    width: 350px !important;
-    height: 380px !important;
-
-  }
-
-  .abouticontxt {
-    font-size: 16px !important;
-  }
-
-  .aboutxt {
-    margin-bottom: 20px !important;
-  }
- 
+.Visitorloginn{
+  background-image: url(../../../Assets/second\ about.png);
+  background-size: cover;
+  height: 250px !important;
+  width: 100%  !important;
+padding: 90px !important;
+margin-top: 90px !important;
+padding-bottom: 600px !important;
 }

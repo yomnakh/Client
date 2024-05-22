@@ -1,14 +1,14 @@
 import "./Why.css";
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-
 const WhyCards = () => {
   return (
     <Container fluid className="why-us">
       <Container className="why">
      
         <Row>
-        <h2 className=" why-header text-center" style={{marginTop:"60px" }}>Why Choose <p className='why-color'>EduTrax</p>   </h2>
+        <h2 className=" why-header text-center" style={{marginTop:"60px" }}>Why Choose <p className='why-color'>EduTrax</p></h2>
+        
           <Col  xs="12"
       sm="12"
       md={6}
@@ -18,8 +18,8 @@ const WhyCards = () => {
             <Card className="why-card">
               <Card.Body>
                 <Card.Title>
-                    
-                  <i class="fa-solid fa-globe "></i>
+                  <div className="div-why-icon">   <i class="fa-solid fa-globe why-icon "></i> </div>
+               
                 </Card.Title>
                 <Card.Text>
                   <h3 className="why-h3">Learn More Anywhere</h3 >
@@ -40,7 +40,8 @@ const WhyCards = () => {
             <Card  className="why-card">
               <Card.Body>
                 <Card.Title>
-                  <i class="fa-solid fa-laptop"></i>
+                <div className="div-why-icon">   <i class="fa-solid fa-laptop why-icon "></i> </div>
+                
                 </Card.Title>
                 <Card.Text>
                   <h3 className="why-h3">Expert Instructor</h3 >
@@ -61,7 +62,8 @@ const WhyCards = () => {
             <Card  className="why-card">
               <Card.Body>
                 <Card.Title>
-                  <i class="fa-solid fa-headphones"></i>
+                <div className="div-why-icon">   <i class="fa-solid fa-headphones why-icon "></i> </div>
+               
                 </Card.Title>
                 <Card.Text>
                   <h3 className="why-h3">24/7 Strong Support</h3 >

@@ -49,3 +49,18 @@
         margin-right: 0px !important;
     }
 }
+.div-why-icon{
+    position: relative;
+    width: 60px !important;
+    height: 60px !important;
+    background-color: rgb(249, 249, 249) !important;
+    border-radius: 50%;
+
+}
+.why-icon{
+position: absolute;
+margin-left: 16px !important;
+margin-top: 18px !important;
+color: var(--thirdColor);
+font-size: 25px !important;
+}

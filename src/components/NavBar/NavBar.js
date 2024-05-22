@@ -105,7 +105,7 @@ const NavBar = () => {
       };
 
   return (
-        <Navbar expand="xl" className=" shadow" fixed="top">
+        <Navbar expand="xl" className=" shadow-nav" fixed="top">
           <Container className="mx-auto">
             <Link to={"/"}>
               <Navbar.Brand>

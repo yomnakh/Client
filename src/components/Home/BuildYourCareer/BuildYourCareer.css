@@ -1,0 +1,71 @@
+
+.buildYourCareer {
+  display: flex !important;
+  justify-content: space-around !important;
+  align-items: center !important;
+
+}
+.col1 {
+  width: 500px !important;
+  height: 300px !important;
+
+  margin-left: 130px !important;
+  background-image: url(../../../Assets/buildcareer1.png);
+  background-size: cover;
+}
+.col2 {
+  width: 500px !important;
+  height: 300px !important;
+  background-image: url(../../../Assets/buildcaeer2.png);
+  background-size: cover;
+  margin-left: 50px !important;
+}
+.p-career1 {
+  padding-top: 20px !important;
+  color: var(--firstColor) !important;
+
+  margin-left: 25px !important;
+  font-size: 17px !important;
+}
+.h2-career1 {
+  font-weight: 600;
+  margin-left: 25px !important;
+  color: var(--secondColor);
+}
+.pp-career1 {
+  margin-left: 25px !important;
+  margin-top: -5px !important;
+  color: rgb(134, 133, 133);
+  font-size: 13px !important;
+}
+.getcoursesBtn {
+  background-color: var(--thirdColor) !important;
+  padding: 0 20px !important;
+  height: 55px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+
+  margin-left: 40px !important;
+}
+
+.getcoursesBtn i {
+  margin-left: 15px !important;
+  transition: 0.8s all ease;
+}
+
+.getcoursesBtn:hover {
+  opacity: 0.7;
+}
+.orange-underline1 {
+  margin-left: 210px !important;
+  width: 130px !important;
+  margin-top: -20px !important;
+}
+.orange-underline2 {
+  margin-left: 155px !important;
+  width: 130px !important;
+  margin-top: -20px !important;
+}
