@@ -23,12 +23,12 @@ const HomeCourses = () => {
 
     const selectedCourses = courses.slice(0, 3);
     return (
-        <div className='homeCoursesSection'>
-            <h2 className="text-center pt-5">Most Popular Courses</h2>
-            <div className='text-center d-flex justify-content-between' style={{marginTop:"-10px"}}>
+        <div className='homeCoursesSection py-3'>
+            <h2 className="text-center py-5">Most Popular Courses</h2>
+            <div className='text-center d-flex justify-content-between' style={{marginTop:"-50px"}}>
                 <div className='col-9  mx-auto text-center m-auto p-0'>
                     <Course course={selectedCourses}/>
-                    <Link to={"/courses"}><Button className='mb-5 btn headerBtn'>Explore More <i class="bi bi-arrow-right"></i></Button>
+                    <Link to={"/courses"}><Button className='mb-5 btn headerBtn mx-auto'style={{marginTop:"-50px"}}>Explore More <i class="bi bi-arrow-right"></i></Button>
                     </Link>
                 </div>
             </div>

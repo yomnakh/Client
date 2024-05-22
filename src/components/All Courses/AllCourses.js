@@ -69,7 +69,7 @@ const AllCourses = () => {
                     </div>
                 </div>
             </div>
-            <div className='row m-0'>
+            <div className='row m-0' style={{alignItems:'start'}}>
                 <FilterCoursesCategory handleCategoryChange={handleCategoryChange} selectedCategories={selectedCategories} allCategories={allCategories} />
                 <div className='col-lg-10 col-md-10 m-0'>
                     <div className='courses'>

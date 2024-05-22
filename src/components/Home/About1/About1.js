@@ -6,10 +6,10 @@ import about1img from '../../../Assets/about3.png'
 
 const About1 = () => {
   return (
-    <Container fluid className='about1container' style={{ marginTop: "100px"  }} >
+    <Container fluid className='about1container' style={{ marginTop: "80px", marginBottom:"120px"  }} >
     <Row>
       <Col className='col-lg-6 col-md-6 col-sm-12 col-12'>
-        <img className='about1img' src={about1img} />
+        <img className='about1img w-75 h-100' src={"https://bestwpware.com/react-templates/edumim/static/media/about1.4d7d45d168730de2759f.png"} />
       </Col>
       <Col className='col-lg-6 col-md-6 col-sm-12 col-12  aboutxt'>
         {/* <span class="badge rounded-pill ms-0 "> Get More About Us </span> */}

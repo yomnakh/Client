@@ -19,7 +19,7 @@ header {
   font-size: 58px;
   font-weight: 700;
   color: var(--secondColor);
-  margin-top: 90px !important;
+  margin-top: 60px !important;
   margin-bottom: 40px !important;
   width: 75% !important;
   line-height: 1.5;
@@ -48,7 +48,8 @@ header {
 
 .animateImage {
   animation: animate2 2s alternate infinite;
-  margin-left: 300px !important;
+  margin-left: 350px !important;
+  margin-top: -30px;
 }
 
 .education {
@@ -58,11 +59,11 @@ header {
 
 @keyframes animate {
   0% {
-    transform: translateY(0);
+    transform: translateY(10px);
   }
 
   100% {
-    transform: translateY(-10px);
+    transform: translateY(-25px);
   }
 }
 

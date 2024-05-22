@@ -20,28 +20,27 @@ const Home = () => {
     const toggleChat = () => {
         setShowChat(!showChat);
     };
-  return (
-    <div>
-      <Slider />
-      <About1 />
-      <HomeCourses />
-      <CourseSection />
-      <IntrodusingVideo />
-      <Visitorlogin />
-      <About />
-      <BuildYourCareer />
-      <Why />
+    return (
+        <div>
+            <Slider />
+            <About1 />
+            <HomeCourses />
+            <IntrodusingVideo />
+            <Visitorlogin />
+            <About />
+            <BuildYourCareer />
+            <Why />
 
-      <Footer />
+            <Footer />
 
-      <button onClick={toggleChat} className="geminiBtn"><img className="geminiRobotImg " src={robot} alt='gemini' /></button>
-          {showChat && (
+            <button onClick={toggleChat} className="geminiBtn"><img className="geminiRobotImg " src={robot} alt='gemini' /></button>
+            {showChat && (
                 <div className="popup">
                     <ChatWindow />
                 </div>
             )}
-    </div>
-  );
+        </div>
+    );
 };
 
 export default Home;
