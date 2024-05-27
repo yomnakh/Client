@@ -1,13 +1,15 @@
 import React from 'react'
 import { Badge, Button, Col, Container, Row } from 'react-bootstrap';
-import AboutImage from '../../../Assets/AboutImage.jpg'
+import about from '../../../Assets/myaboutt.png'
 import './About.css'
 
 const About = () => {
   return (
-    <div className="container-fluid  Visitorloginn">
-    
+    <Container fluid className='w-100'>
+    <div className="container-fluid  w-100">
+    <img src={about} className='about' />
   </div>
+  </Container>
   )
 }
 

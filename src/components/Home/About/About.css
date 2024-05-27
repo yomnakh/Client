@@ -1,9 +1,7 @@
-.Visitorloginn{
-  background-image: url(../../../Assets/second\ about.png);
-  background-size: cover;
-  height: 250px !important;
-  width: 100%  !important;
-padding: 90px !important;
-margin-top: 90px !important;
-padding-bottom: 600px !important;
+.container-fluid{
+margin: auto !important;
+}
+.about{
+  width: 100% !important;
+  height: 100vh !important;
 }
