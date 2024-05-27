@@ -23,8 +23,9 @@ const HomeCourses = () => {
 
     const selectedCourses = courses.slice(0, 3);
     return (
-        <div className='homeCoursesSection py-3'>
-            <h2 className="text-center py-5">Most Popular Courses</h2>
+        <div className='homeCoursesSection py-3 mt-5'>
+            <h2 className="text-center py-5 course-title">Most Popular Courses</h2>
+            <img src="https://demo.alhikmahsoft.com/edufu/wp-content/uploads/2023/06/line-shape.svg" className='orange-underline-course' />
             <div className='text-center d-flex justify-content-between' style={{marginTop:"-50px"}}>
                 <div className='col-9  mx-auto text-center m-auto p-0'>
                     <Course course={selectedCourses}/>

@@ -470,7 +470,12 @@ select {
   border: 2px solid #4CAF50;
 }
 
-
+.course-title{
+  color:  var(--secondColor);
+}
+.orange-underline-course{
+  margin-left: 140px !important;
+}
 /* @media (max-width: 990px){
 .course-container{
 flex-direction: column;

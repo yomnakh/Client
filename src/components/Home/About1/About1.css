@@ -8,6 +8,7 @@
   height: 600px !important;
   margin-top: 40px !important;
   margin-left: 100px !important;
+  object-fit:cover;
 }
 .badge {
   margin-bottom: 20px !important;
@@ -34,12 +35,12 @@
 
 
 .p-about1 {
-  color: var(--thirdColor);
+  color: var(--firstColor);
 }
 .abouticon1{
   font-size: 20px;
   margin: 15px 0px;
-  color: var(--thirdColor);
+  color: var(--firstColor);
 }
 .abouticontxt1 {
   font-weight: bold;
@@ -70,4 +71,8 @@
 .aboutbuttonn{
   margin-top: -20px !important;
   margin-right: 30px !important;
+}
+.orange-underline-about1{
+margin-right: 60px;
+margin-top: -20px;
 }
