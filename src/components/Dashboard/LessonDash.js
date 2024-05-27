@@ -12,9 +12,6 @@ const LessonDash = () => {
     const [showAddModal, setShowAddModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
 
-
-
-
     useEffect(() => {
         fetchCourses();
         fetchLectures();
@@ -30,6 +27,7 @@ const LessonDash = () => {
             }
         }
     };
+
     const fetchCourses = async () => {
         try {
             const response = await Api.get('/api/courses');
@@ -54,20 +52,6 @@ const LessonDash = () => {
         }
     };
 
-    const handleEditLecture = async () => {
-        try {
-            await Api.put(`/api/course-lecture/${editLecture._id}`, editLecture);
-            fetchLectures();
-            setEditLecture(null);
-            setShowEditModal(false)// Close the modal after saving
-            console.log('Edit successful. Closing modal...');
-        } catch (error) {
-            console.error('Error editing lecture:', error.response.data.message);
-            setShowEditModal(false)
-        }
-    };
-
-
     const handleDeleteLecture = async (lectureId) => {
         try {
             await Api.delete(`/api/course-lecture/${lectureId}`);
@@ -77,6 +61,17 @@ const LessonDash = () => {
         }
     };
 
+    const handleEditLecture = async () => {
+        try {
+            const { _id, createdAt, updatedAt, __v, ...updatedData } = editLecture;
+            await Api.put(`/api/course-lecture/${_id}`, updatedData);
+            fetchLectures();
+            setShowEditModal(false);
+            setEditLecture(null);
+        } catch (error) {
+            console.error('Error editing lecture:', error.response.data.details);
+        }
+    };
     return (
         <div>
             <div>
@@ -123,7 +118,7 @@ const LessonDash = () => {
                 </div>
             )}
 
-            <Modal  className='dash-model' show={showAddModal} onHide={() => setShowAddModal(false)}>
+            <Modal className='dash-model' show={showAddModal} onHide={() => setShowAddModal(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title className='modal-title'>Add Lecture</Modal.Title>
                 </Modal.Header>

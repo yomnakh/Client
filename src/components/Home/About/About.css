@@ -1,66 +1,7 @@
-.aboutimg {
-  width: 650px;
-  height: 650px;
+.container-fluid{
+margin: auto !important;
 }
-
-.badge {
-  margin-bottom: 20px !important;
-  padding: 15px !important;
-  background-color: var(--secondColor) !important;
-  font-size: 11px;
-  
-}
-
-.aboutxt {
-  right: 30px;
-}
-
-.h1badge {
-  font-weight: bold;
-}
-
-.pbadge {
-  font-size: 18px;
-  color: gray;
-}
-
-.course {
-  color: var(--firstColor);
-  display: inline;
-}
-
-.abouticon {
-  font-size: 25px;
-  margin: 15px 0px;
-  color: var(--thirdColor);
-}
-
-.abouticontxt {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.aboutbuttonicon:hover {
-  scale: 1.5;
-}
-
-@media (max-width: 576px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  .aboutimg {
-    width: 350px !important;
-    height: 380px !important;
-
-  }
-
-  .abouticontxt {
-    font-size: 16px !important;
-  }
-
-  .aboutxt {
-    margin-bottom: 20px !important;
-  }
- 
+.about{
+  width: 100% !important;
+  height: 100vh !important;
 }

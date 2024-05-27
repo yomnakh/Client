@@ -14,13 +14,13 @@ const CourseDesign = ({ course }) => {
       lg="6"
       xl="4"
       xxl="4"
-      className="mb-3 justify-content-center d-xl-block d-flex"
+      className="mb-3 justify-content-center d-xl-block d-flex m-auto"
       style={{ margin: "auto" }}
     >
       <Link to={`/courses/coursedesc/${course._id}`}>
         <Card
           style={{ width: "20rem", border: "1px solid rgb(225, 220, 220)" }}
-          className="course_card p-1"
+          className="course_card p-1 mx-auto"
         >
           <Card.Img variant="top" className="cardImage" src={course.image.url} />
           <Card.Body>

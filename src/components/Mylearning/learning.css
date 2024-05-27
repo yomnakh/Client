@@ -3,19 +3,17 @@
   background-size: cover;
   background-position: center;
   height: 260px;
-  margin-top: 82px !important;
+  margin-top: 73px !important;
   text-align: center;
   padding-top: 80px !important;
   width: 100%;
 }
-
-
 .header-mylearning {
   color: white !important;
   font-size: 45px;
   font-weight: 700;
   margin-bottom: 20px !important;
-  margin-top: -25px;
+  margin-top: -30px;
 }
 .checked {
   color: orange;
@@ -41,9 +39,7 @@
     opacity: 0.9;
     letter-spacing: 1.3px;
 }
-.mylearning-header {
-  margin-top: 90px !important;
-}
+
 .mylearning-bar{
     height: 6px !important;
 }

@@ -6,6 +6,7 @@ import CourseDesc from './CourseDesc';
 import CourseVideo from './CourseVideo';
 import axios from 'axios';
 import Learning from '../Mylearning/Learning';
+import CourseExam from './CourseExam';
 
 const ParentComponent = () => {
     const { id } = useParams();

@@ -1,0 +1,11 @@
+.imgVideo{
+   background-image: url(../../../Assets/video.png);
+    width: 70% !important;
+    background-size: cover;
+    height: 600px !important;
+ 
+}
+.videobtn{
+    margin-left: 550px !important;
+    margin-top: 280px !important ;
+}

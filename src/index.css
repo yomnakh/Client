@@ -19,7 +19,7 @@ html {
 :root {
     --firstColor: #018883;
     --secondColor: #132f53;
-    --thirdColor:#f5656d;
+    --thirdColor:#f56f75;
 }
 
 section,
@@ -73,6 +73,14 @@ input {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-image: url(../src/Assets/404-bg.png);
+}
+.p-errorpage{
+    color: #848484;
+}
+.h2-errorpage{
+    color: var(--secondColor);
+    
 }
 
 .errBtn {

@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Api from "../../config/api";
+import Swal from 'sweetalert2';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -22,8 +23,7 @@ const Register = () => {
     try {
       const response = await Api.post('/api/auth/register', { name, email, password });
       console.log('Login successful ^_^ , Token:', response.data);
-      toast.success(response.data.message);
-      navigate('/login');
+      Swal.fire("success",`${response.data.message}`,"success")
       const token = response.data.token;
       localStorage.setItem("access_token", `Bearer ${token}`);
 

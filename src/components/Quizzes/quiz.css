@@ -10,7 +10,7 @@
   background-image: url(../../Assets/slider-bg.png);
 }
 .quiz-container {
-  margin-top: 100px !important;
+  margin-top: 120px !important;
   position: absolute;
   top: 40%;
   left: 50%;
@@ -94,7 +94,7 @@ margin-bottom: 30px !important;
 .badge {
   background-color: var(--secondColor) !important;
   margin-left: 1000px !important;
-  margin-top: 60px !important;
+  position: absolute;
 }
 .text-center {
   position: relative;
@@ -163,13 +163,19 @@ margin-bottom: 30px !important;
 }
 .score{
   width: 300px !important;
-  
-  background-color: aqua !important;
   margin: auto;
   border-radius: 8px ;
   color: aliceblue;
   font-size: 30px !important;
-  background-color: var(--secondColor) !important;
+  background-color: var(--firstColor) !important;
 margin-top: 60px !important;
   
+}
+
+.correct-answer {
+  background-color: #19875492;
+}
+
+.wrong-answer {
+  background-color: rgba(255, 0, 0, 0.468);
 }

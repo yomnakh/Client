@@ -1,6 +1,6 @@
 .navbar {
   width: 100% !important;
-  background-color: white;
+ background-color:#fff;
 }
 
 .EduLogo {
@@ -91,7 +91,9 @@
   background-color: var(--firstColor);
   opacity: 0.8;
 }
-
+.shadow-nav{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px !important;
+}
 @media only screen and (max-width: 1200px) {
   .offcanvas-header {
     padding: 15px 40px !important;

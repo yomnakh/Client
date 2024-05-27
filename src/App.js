@@ -37,6 +37,7 @@ import ForgetPage from "./Pages/ForgetPage";
 import ResetPage from "./Pages/ResetPage";
 import Jobs from "../src/components/Jobs/Jobs"
 import VerifyEmail from "./Pages/Verification/VerifyEmail";
+import CourseExam from "./components/All Courses/CourseExam";
 
 
 const App = () => {
@@ -56,7 +57,7 @@ const App = () => {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<SignUpPage />} />
-        <Route path="/users/:userId/verify/:token" element={<VerifyEmail/>} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/forget-password" element={<ForgetPage />} />
         <Route path="/password/reset-password/:userId/:token" element={<ResetPage />} />
 
@@ -68,13 +69,14 @@ const App = () => {
         <Route path='/interview/next' element={<InterviewNext />} />
         <Route path='/interview/network' element={<InterviewNetwork />} />
         <Route path='/interview/android' element={<InterviewAndroid />} />
-        {isLoggedIn ? (<Route path='/dash/*' element={<Dashboard />} />) : (  <Route path="*" element={<ErrorPage />} />)}
+        {isLoggedIn ? (<Route path='/dash/*' element={<Dashboard />} />) : (<Route path="*" element={<ErrorPage />} />)}
         <Route path='/quiz/:type' element={<Quiz />} />
                 <Route path='/Jobs' element={<Jobs />} />
                 <Route path="/jobsShow/:jobId" element={<JobsShow />} />
                 <Route path="/jobApp/:jobId" element={<JobsApp />} />
 
 
+        <Route path="/course-final-exam/:id" element={<CourseExam />} />
         <Route path="/mylearning" element={<MyLearning />} />
         <Route path='/CV' element={<Outlet />}>
           <Route path='' element={<CvPage1 />} />
