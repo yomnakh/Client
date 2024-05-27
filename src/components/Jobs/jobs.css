@@ -1,25 +1,34 @@
 
 .form-check-label {
   margin-left: -40px !important;
-  /* color:#e1e1e1 !important; */
+  color:#e1e1e1 !important;
   font-size: 17px;
   font-weight: 500;
 }
-.form-check-input[type=checkbox]{
-background-color: grey !important;
-}
-.fw-bold{
+
+.fw-bold1 {
   color: var(--secondColor);
+  font-weight: 600;
+  
+}
+/* .left-menu{
+  position: static;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 1;
+} */
+.fw-bold {
+  color: white;
 }
 .menu-job-component1{
-  /* background-color:var(--secondColor) !important; */
+  background-color:var(--secondColor) !important;
     width: 362px;
-    color: var(--white);
+    color: var(--white) !important;
     border-radius: 5px;
   }
   .job-card-component {
     color: var(--secondColor) !important; 
-    /* color: white !important; */
   }
   .menu-job-component1 .menu-section1 {
     padding: 20px;
@@ -42,10 +51,6 @@ background-color: grey !important;
     width: 310px;
     height: 62px;
     background-color: rgba(17, 17, 17, 0.56);
-  }
-  .menu-job-component1 .clear-all1 {
-    color: var(--secondColor) 1 !important;
-    border-radius: 5px;
   }
   .job-card-component .btn1 {
     background-color: var(--firstColor) !important;
@@ -177,12 +182,6 @@ background-color: grey !important;
   background-color: rgba(128, 128, 128, 0.438) !important;
   border: none !important;
 }
-
-
-/* body{height: 3000px;} */
-
- 
-
   .job-card-component .jobimg {
     width: 3.3rem;
     height: 40px;
@@ -274,7 +273,6 @@ background-color: grey !important;
   background-color: var(--firstColor) !important;
   opacity: 0.9;
 }
-
 .job-screen1 .input-sub1::placeholder {
   color: rgb(128, 128, 128);
   font-size: 20px;
@@ -302,8 +300,6 @@ background-color: grey !important;
   --form-bg:#252525;
   --input-bg:#414040;
   --password-eye:#676767;
-
-
 
   /* Colors of Button */
   --btn-defauit: #BF9B30;
@@ -354,38 +350,14 @@ background-color: grey !important;
   --p-22:22px;
   --p-24:24px;
 }
-
-
-
-
-
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ///////////////////page3////////////////////////////////////////////////////////////// */
 .job-app-screen_1{
   background-image: url(../../Assets/slider-bg.png);
 
 }
 .menu-job-box1{
-  background-color: var(--secondColor);
+  /* background-color: var(--secondColor); */
 }
 
 .menu-job-box1  .search-key1 span button {
@@ -575,7 +547,6 @@ background-color: grey !important;
     color: #fff;
     background-color: rgba(86, 85, 85, 0.079);
     --bs-form-select-bg-img: url(data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3e%3cpath fill=%27none%27 stroke=%27%23343a40%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27m2 5 6 6 6-6%27/%3e%3c/svg%3e);
-  
     border-color: #00000000 !important;
     border-bottom: 1px solid #efefef !important;
   }
@@ -750,7 +721,7 @@ background-color: grey !important;
 /* apply job */
 .job-app-screen_1 .contacts-job {
   position: relative;
-  background: var(--secondColor) !important;
+  /* background: var(--secondColor) !important; */
 }
 
 .job-app-screen_1 .btn {
@@ -879,12 +850,16 @@ background-color: grey !important;
   color: var(--Primary);
   border-radius: 5px;
 }
-
+.form-select{
+  background-color: var(--firstColor) !important;
+color: #fff !important;
+border: 0 !important;
+}
 .job-app-screen_1 .form-select {
   width: 95%;
   height: 49px;
   border-radius: 5px;
-
+ background-color: var(--firstColor) !important;
   --bs-form-select-bg-img: url(data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3e%3cpath fill=%27none%27 stroke=%27%23343a40%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27m2 5 6 6 6-6%27/%3e%3c/svg%3e);
   border-color: #00000000 !important;
   border-bottom: 1px solid #efefef !important;
@@ -892,7 +867,7 @@ background-color: grey !important;
 .job-app-screen_1 .job-titel {
   font-size: 20px;
   font-weight: bold;
-  color: #efefef;
+  color: var(--secondColor);
 }
 
 .job-app-screen_1 .form-select:focus {
@@ -904,7 +879,12 @@ background-color: grey !important;
   transition: all 0.3s ease-in;
 }
 
-
+.input-fields::placeholder{
+  color: #6c6a6a !important;
+}
+.input-fields{
+  width: 100% !important;
+}
 
 /* Check boxs */
 .job-app-screen_1 .form-check-input:checked {
@@ -918,14 +898,14 @@ background-color: grey !important;
 }
 /* Contacts Job*/
 .job-app-screen_1 .contacts-job {
-  background: var(--secondColor) !important;
+  /* background: var(--secondColor) !important; */
   flex: 70% 1;
   height: 100%;
   padding: 10px 20px;
   margin-bottom: 20px;
 }
 .job-app-screen_1 .small-style-text{
-  color:#e1e1e1 !important;
+  color:#666262 !important;
 }
 .job-app-screen_1 span img {
   width: 66px;
@@ -961,11 +941,11 @@ background-color: grey !important;
 .job-app-screen_1 .input-job {
   outline: none;
   border: 0;
-  border-radius: 5px;
+  -o-border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  border-radius: 5px;
   height: 35px;
   padding: 5px;
   font-size: 20px;
@@ -1014,8 +994,11 @@ flex-direction: column-reverse;
 }
 .job-app-screen_1 .btn-submit-app {
   background-color: var(--firstColor);
+  padding-left: 45px;
 }
-
+.filed-appliction{
+  color:var(--secondColor) !important;
+}
 .job-app-screen_1 .filed-appliction input {
   width: 320px;
   height: 44px;

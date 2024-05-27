@@ -100,16 +100,16 @@ const Jobs = () => {
             </Container>
           </section>
         </>
-        <div className="container d-flex justify-content-center">
+        <div className="container d-flex justify-content-center ">
           <>
-            <div>
-              <div className="menu-job-component1 d-lg-block d-none shadow text-dark">
+            <div className=" left-menu"/* style={{position:"fixed"}} */>
+              <div className="menu-job-component1 d-lg-block d-none text-dark" >
                 <br></br>
                 <div className="m-auto menu-section1">
                   <div className="location1">
                   </div>
                           <div className="mt-5 icons1">
-                   <div className="job-type1">
+                   <div className="job-type1 ">
                      <Form>
                        <Form.Label className="fw-bold">Job Type</Form.Label>
                      <Form.Select
@@ -145,19 +145,19 @@ const Jobs = () => {
                 </div>
                 </div>
               </div>
-              <Link to="/cv">
+              <Link to="/app">
                 <Button className=" Create-your-cv text-white mt-5 w-100  transition mt-4 d-lg-block d-none">
                   Create your cv
                 </Button>
               </Link>
             </div>
           </>
-          <Container>
+          <Container className="">
             <Row>
               <Col md={12} xs={12}>
                 <>
                   {filteredJobs.map((job) => (
-                    <Card
+                    <Card 
                       className="job-card-component gy-4 p-2 mb-4 shadow "
                       style={{color:"var(--seco)"}}
                       key={job.id}

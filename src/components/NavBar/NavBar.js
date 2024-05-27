@@ -176,7 +176,7 @@ const NavBar = () => {
                         <Link to={"/interview"}>Interview</Link>
                       </NavDropdown.Item>
                       <NavDropdown.Item>
-                        <Link to={"/jobs"}>jobs</Link>
+                        <Link to={"/jobs"}>Jobs</Link>
                       </NavDropdown.Item>
                     </NavDropdown>
                   </Nav>
