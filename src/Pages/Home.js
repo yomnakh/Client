@@ -24,15 +24,13 @@ const Home = () => {
         <div>
             <Slider />
             <About1 />
-            <HomeCourses />
-            <IntrodusingVideo />
-            <Visitorlogin />
-            <About />
-            <BuildYourCareer />
+            {/* <IntrodusingVideo /> */}
             <Why />
-
+            <HomeCourses />
+            <About />
+            <Visitorlogin />
+            <BuildYourCareer />
             <Footer />
-
             <button onClick={toggleChat} className="geminiBtn"><img className="geminiRobotImg " src={robot} alt='gemini' /></button>
             {showChat && (
                 <div className="popup">

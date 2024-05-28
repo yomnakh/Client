@@ -19,6 +19,7 @@
 .aboutxt {
   right: 30px;
   padding: 30px 0 !important;
+  font-weight: 600;
 }
 .h1badge1 {
   font-weight: bold;
@@ -48,6 +49,7 @@
 }
 .aboutbuttonicon{
   color: aliceblue;
+  margin-left: 7px;
 }
 
 .aboutbuttonicon:hover {

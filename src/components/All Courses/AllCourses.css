@@ -86,9 +86,9 @@
   padding: 7px;
 }
 
-.form-check-label {
+.asideCategory .form-check-label {
   margin-left: -40px !important;
-  color: var(--secondColor);
+  color: var(--secondColor) !important;
   font-size: 17px;
   font-weight: 500;
 }
@@ -106,10 +106,11 @@
   background-image: url("../../Assets/coursebreadcramb.png");
   background-size: cover;
 }
-.homeCoursesSection{
+
+.homeCoursesSection {
   background-image: url("../../Assets/slider-bg.png");
-  background-position:center;
-  background-repeat:no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -470,12 +471,20 @@ select {
   border: 2px solid #4CAF50;
 }
 
-.course-title{
-  color:  var(--secondColor);
+.course-title {
+  color: var(--secondColor);
+  font-weight: 700;
+  font-size: 35px;
 }
-.orange-underline-course{
-  margin-left: 140px !important;
+.course-title span{
+  color: var(--firstColor);
 }
+
+.orange-underline-course {
+  margin-left: 805px !important;
+  margin-top: -30px !important;
+}
+
 /* @media (max-width: 990px){
 .course-container{
 flex-direction: column;

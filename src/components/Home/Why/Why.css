@@ -21,7 +21,7 @@
     color: white !important;
 }
 .why-us{
- height: 70vh !important;
+ height: 100vh !important;
   background-image: url(../../../Assets/whyBG.png);
   background-size: cover;
 }
@@ -34,8 +34,9 @@
     color: #7e7e7e;
 }
 .why-header{
-    font-size: 30px  !important;
+    font-size: 35px  !important;
     font-weight: 700;
+    color:var(--secondColor);
 }
 .why-color {
     color: var(--firstColor);

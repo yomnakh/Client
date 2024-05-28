@@ -17,6 +17,7 @@ const CourseDesc = ({course}) => {
   const [lectures, setLectures] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const instructorMail = "mailto:"
   
   const handleEnrollClick = async () => {
     if (!isLoggedIn) {
@@ -75,7 +76,7 @@ const CourseDesc = ({course}) => {
             <img loading="lazy" width="35px" height="35px" className="rounded-circle object-fit-cover me-1" src={course.instructor.avatar.url} alt="instructor img" />
             <p className="text-12px mt-5px me-1 created_by ">Created by</p>
             <p>
-              <a className="created-by-instructor" href={course.instructor.email}>
+              <a className="created-by-instructor" href={`instructorMail${course.instructor.email}`}>
                 {course.instructor.name}
               </a>
             </p>

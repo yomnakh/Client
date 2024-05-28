@@ -1,70 +1,80 @@
-.Visitorlogin{
-    background-image: url(../../../Assets/visitorbg.png);
-    background-size: cover;
-    height: 250px !important;
-    width: 100%  !important;
+.Visitorlogin {
+  background-image: url(../../../Assets/visitorbg.png);
+  background-size: cover;
+  height: 250px !important;
+  width: 100% !important;
   padding: 90px !important;
+  margin: 50px 0 100px 0 !important;
 
 }
-.column3{
-    width: 180px !important;
-    text-align: center;
-    padding: 90px 0px !important;
+
+.column3 {
+  width: 180px !important;
+  text-align: center;
+  padding: 90px 0px !important;
 }
 
 .bg-success {
-    background-color: #00b8b8 !important;
-  }
-  .btn-light {
-    background-color: #fff !important;
-    color: #00b8b8 !important;
-    border-color: #fff !important;
-  }
-  
-  .btn-lg {
-    padding: 0.8rem 1.5rem !important;
-    font-size: 1.25rem !important;
-    border-radius: 0.5rem !important;
-  }
-  
-  .form-control-lg {
-    padding: 0.8rem 1rem !important;
-    font-size: 1.25rem !important;
-    border-radius: 0.5rem !important;
-  }
-  .visitor-h2{
-    margin-left: 40px !important;
-    
-  }
-.visitor-btn{
- 
-   margin-right: 60px !important;
-    text-align: center;
-    font-size: 18px !important;
+  background-color: #00b8b8 !important;
 }
-.visitor-input{
-   width: 600px !important;
-   
-    background-color: #30bead !important;
+
+.btn-light {
+  background-color: #fff !important;
+  color: #00b8b8 !important;
+  border-color: #fff !important;
 }
-.visitor-input:focus{
+
+.btn-lg {
+  padding: 0.8rem 1.5rem !important;
+  font-size: 1.25rem !important;
+  border-radius: 0.5rem !important;
+}
+
+.form-control-lg {
+  padding: 0.8rem 1rem !important;
+  font-size: 1.25rem !important;
+  border-radius: 0.5rem !important;
+}
+
+.visitor-h2 {
+  margin-left: 40px !important;
+
+}
+
+.visitor-btn {
+
+  margin-right: 60px !important;
+  text-align: center;
+  font-size: 18px !important;
+}
+
+.visitor-input {
+  width: 600px !important;
+
+  background-color: #30bead !important;
+}
+
+.visitor-input:focus {
   border: none !important;
 }
-.visitor-input::placeholder {
-    color: rgb(222, 219, 219) !important;
-    font-size: 14px !important;
-  ;
-  }
-  .visitor-icon {
-    margin-top: 16px !important;
-    font-size: 50px !important;
-   
-  }
 
-  .visitorbtn{
-    color: var(--firstColor) !important;
-    font-size: 15px !important;
-  }
-  .visitorbuttonicon{
-    color: var(--firstColor) !important;
-  }
+.visitor-input::placeholder {
+  color: rgb(222, 219, 219) !important;
+  font-size: 14px !important;
+}
+
+.visitor-icon {
+  margin-top: 16px !important;
+  font-size: 50px !important;
+
+}
+
+.visitorbtn {
+  color: var(--firstColor) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+
+.visitorbuttonicon {
+  color: var(--firstColor) !important;
+}

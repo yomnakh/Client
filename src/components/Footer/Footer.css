@@ -1,30 +1,32 @@
 .footer {
- background-image: url(../../Assets/bgg.png);
+  background-image: url(../../Assets/bgg.png);
   color: white;
-  height: 55vh ;
+  height: 55vh;
 }
-.footer-h1, .quicklinks-header,.contactus-header{
+
+.footer-h1,
+.quicklinks-header,
+.contactus-header {
   padding: 20px 0px !important;
 }
 
 .google {
-  background: conic-gradient(
-      from -45deg,
+  background: conic-gradient(from -45deg,
       #ea4335 110deg,
       #4285f4 90deg 180deg,
       #34a853 180deg 270deg,
-      #fbbc05 270deg
-    )
-    73% 55%/150% 150% no-repeat;
+      #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
-.footer-p{
+
+.footer-p {
   text-align: left !important;
   color: rgb(203, 203, 203) !important;
 }
+
 .linkedin {
   color: rgb(45, 45, 169);
 }
@@ -42,16 +44,28 @@
   color: rgb(203, 203, 203);
   line-height: 35px;
   text-align: left;
+  transition: 0.5s all ease-in;
 }
-.connection-p{
+
+.footerLinks:hover {
+  color: var(--thirdColor) !important;
+}
+
+.Quicklinksp:hover {
+  transform: translate(4%) !important;
+}
+
+.connection-p {
   margin-left: 10px !important;
 }
+
 dl,
-  ol,
-  ul {
-    padding: 0 !important;
-  }
-.connection-p{
+ol,
+ul {
+  padding: 0 !important;
+}
+
+.connection-p {
   color: rgb(203, 203, 203) !important;
 }
 
@@ -61,14 +75,16 @@ dl,
     width: 100% !important;
     width: 180px !important;
   }
-  .logo4{
-    margin-left: -200px ;
+
+  .logo4 {
+    margin-left: -200px;
   }
- 
+
 
 }
+
 @media (max-width: 576px) {
-  .footerp{
+  .footerp {
     margin: 0px !important;
   }
 }
@@ -77,10 +93,12 @@ dl,
   .footer {
     text-align: center;
   }
-  .footerp{
+
+  .footerp {
     width: 180px !important;
-    margin-left: -100px ;
+    margin-left: -100px;
   }
+
   dl,
   ol,
   ul {
@@ -88,8 +106,9 @@ dl,
     margin-bottom: 1rem;
     padding: 0 !important;
   }
+
   .logo4 {
-    margin-left: -200px ;
+    margin-left: -200px;
   }
 }
 
@@ -97,6 +116,7 @@ dl,
   .footer {
     text-align: center;
   }
+
   dl,
   ol,
   ul {
@@ -104,14 +124,16 @@ dl,
     margin-bottom: 1rem;
     padding: 0 !important;
   }
+
   h2 {
     text-align: start !important;
   }
+
   .contacts {
     text-align: left;
   }
+
   .logo4 {
-    margin-left: -120px ;
+    margin-left: -120px;
   }
 }
-

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container ,Row,Col ,Form,Button} from 'react-bootstrap'
+import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import "./Visitorlogin.css"
 import { Link } from "react-router-dom";
 
@@ -20,16 +20,16 @@ const Visitorlogin = () => {
               type="email"
               className="form-control form-control-lg mb-3 visitor-input"
               placeholder="Enter your email address"
-              style={{marginLeft:"90px"}}
-           
+              style={{ marginLeft: "90px" }}
+
             />
-           
+
           </div>
         </div>
         <div className="col-md-4 d-flex align-items-center justify-content-center">
-        <Button className='aboutbuttonn' style={{ borderRadius: "5px", fontSize: "16px", backgroundColor: "#fff", border: "none",marginLeft:"70px" ,color:""}}> <Link className='visitorbtn' to={"/register"}>Register Now</Link><i class="fas fa-arrow-right aboutbuttonicon"></i></Button>
+          <Button className='aboutbuttonn' style={{ borderRadius: "5px", fontSize: "16px", backgroundColor: "#fff", border: "none", marginLeft: "70px"}}> <Link className='visitorbtn' to={"/register"}>Register Now</Link></Button>
         </div>
-        
+
       </div>
     </div>
   )

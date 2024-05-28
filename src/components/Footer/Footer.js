@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -46,12 +47,12 @@ const Footer = () => {
 
           <Col md={4} sm={12}>
             <h2 className="quicklinks-header"> Quick Links </h2>
-            <ul className="quicklinks">
-              <li className="Quicklinksp"> Latest Courses</li>
+            <ul className="quicklinks text-center ms-2">
+              <li className="Quicklinksp ms-2"><Link to={"/courses"} className="text-light footerLinks">Join Our Courses</Link></li>
               {/* <li className="Quicklinksp">Mission & Vision</li> */}
-              <li className="Quicklinksp">Our Approach</li>
+              <li className="Quicklinksp ms-2"><Link to={"/jobs"} className="text-light footerLinks">Strat your Career</Link></li>
               {/* <li className="Quicklinksp">Exclusive Advisors</li> */}
-              <li className="Quicklinksp"> Join A Carrer </li>
+              <li className="Quicklinksp ms-2"> <Link to={"/interview"} className="text-light footerLinks">about interviews</Link></li>
             </ul>
           </Col>
           <Col md={4} sm={6}>
@@ -59,18 +60,18 @@ const Footer = () => {
             <div className=" contacts py-1">
               <li>
                 <i class="fas fa-map-marker-alt contact contacticon"></i>
-                <span className="connection-p" style={{ fontWeight: " 600" }}>
-                    123 Main Street, City, Country
+                <span className="connection-p footerLinks" style={{ fontWeight: " 600" }}>
+                  Sadat Academy, Maadi, Egypt
                 </span>
               </li>
               <li>
                 <i class="fas fa-envelope contacticon"></i>
                 <span className="connection-p" style={{ fontWeight: " 600" }}>
-                  Email: info@example.com
+                  <a href="mailto:edutrax2@gmail.com" className="text-light footerLinks" title="mail to edutrax2@gmail.com">Email: edutrax2@gmail.com</a>
                 </span>
               </li>
               <i class="fas fa-phone contacticon"></i>
-              <span className="connection-p" style={{ fontWeight: " 600" }}>
+              <span className="connection-p footerLinks" style={{ fontWeight: " 600" }}>
                 Phone: +123 456 789
               </span>
             </div>
