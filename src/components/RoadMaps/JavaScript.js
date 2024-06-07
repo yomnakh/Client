@@ -29,7 +29,7 @@ const JavaScript = () => {
                             <div className="row px-5 mb-3 mt-3" key={track.id}>
                                 <div className="col-md-1 col-lg-1 icon-col">
                                     <div className=" mt-4 p-1 text-center">
-                                        <i class={track.icon} ></i>
+                                        <i className={track.icon} ></i>
                                     </div>
                                 </div>
                                 <div className="col-md-11 col-lg-11 jump-col col-sm-12">

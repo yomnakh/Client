@@ -18,10 +18,12 @@ function Cv() {
     Education = [],
     Award = [],
     Hobbies = [],
-    URL = [],
+    url = [],
   } = CVData;
 
   const profileData = useSelector((state) => state.cv.profile);
+  const aboutData = useSelector((state) => state.cv.about);
+  const skillsData = useSelector((state) => state.cv.skills);
 
   return (
     <div className="col-8 d-none d-lg-block CVPage">
@@ -30,53 +32,53 @@ function Cv() {
           <div className="col-4 bg-blue-side">
             <img
               className="d-block rounded-pill mt-3"
-              src={image}
+              src={profileData?.image && URL.createObjectURL(profileData?.image)}
               alt=""
               style={{ width: "120px", height: "120px" }}
-              
+
             />
             <div className="neme-job my-4">
               <h4 className="text-white text-capitalize">
-                {profileData.fName === ""
+                {!profileData?.fName
                   ? "Name"
-                  : `${profileData.fName} ${profileData.lName || ""}`}
+                  : `${profileData?.fName} ${profileData?.lName || ""}`}
               </h4>
               <p className="text-capitalize">
-              {profileData.profession === ""
+                {!profileData.profession 
                   ? "profession"
                   : `${profileData.profession} `}
-              
-                
+
+
               </p>
             </div>
 
             {/* mobileNumber  */}
             <div className="info-cv">
               <p className=" phone py-1 px-2">
-              {profileData.mobileNumber === ""
+                {!profileData.mobileNumber
                   ? "mobileNumber"
                   : `${profileData.mobileNumber} `}
-              
+
               </p>
               <p className=" email py-1 px-2">
-              {profileData.email === ""
+                {!profileData.email
                   ? "Email"
                   : `${profileData.email} `}
               </p>
               <p className=" location py-1 px-2">
                 {" "}
-               
-                {profileData.city === "" 
-    ? "Location" 
-    : `${profileData.city}, ${profileData.country || ""}`}
-                
+
+                {!profileData.city 
+                  ? "Location"
+                  : `${profileData?.city || "city"}, ${profileData?.country || "country"}`}
+
               </p>
             </div>
             <div className="skills mb-5">
               <h6 className="text-white">Skills</h6>
               <ul>
-                {Skills.map((skill) => (
-                  <li key={skill}>{skill}</li>
+                {skillsData.map((skill) => (
+                  <li style={{color:"#fff"}} key={skill}>{skill}</li>
                 ))}
               </ul>
             </div>
@@ -103,7 +105,7 @@ function Cv() {
             <div className="links">
               <h6 className="text-white">Links and Credentials</h6>
               <div className="links-icon row">
-                {URL.map((link) => (
+                {url.map((link) => (
                   <a
                     href={link.url}
                     key={link.websiteName}
@@ -121,7 +123,7 @@ function Cv() {
             <div className="about mb-5">
               <h4 className="cateigry-cv">About</h4>
               <div className="line-cv mb-3"></div>
-              <p className="text-dark">{about}</p>
+              <p className="text-dark">{aboutData || "  "}</p>
             </div>
             <div className="experience">
               <div className="education mb-5">
@@ -186,9 +188,9 @@ function Cv() {
                     </h5>
                     <p className=" text-dark  text-capitalize">
                       {Experience.Position} |{" "}
-                      {Experience.From + "-" + Experience.to}
+                      {Experience.From + "-" + Experience?.to || " "}
                     </p>
-                    <p className="text-dark">{Experience.Description}</p>
+                    <p className="text-dark">{Experience?.Description}</p>
                   </div>
                 </div>
               ))}

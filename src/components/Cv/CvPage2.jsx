@@ -3,27 +3,27 @@ import Cv from "./Cv";
 import { useNavigate } from "react-router-dom";
 import image from "../../Assets/404 Page.jpg";
 import { useFormik } from "formik";
-import { setProfile } from "../../redux/slices/cv.slice";
+import { setAbout, setProfile } from "../../redux/slices/cv.slice";
 import { useDispatch, useSelector } from "react-redux";
 import "./Cv.css";
 
 function CvPage2() {
-  const Navigate = useNavigate();
 
+  const Navigate = useNavigate();
   const dispatch = useDispatch();
-  const profileData = useSelector((state) => state.cv.profile);
+  const aboutData = useSelector((state) => state.cv.about);
 
   const handleSubmit = (values) => {
     const OldData = localStorage.getItem("CvData");
     localStorage.setItem("CvData", { ...OldData, ...values, image });
-    dispatch(setProfile(values));
+    dispatch(setProfile(values.about));
   };
 
   const handleChange = (e) => {
-    dispatch(setProfile({ ...profileData, [e.target.name]: e.target.value }));
+    dispatch(setAbout(e.target.value));
   };
 
-  console.log(profileData);
+  console.log(aboutData);
   return (
     <div>
       <div className="container">
@@ -125,7 +125,7 @@ function CvPage2() {
                 cols
                 placeholder="Enter text"
                 name="about"
-                value={profileData.about}
+                value={aboutData.about}
                 onChange={handleChange}
               ></textarea>
             </div>
@@ -153,7 +153,7 @@ function CvPage2() {
             >
               Back
             </button>
-            
+
           </div>
         </div>
       </div>

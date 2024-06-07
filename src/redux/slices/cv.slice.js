@@ -7,7 +7,7 @@ export const cvSlice = createSlice({
   initialState:{
     profile:{},
     education:[],
-    experience:[],
+    experience:{},
     skills:[],
     languages:[],
     hobbies:[],
@@ -20,15 +20,22 @@ export const cvSlice = createSlice({
     website:{},
     resume:{},
     coverLetter:{},
+    about:""
   },
   reducers: {
     setProfile:(state,action)=>{
         state.profile = action.payload
-    }    
+    },
+    setAbout:(state,action)=>{
+      state.about = action.payload
+  },
+  setSkills:(state,action)=>{
+    state.skills = action.payload
+}
   },
 })
 
 // Action creators are generated for each case reducer function
-export const {setProfile } = cvSlice.actions
+export const {setProfile ,setAbout,setSkills } = cvSlice.actions
 
 export default cvSlice.reducer

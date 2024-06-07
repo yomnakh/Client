@@ -2,7 +2,7 @@ import Cv from "./Cv";
 import img from "../../Assets/404 Page.jpg";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./Cv.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setProfile } from "../../redux/slices/cv.slice";
@@ -19,8 +19,6 @@ function CvPage1() {
     localStorage.setItem("CvData", { ...OldData, ...values, image });
     dispatch(setProfile(values));
   };
-
-  console.log(profileData);
 
   const [formValues, setFormValues] = useState({
     fName: "",
@@ -48,6 +46,17 @@ function CvPage1() {
     },
     onSubmit: handleSubmit,
   });
+
+  const refImage = useRef()
+
+  function handleClickInput() {
+    refImage.current.click()
+  }
+
+  function uploadFile(e) {
+    let image = e.target.files[0]
+    dispatch(setProfile({ ...profileData, image }));
+  }
   return (
     <div>
       <div className="container">
@@ -259,7 +268,7 @@ function CvPage1() {
           <div className="row mt-3">
             <div className="col golden-dashed-border d-flex flex-column align-items-center py-5">
               <img src={img} alt="" width="80px" />
-              <p className="fw-bold mt-3">
+              <p className="fw-bold mt-3" >
                 Drag & drop files or
                 <label
                   for="personalPhoto"
@@ -271,10 +280,9 @@ function CvPage1() {
                 <input
                   type="file"
                   style={{ display: "none" }}
-                  onChange={(e) =>
-                    setImage(URL.createObjectURL(e.currentTarget.files[0]))
-                  }
+                  onChange={uploadFile}
                   id="personalPhoto"
+                  ref={refImage}
                 />
               </p>
               <p className="text-secondary small-txt">

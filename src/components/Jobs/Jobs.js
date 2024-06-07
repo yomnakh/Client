@@ -9,20 +9,30 @@ import {
   Container,
   Col,
   Row,
-  Form,
-  Stack,
+  Form
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import JobsData from "./JobsData";
+import Swal from "sweetalert2";
 
 const Jobs = () => {
   const [selectedJobType, setSelectedJobType] = useState("All");
   const [selectedSalaryRanges, setSelectedSalaryRanges] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
   const navigate = useNavigate();
 
   const handleShowDetails = (jobId) => {
-    navigate(`/JobsShow/${jobId}`);
+    if (isLoggedIn) {
+      navigate(`/JobsShow/${jobId}`);
+    }
+    else {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Not Logged In',
+        text: 'Please log in first 🙁',
+      });
+    }
   };
 
   const handleJobTypeChange = (event) => {
@@ -63,10 +73,10 @@ const Jobs = () => {
 
   const filteredJobs = JobsData.jobscard.filter(filterJobs);
   return (
-    <>
+    <div>
       <div className="firstpage-jop-bg shadow text-dark">
         <div style={{ height: "100px" }}></div>
-        <>
+        <div>
           <section className="job-screen1">
             <Container>
               <Row className="justify-content-md-center"></Row>
@@ -84,88 +94,88 @@ const Jobs = () => {
                   </span>
                 </Col>
                 <Col lg={6} className="my-4">
-                <div className="d-flex flex-lg-row mt-4 p-3">
-                  <Form.Control
-                    className="input-sub1 my-2 w-100"
-                    size="lg"
-                    type="text"
-                    placeholder="Search for job"
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                  ></Form.Control>
-                  <Button className="btn-subscribe1 my-2 h-100">Search</Button>
-                </div>
-              </Col>
+                  <div className="d-flex flex-lg-row mt-4 p-3">
+                    <Form.Control
+                      className="input-sub1 my-2 w-100"
+                      size="lg"
+                      type="search"
+                      placeholder="Search for job"
+                      value={searchTerm}
+                      onChange={handleSearchChange}
+                    ></Form.Control>
+                    <Button className="btn-subscribe1 my-2 h-100">Search</Button>
+                  </div>
+                </Col>
               </Row>
             </Container>
           </section>
-        </>
+        </div>
         <div className="container d-flex justify-content-center ">
-          <>
+          <div>
             <div className=" left-menu"/* style={{position:"fixed"}} */>
               <div className="menu-job-component1 d-lg-block d-none text-dark" >
                 <br></br>
                 <div className="m-auto menu-section1">
                   <div className="location1">
                   </div>
-                          <div className="mt-5 icons1">
-                   <div className="job-type1 ">
-                     <Form>
-                       <Form.Label className="fw-bold">Job Type</Form.Label>
-                     <Form.Select
-                         onChange={handleJobTypeChange}
-                         value={selectedJobType}
-                       >
-                         <option value="All">All</option>
-                         <option value="On-Site">On-Site</option>
-                         <option value="Remote">Remote</option>
-                       </Form.Select>
-                     </Form>
-                   </div>
-                 </div>
-                <div className="salary-range1">
-                  <Form>
-                    <Form.Label className="fw-bold">Salary Range</Form.Label>
-                    {[
-                      "under 6000 EGP",
-                      "Between 4000 & 10000",
-                      "More Than 10000 EGP",
-                    ].map((type, index) => (
-                      <div key={`default-${index}`} className="mb-3">
-                        <Form.Check
-                          type="checkbox"
-                          id={`default-${type}`}
-                          label={type}
-                          value={type}
-                          onChange={handleSalaryRangeChange}
-                        />
-                      </div>
-                    ))}
-                  </Form>
-                </div>
+                  <div className="mt-5 icons1">
+                    <div className="job-type1 ">
+                      <Form>
+                        <Form.Label className="fw-bold">Job Type</Form.Label>
+                        <Form.Select
+                          onChange={handleJobTypeChange}
+                          value={selectedJobType}
+                        >
+                          <option value="All">All</option>
+                          <option value="On-Site">On-Site</option>
+                          <option value="Remote">Remote</option>
+                        </Form.Select>
+                      </Form>
+                    </div>
+                  </div>
+                  <div className="salary-range1">
+                    <Form>
+                      <Form.Label className="fw-bold">Salary Range</Form.Label>
+                      {[
+                        "under 6000 EGP",
+                        "Between 4000 & 10000",
+                        "More Than 10000 EGP",
+                      ].map((type, index) => (
+                        <div key={`default-${index}`} className="mb-3">
+                          <Form.Check
+                            type="checkbox"
+                            id={`default-${type}`}
+                            label={type}
+                            value={type}
+                            onChange={handleSalaryRangeChange}
+                          />
+                        </div>
+                      ))}
+                    </Form>
+                  </div>
                 </div>
               </div>
-              <Link to="/app">
+              <Link to="/cv">
                 <Button className=" Create-your-cv text-white mt-5 w-100  transition mt-4 d-lg-block d-none">
                   Create your cv
                 </Button>
               </Link>
             </div>
-          </>
+          </div>
           <Container className="">
             <Row>
               <Col md={12} xs={12}>
-                <>
+                <div>
                   {filteredJobs.map((job) => (
-                    <Card 
+                    <Card
                       className="job-card-component gy-4 p-2 mb-4 shadow "
-                      style={{color:"var(--seco)"}}
+                      style={{ color: "var(--seco)" }}
                       key={job.id}
                     >
                       <Card.Body className="text-withe ">
                         <div className="row">
                           <div className="col-lg-1 col-12">
-                            <img src={jobimg} className="jobimg" />
+                            <img src={jobimg} className="jobimg" alt='img' />
                           </div>
                           <div className="col-lg-6 col-12 ms-2">
                             <h3 className="h3">{job.jobsTitle}</h3>
@@ -221,13 +231,13 @@ const Jobs = () => {
                       </Card.Body>
                     </Card>
                   ))}
-                </>
+                </div>
               </Col>
             </Row>
           </Container>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Jobs;
