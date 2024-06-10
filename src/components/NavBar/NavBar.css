@@ -1,10 +1,10 @@
 .navbar {
   width: 100% !important;
- background-color:#fff;
+  background-color: #ffffff;
 }
 
 .EduLogo {
-  width: 160px;
+  width: 170px;
 }
 
 .navbar-nav .homeNav,
@@ -12,7 +12,7 @@
   color: var(--secondColor) !important;
   padding: 7px !important;
   margin: 0 15px !important;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 18px;
 }
 
@@ -23,16 +23,16 @@
 .dropImag {
   display: flex;
   justify-content: baseline;
-  margin-top: -10px;
+  margin-top: -7px;
 }
 
-.dropImag .dropdown-menu{
+.dropImag .dropdown-menu {
   width: 200px;
 }
 
-.dropImag .dropdown-menu[data-bs-popper]{
+.dropImag .dropdown-menu[data-bs-popper] {
   left: -100px;
-  top: 65px !important; 
+  top: 57px !important;
 }
 
 .dropImag .dropdown-toggle::after {
@@ -40,7 +40,7 @@
 }
 
 .dropdown-menu {
-  top: 55px !important;
+  top: 50px !important;
 }
 
 .dropdown-menu .dropdown-item {
@@ -91,9 +91,11 @@
   background-color: var(--firstColor);
   opacity: 0.8;
 }
-.shadow-nav{
+
+.shadow-nav {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px !important;
 }
+
 @media only screen and (max-width: 1200px) {
   .offcanvas-header {
     padding: 15px 40px !important;
@@ -148,4 +150,8 @@
   font-weight: 700;
   color: var(--firstColor);
   font-size: 20px;
+}
+
+.navFormCheck .form-check-label{
+  color:var(--secondColor) !important;
 }

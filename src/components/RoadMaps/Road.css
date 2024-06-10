@@ -3,7 +3,7 @@
     background-size: cover;
     background-position: center;
     height: 250px;
-    margin-top: 82px !important;
+    margin-top: 68px !important;
     text-align: center;
     padding-top: 80px !important;
     position: relative;
@@ -66,8 +66,11 @@ p {
 }
 
 .icon {
-    font-size: 40px;
-    color: var(--firstColor);
+    font-size: 40px !important;
+    color: var(--firstColor) !important;
+    position: absolute;
+    z-index: 11111;
+    left: -200px;
 }
 
 .jumpheader {

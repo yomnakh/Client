@@ -56,7 +56,7 @@ const Learning = () => {
       </div>
       <Container>
         <Row className="d-flex mylearning-cards">
-          {filteredCourses.map((course) => (
+          {filteredCourses.length >= 1 ? (filteredCourses.map((course) => (
             <Col
               key={course._id}
               xs="12"
@@ -92,7 +92,10 @@ const Learning = () => {
                 </Card.Body>
               </Card>
             </Col>
-          ))}
+          ))) : (
+            <div className="">
+              <h3 className="learningNOCourses">No Enrolled Course Now !</h3>
+            </div>)}
         </Row>
       </Container>
     </div>

@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import Api from "../../config/api";
 import CourseVideo from './CourseVideo';
 
-const CourseDesc = ({course}) => {
+const CourseDesc = ({ course }) => {
   const { id } = useParams();
   // const [course, setCourse] = useState(null);
   const [isEnrolled, setIsEnrolled] = useState(false);
@@ -18,7 +18,7 @@ const CourseDesc = ({course}) => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const instructorMail = "mailto:"
-  
+
   const handleEnrollClick = async () => {
     if (!isLoggedIn) {
       Swal.fire({
@@ -53,7 +53,7 @@ const CourseDesc = ({course}) => {
           title: 'Error',
           text: error.response.data.message || 'An error occurred while enrolling in the course.'
         });
-        if(error.response.data.message === "Already enrolled in this course"){
+        if (error.response.data.message === "Already enrolled in this course") {
           navigate(`/courses/coursedesc/${id}/coursevideo`);
         }
       }
@@ -76,7 +76,7 @@ const CourseDesc = ({course}) => {
             <img loading="lazy" width="35px" height="35px" className="rounded-circle object-fit-cover me-1" src={course.instructor.avatar.url} alt="instructor img" />
             <p className="text-12px mt-5px me-1 created_by ">Created by</p>
             <p>
-              <a className="created-by-instructor" href={`instructorMail${course.instructor.email}`}>
+              <a className="created-by-instructor" href={"mailto:" + course.instructor.email}>
                 {course.instructor.name}
               </a>
             </p>
@@ -95,7 +95,7 @@ const CourseDesc = ({course}) => {
               <i className="fa-solid fa-calendar-days calender-icon"></i>
               <span>Last updated: {course.updatedAt}</span>
 
-              <i className="far fa-clock  -icon"></i>
+              <i className="far fa-clock  clock-icon"></i>
               <span> {course.hours} Hours</span>
             </div>
           </div>
@@ -177,7 +177,7 @@ const CourseDesc = ({course}) => {
                                 </a>
                               </li>
                               <li>
-                                <a className="instructor_linkedin">
+                                <a className="instructor_linkedin" href={"mailto:" + course.instructor.email}>
                                   <i class="fa-solid fa-envelope" title='Mail Me'></i>
                                 </a>
                               </li>
@@ -186,8 +186,8 @@ const CourseDesc = ({course}) => {
                                   𝕏
                                 </a>
                               </li>
-                              <button className="instructor_profile">
-                                View profile
+                              <button className="instructor_profile my-auto" >
+                                <a className='my-auto' href={"mailto:" + course.instructor.email}>Contact Us</a>
                               </button>
                             </ul>
                           </div>
@@ -224,7 +224,7 @@ const CourseDesc = ({course}) => {
                 <div class="info-item">
                   <i class="icon ms-0">🎓</i>
                   <span className="spanaside">Certificate</span>
-                  <span>Yes</span>
+                  <span>Soon.......</span>
                 </div>
               </div>
 

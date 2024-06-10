@@ -73,7 +73,7 @@ const LessonDash = () => {
         }
     };
     return (
-        <div>
+        <div style={{ marginLeft: "170px" }}>
             <div>
                 <Alert variant="success" className='w-75 mx-auto mt-2 d-flex justify-content-between'>
                     <h6>Select Course To Show , ADD , Update and Delete Course Lessons </h6>
@@ -100,11 +100,11 @@ const LessonDash = () => {
                                 <tr key={lecture._id}>
                                     <td className='text-dark bg-light'>{lecture.name}</td>
                                     <td className='text-dark bg-light'>{lecture.link}</td>
-                                    <td className='text-dark bg-light'>
-                                        <Button onClick={() => { setEditLecture(lecture); setShowEditModal(true); }}>Edit</Button>
+                                    <td className='text-dark bg-light mx-auto'>
+                                        <Button className='quiz-edit-btn mx-auto' onClick={() => { setEditLecture(lecture); setShowEditModal(true); }}>Update</Button>
                                     </td>
                                     <td className='text-dark bg-light'>
-                                        <Button className='btn-danger' onClick={() => handleDeleteLecture(lecture._id)}>Delete</Button>
+                                        <Button className='delete-btn mx-auto' onClick={() => handleDeleteLecture(lecture._id)}>Delete</Button>
                                     </td>
                                 </tr>
                             ))}
@@ -120,29 +120,29 @@ const LessonDash = () => {
 
             <Modal className='dash-model' show={showAddModal} onHide={() => setShowAddModal(false)}>
                 <Modal.Header closeButton>
-                    <Modal.Title className='modal-title'>Add Lecture</Modal.Title>
+                    <Modal.Title className='modal-title' style={{fontWeight:"600"}}>Add Lecture</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='d-flex flex-column'>
                     <input type="text" className='border rounded my-4 p-2' placeholder="Lesson Name......." value={newLecture.name} onChange={(e) => setNewLecture({ ...newLecture, name: e.target.value })} />
                     <input type="text" className='border rounded p-2' placeholder="Lesson Link......." value={newLecture.link} onChange={(e) => setNewLecture({ ...newLecture, link: e.target.value })} />
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={() => setShowAddModal(false)}>Close</Button>
-                    <Button variant="primary" onClick={handleAddLecture}>Add Lecture</Button>
+                <Modal.Footer className='justify-content-between'>
+                    <Button className="quiz-edit-btn" onClick={handleAddLecture}>Add Lecture</Button>
+                    <Button className='delete-btn' onClick={() => setShowAddModal(false)}>Close</Button>
                 </Modal.Footer>
             </Modal>
 
             <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Edit Lecture</Modal.Title>
+                <Modal.Header closeButton >
+                    <Modal.Title style={{fontWeight:"600"}}>Edit Lecture</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='d-flex flex-column'>
                     <input type="text" className='border rounded my-4 p-2' placeholder="Name" value={editLecture?.name || ''} onChange={(e) => setEditLecture({ ...editLecture, name: e.target.value })} />
                     <input type="text" className='border rounded p-2' placeholder="Link" value={editLecture?.link || ''} onChange={(e) => setEditLecture({ ...editLecture, link: e.target.value })} />
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={() => setShowEditModal(false)}>Close</Button>
-                    <Button variant="primary" onClick={handleEditLecture}>Save</Button>
+                <Modal.Footer className="d-flex justify-content-between">
+                    <Button className="quiz-edit-btn" onClick={handleEditLecture}>Update</Button>
+                    <Button className='delete-btn' onClick={() => setShowEditModal(false)}>Close</Button>
                 </Modal.Footer>
             </Modal>
         </div>

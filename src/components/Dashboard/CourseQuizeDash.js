@@ -79,19 +79,36 @@ function CourseQuizeDash() {
 
     const clearForm = () => {
         setName("");
-        setQuestions([]);
+        setQuestions([{ text: "", answers: [{ text: "" }], correctAnswerIndex: 0 }]);
     };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        // Debug statements to check values before validation
-        console.log("Name:", name);
-        console.log("Questions:", questions);
-        console.log("Course:", selectedCourse);
+        // Validate questions
+        if (questions.some(question => !question.text)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Validation Error',
+                text: 'Please fill out all questions before submitting the quiz.',
+            });
+            return;
+        }
+
+        // Check if a course is selected
+        if (!selectedCourse) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Validation Error',
+                text: 'Please select a course for the quiz.',
+            });
+            return;
+        }
 
         // Create a new quiz object with the provided data
         const newQuiz = {
             name,
+            course: selectedCourse, // Include the selected course ID
             questions: questions.map((question, index) => ({
                 question: question.text,
                 answers: question.answers.map((answer, answerIndex) => ({
@@ -99,17 +116,12 @@ function CourseQuizeDash() {
                     index: answerIndex  // Assigning index to each answer
                 })),
                 correctAnswerIndex: question.correctAnswerIndex
-            })),
-            course: selectedCourse
+            }))
         };
 
         try {
             if (editedIndex !== null) {
-                console.log(currentQuizId);
                 await Api.put(`/coursequiz/${currentQuizId}`, newQuiz);
-                const updatedQuizzes = [...quizzes];
-                updatedQuizzes[editedIndex] = newQuiz;
-                setQuizzes(updatedQuizzes);
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
@@ -118,7 +130,6 @@ function CourseQuizeDash() {
                 });
             } else {
                 await Api.post("/coursequiz", newQuiz);
-                setQuizzes([...quizzes, newQuiz]);
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
@@ -128,7 +139,10 @@ function CourseQuizeDash() {
             }
             handleClose();
             clearForm();
-            console.log("Quiz added successfully");
+
+            // Fetch the updated list of quizzes from the server
+            const response = await Api.get('/coursequiz');
+            setQuizzes(response.data);
         } catch (error) {
             console.error('Error saving quiz:', error);
             Swal.fire({
@@ -139,8 +153,10 @@ function CourseQuizeDash() {
         }
     };
 
+
     const handleEdit = (quiz) => {
         setName(quiz.name);
+        setSelectedCourse(quiz.course); // Set the selected course
         setQuestions(quiz.questions.map((question, index) => ({
             text: question.question,
             answers: question.answers.map(answer => ({ text: answer.text })),
@@ -151,7 +167,6 @@ function CourseQuizeDash() {
         setEditedIndex(quizzes.indexOf(quiz));
         setIsAddFormVisible(true);
     };
-
 
     const handleDelete = async (quizId) => {
         try {
@@ -195,7 +210,7 @@ function CourseQuizeDash() {
                 <FormGroup className="mb-3">
                     <Form.Label className='modal-data' htmlFor={`question-${index}`}>Question</Form.Label>
                     <Form.Control
-                       className="input-modal"
+                        className="input-modal"
                         type="text"
                         placeholder="Enter Question"
                         id={`question-${index}`}
@@ -208,7 +223,7 @@ function CourseQuizeDash() {
                     <FormGroup key={answerIndex} className="mb-3">
                         <Form.Label className='modal-data' htmlFor={`answer-${index}-${answerIndex}`}>Answer</Form.Label>
                         <Form.Control
-                           className="input-modal"
+                            className="input-modal"
                             type="text"
                             placeholder="Enter Answer"
                             id={`answer-${index}-${answerIndex}`}
@@ -217,13 +232,13 @@ function CourseQuizeDash() {
                             value={answer.text}
                             onChange={(event) => handleInputChange(event, index)}
                         />
-                        <Button  className="Delete-Answer-btn" onClick={() => handleDeleteAnswer(index, answerIndex)}>Delete</Button>
+                        <Button className="Delete-Answer-btn" onClick={() => handleDeleteAnswer(index, answerIndex)}>Delete</Button>
                     </FormGroup>
                 ))}
                 <FormGroup className="mb-3">
                     <Form.Label className='modal-data' htmlFor={`correctAnswerIndex-${index}`}>Correct Answer Index</Form.Label>
                     <Form.Control
-                       className="input-modal"
+                        className="input-modal"
                         as="select"
                         id={`correctAnswerIndex-${index}`}
                         name="correctAnswerIndex"
@@ -235,16 +250,17 @@ function CourseQuizeDash() {
                         ))}
                     </Form.Control>
                 </FormGroup>
-                <Button className="Add-Answer-btn" onClick={() => handleAddAnswer(index)}>ADD </Button>
+                <Button className="Add-Answer-btn ms-3" onClick={() => handleAddAnswer(index)}>ADD Answer </Button>
             </div>
         ));
     };
+
     const filteredQuizzes = quizzes.filter(quiz =>
-        quiz.name.toLowerCase().includes(searchQuery.toLowerCase())
+        quiz.name && quiz.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     return (
-        <div>
+        <div style={{ marginLeft: "170px" }} className="backdashimg">
             <div className=" mb-3 w-75 mx-auto mt-5 d-flex">
                 <input
                     type="search"
@@ -253,13 +269,13 @@ function CourseQuizeDash() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-75 mx-auto border rounded"
                 />
-                <Button  onClick={handleShow} className="m-auto add-quiz-btn">
-                    Add Quiz
+                <Button onClick={handleShow} className="m-auto add-quiz-btn">
+                    Add Exam
                 </Button>
             </div>
-            <Modal  className='dash-model' show={isAddFormVisible} onHide={handleClose}>
+            <Modal className='dash-model' show={isAddFormVisible} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title className='modal-title'>{editedIndex !== null ? "Edit Quiz" : "Add Quiz"}</Modal.Title>
+                    <Modal.Title className='modal-title' style={{fontWeight:"600"}}>{editedIndex !== null ? "Edit Exam" : "Add Exam"}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
@@ -290,15 +306,15 @@ function CourseQuizeDash() {
                             </Form.Control>
                         </FormGroup>
                         {renderQuestions()}
-                        <Button  className="add-question-btn" onClick={handleAddQuestion}>Add Question</Button>
+                        <Button className="add-question-btn" onClick={handleAddQuestion}>Add Question</Button>
                     </Form>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button className="close-btn" onClick={handleClose}>
-                        Close
-                    </Button>
+                <Modal.Footer className="justify-content-between">
                     <Button className="save-changes-btn" type="submit" onClick={handleSubmit}>
-                        Save Changes
+                        Save Exam
+                    </Button>
+                    <Button className="bg-danger" onClick={handleClose}>
+                        Close
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -306,9 +322,9 @@ function CourseQuizeDash() {
             <Table striped bordered className='w-75 mx-auto'>
                 <thead>
                     <tr className="text-center">
-                        <th className='tablehead'>ID</th>
-                        <th className='tablehead'>Name</th>
-                        <th className='tablehead' colSpan={2}>Actions</th>
+                        <th className="tablehead">ID</th>
+                        <th className="tablehead">Name</th>
+                        <th className="tablehead" colSpan={2}>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -317,12 +333,12 @@ function CourseQuizeDash() {
                             <td>{quiz._id}</td>
                             <td>{quiz.name}</td>
                             <td>
-                                <Button  className="quiz-edit-btn px-3 m-auto" size="sm" onClick={() => handleEdit(quiz)}>
+                                <Button className="quiz-edit-btn px-3 m-auto" size="sm" onClick={() => handleEdit(quiz)}>
                                     Edit
                                 </Button>
                             </td>
                             <td>
-                                <Button className='delete-btn' size="sm" onClick={() => handleDelete(quiz._id)}>
+                                <Button className="delete-btn" size="sm" onClick={() => handleDelete(quiz._id)}>
                                     Delete
                                 </Button>
                             </td>
@@ -335,4 +351,7 @@ function CourseQuizeDash() {
 }
 
 export default CourseQuizeDash;
+
+
+
 

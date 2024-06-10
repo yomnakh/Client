@@ -94,7 +94,7 @@ const Jobs = () => {
                   </span>
                 </Col>
                 <Col lg={6} className="my-4">
-                  <div className="d-flex flex-lg-row mt-4 p-3">
+                  <div className="d-flex flex-lg-row mt-1 p-3">
                     <Form.Control
                       className="input-sub1 my-2 w-100"
                       size="lg"

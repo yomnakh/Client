@@ -47,7 +47,7 @@ const StudentDash = () => {
   );
 
   return (
-    <div>
+    <div style={{ marginLeft: "250px" }}>
       <Form.Control
         type="text"
         placeholder="Search by Student ID"
@@ -56,7 +56,7 @@ const StudentDash = () => {
         className='w-50 mx-auto  dashboard-search'
 
       />
-      <Table striped bordered className='w-75 mx-auto'>
+      <Table striped bordered className='w-100 mx-auto'>
         <thead>
           <tr className='text-center'>
             <th className='tablehead'>ID</th>

@@ -13,124 +13,124 @@ const Dashboard = () => {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const userRole = userData ? userData.role : null;
     return (
-        <div className='container-fluid dshh' style={{ height: "100vh" }}>
+        <div className='container-fluid dshh dash'>
             <div className='row'>
-                    {isLoggedIn && userData.role === "admin" && (
-                        <div className={`interview shadow col-auto col-md-2 min-vh-100 d-flex justify-content-between flex-column`}>
-                            <div className='interviewSide'>
+                {isLoggedIn && userData.role === "admin" && (
+                    <div className={`interview dash-side shadow col-auto col-md-2 min-vh-100 d-flex justify-content-between flex-column`}>
+                        <div className='interviewSide dashAside'>
+                            <hr className='text-secondary' />
+                            <Link className='text-decoration-none text-white  d-flex justify-content-evenly align-content-center' style={{ marginTop: "100px" }}>
+                                {/* <i class="fa-solid fa-gauge interviewIcon"></i> */}
+                                <span className=' d-none d-sm-inline interviewSpan dash-header m-auto'>Dashboard</span>
+                            </Link>
+                            <hr className='text-secondary' />
+                            <ul className="nav nav-pills flex-column">
+                                <li className="nav-item text-white  mb-2">
+                                    <Link to={"students"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
+                                        <i class="fa-solid fa-users interviewIcon"></i>
+                                        <span className=' d-none d-sm-inline interviewSpan'>Students</span>
+                                    </Link>
+                                </li>
+
                                 <hr className='text-secondary' />
-                                <Link className='text-decoration-none text-white  d-flex justify-content-evenly align-content-center' style={{ marginTop: "100px" }}>
-                                    {/* <i class="fa-solid fa-gauge interviewIcon"></i> */}
-                                    <span className=' d-none d-sm-inline interviewSpan dash-header m-auto'>Dashboard</span>
-                                </Link>
+
+                                <li className="nav-item text-white  mb-2">
+                                    <Link to={"instructors"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
+                                        <i class="fa-solid fa-user-tie interviewIcon"></i>
+                                        <span className=' d-none d-sm-inline interviewSpan'>Instructor</span>
+                                    </Link>
+                                </li>
+
                                 <hr className='text-secondary' />
-                                <ul className="nav nav-pills flex-column">
-                                    <li className="nav-item text-white  mb-2">
-                                        <Link to={"students"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
-                                            <i class="fa-solid fa-users interviewIcon"></i>
-                                            <span className=' d-none d-sm-inline interviewSpan'>Students</span>
-                                        </Link>
-                                    </li>
 
-                                    <hr className='text-secondary' />
+                                <li className="nav-item text-white ">
+                                    <Link to={"courses"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
+                                        <i class="fa-solid fa-laptop-code interviewIcon"></i>
+                                        <span className=' d-none d-sm-inline interviewSpan'>Courses</span>
+                                    </Link>
+                                </li>
+                                <hr className='text-secondary' />
 
-                                    <li className="nav-item text-white  mb-2">
-                                        <Link to={"instructors"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
-                                            <i class="fa-solid fa-user-tie interviewIcon"></i>
-                                            <span className=' d-none d-sm-inline interviewSpan'>Instructor</span>
-                                        </Link>
-                                    </li>
-
-                                    <hr className='text-secondary' />
-
-                                    <li className="nav-item text-white ">
-                                        <Link to={"courses"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
-                                            <i class="fa-solid fa-laptop-code interviewIcon"></i>
-                                            <span className=' d-none d-sm-inline interviewSpan'>Courses</span>
-                                        </Link>
-                                    </li>
-                                    <hr className='text-secondary' />
-
-                                    <li className="nav-item text-white ">
-                                        <Link to={"lessons"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
-                                            <i class="fa-regular fa-file-video interviewIcon"></i>
-                                            <span className=' d-none d-sm-inline interviewSpan'>Lessons</span>
-                                        </Link>
-                                    </li>
-                                    <hr className='text-secondary' />
+                                <li className="nav-item text-white ">
+                                    <Link to={"lessons"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
+                                        <i class="fa-regular fa-file-video interviewIcon"></i>
+                                        <span className=' d-none d-sm-inline interviewSpan'>Lessons</span>
+                                    </Link>
+                                </li>
+                                <hr className='text-secondary' />
 
 
-                                    <li className="nav-item text-white">
-                                        <Link to={"quizzes"} className="nav-link  text-white  d-flex justify-content-evenly align-content-center" aria-current="page">
-                                            <i class="fa-regular fa-circle-question interviewIcon"></i>
-                                            <span className=' d-none d-sm-inline interviewSpan'>Quizzes</span>
-                                        </Link>
-                                    </li>
+                                <li className="nav-item text-white">
+                                    <Link to={"quizzes"} className="nav-link  text-white  d-flex justify-content-evenly align-content-center" aria-current="page">
+                                        <i class="fa-regular fa-circle-question interviewIcon"></i>
+                                        <span className=' d-none d-sm-inline interviewSpan'>Quizzes</span>
+                                    </Link>
+                                </li>
 
 
-                                    <hr className='text-secondary' />
+                                <hr className='text-secondary' />
 
 
-                                    <li className="nav-item text-white ">
-                                        <Link to={"course-quizzes"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
-                                            <i class="fa-solid fa-file-circle-question interviewIcon"></i>
-                                            <span className=' d-none d-sm-inline interviewSpan'>Course Quiz</span>
-                                        </Link>
-                                    </li>
+                                <li className="nav-item text-white ">
+                                    <Link to={"course-quizzes"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
+                                        <i class="fa-solid fa-file-circle-question interviewIcon"></i>
+                                        <span className=' d-none d-sm-inline interviewSpan'>Course Exam</span>
+                                    </Link>
+                                </li>
 
-                                </ul>
-                            </div>
-
+                            </ul>
                         </div>
-                    )}
-                    {isLoggedIn && userData.role === "instructor" && (
-                        <div className={`interview shadow col-auto col-md-2 min-vh-100 d-flex justify-content-between flex-column`}>
-                            <div className='interviewSide'>
+
+                    </div>
+                )}
+                {isLoggedIn && userData.role === "instructor" && (
+                    <div className={`interview  dash-side shadow col-auto col-md-2 min-vh-100 d-flex justify-content-between flex-column`}>
+                        <div className='interviewSide'>
+                            <hr className='text-secondary' />
+                            <Link className='text-decoration-none text-white  d-flex justify-content-evenly align-content-center' style={{ marginTop: "90px" }}>
+                                {/* <i class="fa-solid fa-gauge interviewIcon"></i> */}
+                                <span className=' d-none d-sm-inline interviewSpan dash-header1 mb-3'>Dashboard</span>
+                            </Link>
+                            <ul className="nav nav-pills flex-column">
                                 <hr className='text-secondary' />
-                                <Link className='text-decoration-none text-white  d-flex justify-content-evenly align-content-center' style={{ marginTop: "120px" }}>
-                                    <i class="fa-solid fa-gauge interviewIcon"></i>
-                                    <span className=' d-none d-sm-inline interviewSpan '>Dashboard</span>
-                                </Link>
-                                <ul className="nav nav-pills flex-column">
-                                    <hr className='text-secondary' />
-                                    <li className="nav-item text-white ">
-                                        <Link to={"courses"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
-                                            <i class="fa-solid fa-laptop-code interviewIcon"></i>
-                                            <span className=' d-none d-sm-inline interviewSpan'>Courses</span>
-                                        </Link>
-                                    </li>
+                                <li className="nav-item text-white ">
+                                    <Link to={"courses"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
+                                        <i class="fa-solid fa-laptop-code interviewIcon"></i>
+                                        <span className=' d-none d-sm-inline interviewSpan'>Courses</span>
+                                    </Link>
+                                </li>
 
-                                    <hr className='text-secondary' />
+                                <hr className='text-secondary' />
 
-                                    <li className="nav-item text-white ">
-                                        <Link to={"lessons"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
-                                            <i class="fa-regular fa-file-video interviewIcon"></i>
-                                            <span className=' d-none d-sm-inline interviewSpan'>Lessons</span>
-                                        </Link>
-                                    </li>
-                                    <hr className='text-secondary' />
+                                <li className="nav-item text-white ">
+                                    <Link to={"lessons"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
+                                        <i class="fa-regular fa-file-video interviewIcon"></i>
+                                        <span className=' d-none d-sm-inline interviewSpan'>Lessons</span>
+                                    </Link>
+                                </li>
+                                <hr className='text-secondary' />
 
 
-                                    <li className="nav-item text-white ">
-                                        <Link to={"course-quizzes"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
-                                            <i class="fa-solid fa-file-circle-question interviewIcon"></i>
-                                            <span className=' d-none d-sm-inline interviewSpan'>Course Quiz</span>
-                                        </Link>
-                                    </li>
+                                <li className="nav-item text-white ">
+                                    <Link to={"course-quizzes"} className="nav-link  text-white d-flex justify-content-evenly align-content-center" aria-current="page">
+                                        <i class="fa-solid fa-file-circle-question interviewIcon"></i>
+                                        <span className=' d-none d-sm-inline interviewSpan'>Course Exam</span>
+                                    </Link>
+                                </li>
 
-                                    <hr className='text-secondary' />
-                                </ul>
-                            </div>
+                                <hr className='text-secondary' />
+                            </ul>
                         </div>
-                    )}
-                    {
-                        isLoggedIn&& userData.role === "student"&&(
-                            <div style={{height:"100vh"}}>
-                            <ErrorPage/>
-                            </div>
-                        )
-                    }
-                <div style={{ marginTop: "100px" }} className='dashContent col-auto col-md-10'>
+                    </div>
+                )}
+                {
+                    isLoggedIn && userData.role === "student" && (
+                        <div style={{ height: "100vh" }}>
+                            <ErrorPage />
+                        </div>
+                    )
+                }
+                <div style={{ marginTop: "100px" }} className='dashContent col-auto col-md-10 mx-auto'>
                     {
                         userData.role === "admin" && (<Routes>
                             <Route path="/students" element={<StudentDash />} />
@@ -145,7 +145,7 @@ const Dashboard = () => {
                         <Route path="/course-quizzes" element={<CourseQuizeDash />} />
                         <Route path="/lessons" element={<LessonDash />} />
                     </Routes>)}
-                    
+
                 </div>
             </div>
         </div>

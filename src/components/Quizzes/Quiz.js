@@ -3,6 +3,7 @@ import { Container, Card, ProgressBar, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import done from "../../Assets/icons8-check.gif";
 import "./quiz.css";
+import Swal from "sweetalert2";
 
 const Quiz = () => {
   const { type } = useParams();
@@ -15,6 +16,7 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [quizName, setQuizName] = useState("");
   const [selectedAnswers, setSelectedAnswers] = useState([]);
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
   useEffect(() => {
     const fetchQuizData = async () => {
@@ -53,8 +55,16 @@ const Quiz = () => {
   }, [currentQuestionIndex]);
 
   const handleStartQuiz = () => {
+    if(isLoggedIn){
     setIsQuizStarted(true);
     setCurrentQuestionIndex(0);
+    }else{
+      Swal.fire({
+        icon: 'warning',
+        title: 'Not Logged In',
+        text: 'Please log in first 🙁',
+    });
+    }
   };
 
   const handleNextQuestion = () => {
@@ -120,7 +130,7 @@ const Quiz = () => {
         )}
         {!isQuizStarted && (
           <div className=" start-quiz">
-            <h1 className="welcome-quiz-h">Welcome to the Exam!</h1>
+            <h1 className="welcome-quiz-h">Welcome to the Quiz!</h1>
             <p className="welcome-quiz-p">
               Let's put your expertise to the test on the track. Are you ready
               to prove your <br /> knowledge in action?

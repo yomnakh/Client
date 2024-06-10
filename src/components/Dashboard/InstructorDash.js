@@ -116,7 +116,7 @@ const InstructorDash = () => {
   });
 
   return (
-    <div>
+    <div style={{marginLeft:"200px"}}>
       <div className="mb-3 w-75 mx-auto mt-5 d-flex">
         <Form.Control
           type="text"
@@ -125,7 +125,7 @@ const InstructorDash = () => {
           onChange={handleSearch}
           className='dashboard-search'
         />
-        <Button  onClick={handleShow} className='ms-4  add-instructor-btn' style={{ width: "200px" }}>
+        <Button onClick={handleShow} className='ms-4  add-instructor-btn' style={{ width: "200px" }}>
           Add Instructor
         </Button>
       </div>
@@ -160,7 +160,7 @@ const InstructorDash = () => {
                 <td className='text-dark bg-light table-email'>{instructor.email}</td>
                 <td className='text-dark bg-light'>
                   <Button
-                     className='delete-btn'
+                    className='delete-btn'
                     size="sm"
                     onClick={() => deleteInstructor(instructor._id)}
                   >
@@ -217,13 +217,13 @@ const InstructorDash = () => {
           </Form>
         </Modal.Body>
         <Modal.Footer className='d-flex justify-content-around'>
-        <Button className='close-model-btn' onClick={handleClose}>
+          <Button className='close-model-btn' onClick={handleClose}>
             Close
           </Button>
           <Button className='save-model-btn' type="submit" onClick={handleSubmit}>
             Save
           </Button>
-         
+
         </Modal.Footer>
       </Modal>
     </div>
