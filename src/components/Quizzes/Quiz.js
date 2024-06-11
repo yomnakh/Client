@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import done from "../../Assets/icons8-check.gif";
 import "./quiz.css";
 import Swal from "sweetalert2";
-
 const Quiz = () => {
   const { type } = useParams();
   const [isQuizStarted, setIsQuizStarted] = useState(false);
@@ -17,7 +16,6 @@ const Quiz = () => {
   const [quizName, setQuizName] = useState("");
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
   useEffect(() => {
     const fetchQuizData = async () => {
       try {
@@ -36,14 +34,11 @@ const Quiz = () => {
         console.error(error);
       }
     };
-
     fetchQuizData();
   }, [type]);
-
   useEffect(() => {
     setTimeRemaining(quizTime);
   }, []);
-
     useEffect(() => {
     // Start the timer when a question is selected
     if (currentQuestionIndex !== null) {
@@ -53,7 +48,6 @@ const Quiz = () => {
       return () => clearInterval(timer);
     }
   }, [currentQuestionIndex]);
-
   const handleStartQuiz = () => {
     if(isLoggedIn){
     setIsQuizStarted(true);
@@ -66,7 +60,6 @@ const Quiz = () => {
     });
     }
   };
-
   const handleNextQuestion = () => {
     if (selectedAnswerIndex !== null) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
@@ -74,18 +67,15 @@ const Quiz = () => {
       setSelectedAnswerIndex(null);
     }
   };
-
   const handlePreviousQuestion = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex((prevIndex) => prevIndex - 1);
       setSelectedAnswerIndex(null);
     }
   };
-
   const handleAnswerSelection = (index) => {
     setSelectedAnswerIndex(index);
   };
-
   const calculateScore = () => {
     let score = 0;
     selectedAnswers.forEach((selectedIndex, index) => {
@@ -95,7 +85,6 @@ const Quiz = () => {
     });
     return score;
   };
-
   const handleQuizSubmit = () => {
     const score = calculateScore();
     console.log("Selected Answers:", selectedAnswers);
@@ -103,7 +92,6 @@ const Quiz = () => {
     setScore(score);
     setCurrentQuestionIndex(null);
   };
-
   const handleRestartQuiz = () => {
     setIsQuizStarted(false);
     setCurrentQuestionIndex(null);
@@ -111,15 +99,12 @@ const Quiz = () => {
     setSelectedAnswers([]);
     setScore(0);
   };
-
-
   const currentQuestion = quizData[currentQuestionIndex];
   const isLastQuestion = currentQuestionIndex === quizData.length - 1;
   const progressPercentage =
     currentQuestionIndex !== null
       ? ((currentQuestionIndex + 1) / quizData.length) * 100
       : 0;
-
   return (
     <div className="quiz-wrapper">
       <Container className="quiz-container">

@@ -24,6 +24,10 @@ function Cv() {
   const profileData = useSelector((state) => state.cv.profile);
   const aboutData = useSelector((state) => state.cv.about);
   const skillsData = useSelector((state) => state.cv.skills);
+  const experienceData = useSelector((state) => state.cv.experience);
+  const hobbiesData = useSelector((state) => state.cv.hobbies);
+  const linksData = useSelector((state) => state.cv.links);
+
 
   return (
     <div className="col-8 d-none d-lg-block CVPage">
@@ -43,12 +47,10 @@ function Cv() {
                   ? "Name"
                   : `${profileData?.fName} ${profileData?.lName || ""}`}
               </h4>
-              <p className="text-capitalize">
+              <p className="text-capitalize text-white">
                 {!profileData.profession 
                   ? "profession"
                   : `${profileData.profession} `}
-
-
               </p>
             </div>
 
@@ -97,15 +99,15 @@ function Cv() {
             <div className="hobbies mb-5">
               <h6 className="text-white">Hobbies & Interest</h6>
               <ul>
-                {Hobbies.map((Hobby) => (
-                  <li key={Hobby}>{Hobby}</li>
+                {hobbiesData.map((Hobby) => (
+                  <li style={{color:"#fff"}} key={Hobby}>{Hobby}</li>
                 ))}
               </ul>
             </div>
             <div className="links">
               <h6 className="text-white">Links and Credentials</h6>
               <div className="links-icon row">
-                {url.map((link) => (
+                {linksData.map((link) => (
                   <a
                     href={link.url}
                     key={link.websiteName}
@@ -119,8 +121,8 @@ function Cv() {
               </div>
             </div>
           </div>
-          <div className="col-7 bg-white">
-            <div className="about mb-5">
+          <div className="col-7 bg-white p-4">
+            <div className="about-cv ">
               <h4 className="cateigry-cv">About</h4>
               <div className="line-cv mb-3"></div>
               <p className="text-dark">{aboutData || "  "}</p>

@@ -1,6 +1,8 @@
 import React from 'react'
 import Cv from './Cv'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import { setLinks } from "../../redux/slices/cv.slice";
 import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
 import { useState } from 'react'
@@ -13,6 +15,30 @@ import "./Cv.css";
 function CvPage8() {
     const Navigate = useNavigate()
       const [loader, setLoader] = useState(false);
+      const dispatch = useDispatch();
+  const linksData = useSelector((state) => state.cv.links);
+  const [skillsArr, setLinksArr] = useState([])
+
+  const handleChange = (value, index) => {
+    let temp = [...linksData]
+    temp[index] = value
+    dispatch(setLinks(temp));
+  };
+  const handleSubmit = () => {
+    const OldData = localStorage.getItem('CvData');
+    localStorage.setItem('CvData', { ...OldData, Links: linksData });
+    // You might want to dispatch an action to update profile data in Redux store
+
+    Navigate('/CV/Form4'); // Navigate to the next form
+  };
+  const addLinkField = () => {
+    dispatch(setLinks([...linksData, '']))
+  };
+  const removeLinkField = (index) => {
+    const updatedLinks = linksData.filter((_, i) => i !== index);
+    dispatch(setLinks(updatedLinks));
+  };
+console.log(linksData);
 
   const downloadPDF = () =>{
     const capture = document.querySelector('.CVPage');
@@ -64,14 +90,9 @@ const onSubmit = (values) => {
     formik.setValues({ ...formik.values, URL: updatedForms });
   };
 return (
-    <div>
+    <div style={{marginTop:"100px"}}>
     <div className="container">
         <div className="row">
-            <div className="col-12">
-                <p className="my-2">Create CV</p>
-                <div className="gold-border"></div>
-                <p className="pt-2">6th June 2023</p>
-            </div>
         </div>
     </div>
     {/* End small title */}
@@ -91,23 +112,23 @@ return (
     <div className="container px-4 py-4 background-transparent rounded d-none d-lg-block">
     <div className="row">
         <div className="col d-flex align-items-center" onClick={()=> Navigate('/CV/Form4')}>
-            <div className="btn-golden-border me-3 bg-warning">4</div>
+            <div className="btn-golden-border me-3 createcv-active">4</div>
             <span className="text-uppercase">Experience</span>
         </div>
         <div className="col d-flex align-items-center" onClick={()=> Navigate('/CV/Form5')}>
-            <div className="btn-golden-border me-3 bg-warning">5</div>
+            <div className="btn-golden-border me-3 createcv-active">5</div>
             <span className="text-uppercase">education</span>
         </div>
         <div className="col d-flex align-items-center" onClick={()=> Navigate('/CV/Form6')}>
-            <div className="btn-golden-border me-3 bg-warning">6</div>
+            <div className="btn-golden-border me-3 createcv-active">6</div>
             <span className="text-uppercase">Honers & Awards</span>
         </div>
         <div className="col d-flex align-items-center" onClick={()=> Navigate('/CV/Form7')}>
-            <div className="btn-golden-border me-3 bg-warning">7</div>
+            <div className="btn-golden-border me-3 createcv-active">7</div>
             <span className="text-uppercase">Hobbies & Interest</span>
         </div>
         <div className="col d-flex align-items-center" onClick={()=> Navigate('/CV/Form8')}>
-            <div className="btn-golden-border me-3 bg-warning">8</div>
+            <div className="btn-golden-border me-3 createcv-active">8</div>
             <span className="text-uppercase">Links</span>
         </div>
     </div>
@@ -127,44 +148,44 @@ return (
     <div className="container mt-4 px-4 py-4 background-transparent rounded form-container d-lg-flex">
     
     <form  className="col-12 col-lg-4 me-lg-5">
-      <p>Links</p>
-      {formik.values.URL.map((form, index) => (
-        <div key={form.id} className="d-lg-flex p-2">
+      <h5>Links</h5>
+      {linksData.map((link, index) => (
+        <div key={link.id} className="d-lg-flex p-2">
           <div className="form-group col-12 col-lg-4">
-            <label className="d-block mb-2" htmlFor={`websiteName-${index}`}>
+            <h6 className="d-block mb-2" htmlFor={`websiteName-${index}`}>
               Website Name
-            </label>
+            </h6>
             <input 
               type="text"
               id={`websiteName-${index}`}
               name={`URL[${index}].websiteName`}
               value={formik.values.URL[index].websiteName}
-              onChange={formik.handleChange}
-              onBlur={formik.handleSubmit}
+              onChange={handleChange}
+              onBlur={handleSubmit}
               className="col-12"
-              onInput={formik.handleSubmit}
+              onInput={handleSubmit}
             />
           </div>
           <div className="form-group col-12 col-lg-7">
-            <label className="d-block mb-2 ms-lg-4" htmlFor={`url-${index}`}>
+            <h6 className="d-block mb-2 ms-lg-4" htmlFor={`url-${index}`}>
               URL
-            </label>
+            </h6>
             <input 
               type="text"
               id={`url-${index}`}
               name={`URL[${index}].url`}
               value={formik.values.URL[index].url}
-              onChange={formik.handleChange}
-              onBlur={formik.handleSubmit}
-              onInput={formik.handleSubmit}
+              onChange={handleChange}
+              onBlur={handleSubmit}
+              onInput={handleSubmit}
               className="col-11 ms-4"
             />
           </div>
           <button
             type="button"
             className="border-0 mt-4 ms-2 pt-2"
-            style={{ backgroundColor: "transparent", color: "#BF9B30" }}
-            onClick={() => deleteForm(form.id)}
+            style={{ backgroundColor: "transparent", color: "#1b3f6b" }}
+            onClick={() => removeLinkField(link.id)}
           >
             <FontAwesomeIcon className="fs-5" icon={faTrashCan} />
           </button>
@@ -173,13 +194,13 @@ return (
 
       <button
         type="button"
-        className="me-2 pe-1 border-0"
-        style={{ backgroundColor: "transparent", color: "#BF9B30" }}
-        onClick={addForm}
+        className=" pe-1 border-0 justify-content-end add-link-cv"
+        style={{ backgroundColor: "transparent", color: "#1b3f6b" }}
+        onClick={addLinkField}
       >
         <FontAwesomeIcon
           className="rounded-circle p-1"
-          style={{ border: "2px solid #BF9B30" }}
+          style={{ border: "2px solid #1b3f6b" }}
           icon={faPlus}
         />
       </button>
@@ -190,10 +211,16 @@ return (
     <div className="container btns-form-part">
             <div className="d-lg-flex justify-content-between  my-3">
                 <div className="col-12 col-lg-2 mb-3 mb-lg-0">
-                    <button onClick={downloadPDF} type='button' className="btn bg-gold text-white text-uppercase btn-gold-hover py-3 w-100">{loader == false ? 'Download' : 'Downloading'}</button>
+                    <button onClick={downloadPDF} type='button' className="btn bg-gold text-white btn-gold-hover w-100 btn-back-cv">{loader == false ? 'Download' : 'Downloading'}</button>
                 </div>
                 <div className="col-12 col-lg-2 order-lg-first">{/* to make continue btn appear first in md sm screens */}
-                <button type="button" onClick={()=> Navigate(-1)} className="btn btn-secondary text-white text-uppercase me-3 py-3 mb-3 mb-lg-0 w-100">Back</button>
+                <button
+              type="button"
+              onClick={() => Navigate("/CV/Form7")}
+              className="btn btn-secondary text-white me-3 mb-3 mb-lg-0 w-100 btn-back-cv"
+            >
+              Back
+            </button>
             </div>
         </div>
 </div>

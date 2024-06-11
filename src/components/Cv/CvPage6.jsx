@@ -79,14 +79,9 @@ function CvPage6() {
           Award: updatedForms,
         })}
 return (
-    <div>
+    <div style={{marginTop:"100px"}}>
     <div className="container">
         <div className="row">
-            <div className="col-12">
-                <p className="my-2">Create CV</p>
-                <div className="gold-border"></div>
-                <p className="pt-2">6th June 2023</p>
-            </div>
         </div>
     </div>
     {/* End small title */}
@@ -95,9 +90,7 @@ return (
     <div className="container pt-4">
         <div className="row">
             <h2>Customize your cv</h2>
-            <p className="col-lg-
-            12 col-lg-5">Here you can create your CV by answering question and getting it
-                ready for download or applying to jobs through the platform.
+            <p className="col-lg-12 col-lg-5">Here you can create your CV by answering question and getting it ready for download or applying to jobs through the platform.
             </p>
         </div>
     </div>
@@ -107,15 +100,15 @@ return (
     <div className="container px-4 py-4 background-transparent rounded d-none d-lg-block">
         <div className="row">
             <div className="col d-flex align-items-center" onClick={()=> Navigate('/CV/Form4')}>
-                <div className="btn-golden-border me-3 bg-warning">4</div>
+                <div className="btn-golden-border me-3 createcv-active">4</div>
                 <span className="text-uppercase">Experience</span>
             </div>
             <div className="col d-flex align-items-center" onClick={()=> Navigate('/CV/Form5')}>
-                <div className="btn-golden-border me-3 bg-warning">5</div>
+                <div className="btn-golden-border me-3 createcv-active">5</div>
                 <span className="text-uppercase">education</span>
             </div>
             <div className="col d-flex align-items-center" onClick={()=> Navigate('/CV/Form6')}>
-                <div className="btn-golden-border me-3 bg-warning">6</div>
+                <div className="btn-golden-border me-3 createcv-active">6</div>
                 <span className="text-uppercase">Honers & Awards</span>
             </div>
             <div className="col d-flex align-items-center" onClick={()=> Navigate('/CV/Form7')}>
@@ -131,7 +124,7 @@ return (
     <div className="container px-4 py-4 background-transparent rounded d-block d-lg-none">
     <div className="row">
         <div className="col d-flex align-items-center" onClick={()=> Navigate('/CV/Form6')}>
-            <div className="btn-golden-border me-3 bg-warning">6</div>
+            <div className="btn-golden-border me-3 createcv-active">6</div>
             <span className="text-uppercase">Honers & Awards</span>
         </div>
         <div className="col d-flex align-items-center" onClick={()=> Navigate('/CV/Form7')}>
@@ -147,8 +140,8 @@ return (
     {formik.values.Award.map((form, formIndex) => (
       <div 
         key={form.id}
-        className="rounded-3 p-3 bg-black text-white my-3"
-        style={{ border: "2px dashed #BF9B30" }}
+        className="rounded-3 p-3  text-dark my-3"
+        style={{ border: "2px dashed #1b3f6b" }}
       >
         {form.inputs.map((input, inputIndex) => (
           <div key={input.id} style={{ marginBottom: "10px" }}>
@@ -179,7 +172,7 @@ return (
           <button
             type="button"
             className="border-0"
-            style={{ backgroundColor: "transparent", color: "#BF9B30" }}
+            style={{ backgroundColor: "transparent", color: "#1b3f6b" }}
             onClick={() => removeForm(form.id)}
           >
             <FontAwesomeIcon className="fs-5" icon={faTrashCan} />
@@ -187,16 +180,16 @@ return (
         </div>
       </div>
     ))}
-    <div className="col-12 pt-2 border-0 d-flex justify-content-end">
+    <div className="col-12 pt-2 border-0 ">
       <button
-        type="button"
-        className="me-2 pe-1 border-0"
-        style={{ backgroundColor: "transparent", color: "#BF9B30" }}
+        // type="button"
+        className=" pe-1 border-0 add-experience-cv"
+        style={{ backgroundColor: "transparent", color: "#1b3f6b" }}
         onClick={addForm}
       >
         <FontAwesomeIcon
           className="rounded-circle p-1"
-          style={{ border: "2px solid #BF9B30" }}
+          style={{ border: "2px solid #1b3f6b" }}
           icon={faPlus}
         />
       </button>
@@ -205,15 +198,28 @@ return (
         <Cv/>
     </div>
     <div className="container btns-form-part">
-            <div className="row my-3">
-                <div className="col-12 col-lg-2 mb-3 mb-lg-0">
-                    <button type="submit" onClick={ ()=> (formik.handleSubmit(),Navigate('/CV/Form7'))} className="btn bg-gold text-white text-uppercase btn-gold-hover py-3 w-100">Continue</button>
-                </div>
-                <div className="col-12 col-lg-2 order-lg-first">{/* to make continue btn appear first in md sm screens */}
-                <button type="button"  onClick={()=> Navigate(-1)} className="btn btn-secondary text-white text-uppercase me-3 py-3 mb-3 mb-lg-0 w-100">Back</button>
-            </div>
+        <div className="row my-3">
+          <div className="col-12 col-lg-2 mb-3 mb-lg-0">
+            <button
+              type="submit"
+              onClick={() => (formik.handleSubmit(), Navigate("/CV/Form7"))}
+              className="btn  text-white btn-gold-hover w-100 btn-back-cv"
+            >
+              Continue
+            </button>
+          </div>
+          <div className="col-12 col-lg-2 order-lg-first">
+            {/* to make continue btn appear first in md sm screens */}
+            <button
+              type="button"
+              onClick={() => Navigate("/CV/Form5")}
+              className="btn btn-secondary text-white me-3 mb-3 mb-lg-0 w-100 btn-back-cv"
+            >
+              Back
+            </button>
+          </div>
         </div>
-</div>
+      </div>
 </div>
 )
 }

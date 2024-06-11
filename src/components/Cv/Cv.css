@@ -4,7 +4,7 @@
   --colorGreen: #34a853;
   --colorGrey: #d0d0d0;
   --main-color: var(--secondColor);
-  --btn-hover: #e7bc3c;
+  --btn-hover: var(--secondColor);
   --bg-cv: #0d1c33;
   --firstColor: #018883;
   --secondColor: #1b3f6b;
@@ -118,7 +118,18 @@
 .bg-transparent2 {
   background-color: rgba(149, 139, 139, 0.199);
 }
-
+.add-skill-cv{
+  margin-top: -43px;
+  margin-left: -30px;
+}
+.add-experience-cv{
+  margin-top: -114px ;
+  margin-right: 50px ;
+}
+.add-link-cv{
+  margin-bottom: 15px !important;
+  margin-left: 430px !important ;
+}
 .steps {
   display: flex;
   justify-content: space-between;
@@ -160,8 +171,20 @@
   margin-left: 18px;
   margin-bottom: 18px;
 }
+/* .bg-warning{
+  background-color: var(--firstColor) !important;
+} */
+.bg-warning {
+  /* --bs-bg-opacity: 1; */
+  background-color:var(--firstColor) !important;
+}
+.createcv-active {
+  background-color: var(--firstColor);
+  opacity: 0.9;
+color: white;
+  box-shadow:  inset 0 3px 5px rgba(0, 0, 0, 0.125);;
+}
 
-/* to customize progress bar */
 #progress::-webkit-progress-value {
   background-color: var(--main-color);
   transition: 0.5s ease;
@@ -235,6 +258,9 @@ td {
 
 .item-all {
   width: 100%;
+}
+.label{
+  font-weight: 600;
 }
 
 @media screen and (min-width: 400px) {
@@ -377,13 +403,17 @@ td {
 }
 .cateigry-cv {
   color: rgb(42, 62, 116);
+  flex-direction: column;
 }
 .line-cv {
   width: 50px;
   height: 2px;
   background-color: rgb(7, 7, 50) !important;
 }
-
+.btn-back-cv{
+ background-color: var(--firstColor) !important;
+ font-size: larger !important;
+}
 /* animations */
 @keyframes fadeInDown {
   from {

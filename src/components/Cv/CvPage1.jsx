@@ -58,19 +58,11 @@ function CvPage1() {
     dispatch(setProfile({ ...profileData, image }));
   }
   return (
-    <div>
+    <div style={{marginTop:"100px"}}>
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <p className="my-2">Create CV</p>
-            <div className="gold-border"></div>
-            <p className="pt-2">6th June 2023</p>
-          </div>
         </div>
       </div>
-      {/* End small title */}
-
-      {/* Start big title */}
       <div className="container pt-4">
         <div className="row">
           <h2>Customize your cv</h2>
@@ -90,35 +82,35 @@ function CvPage1() {
             onClick={() => Navigate("/CV")}
           >
             <div className="btn-golden-border me-3 ">1</div>
-            <span className="text-uppercase">main information</span>
+            <h6 className="text-uppercase">main information</h6>
           </div>
           <div
             className="col d-flex align-items-center"
             onClick={() => Navigate("/CV/Form2")}
           >
             <div className="btn-golden-border me-3 ">2</div>
-            <span className="text-uppercase">about</span>
+            <h6 className="text-uppercase">about</h6>
           </div>
           <div
             className="col d-flex align-items-center"
             onClick={() => Navigate("/CV/Form3")}
           >
             <div className="btn-golden-border me-3">3</div>
-            <span className="text-uppercase">skills</span>
+            <h6 className="text-uppercase">skills</h6>
           </div>
           <div
             className="col d-flex align-items-center"
             onClick={() => Navigate("/CV/Form4")}
           >
             <div className="btn-golden-border me-3">4</div>
-            <span className="text-uppercase">experience</span>
+            <h6 className="text-uppercase">experience</h6>
           </div>
           <div
             className="col d-flex align-items-center"
             onClick={() => Navigate("/CV/Form5")}
           >
             <div className="btn-golden-border me-3">5</div>
-            <span className="text-uppercase">education</span>
+            <h6 className="text-uppercase">education</h6>
           </div>
         </div>
       </div>
@@ -129,14 +121,14 @@ function CvPage1() {
             onClick={() => Navigate("/CV")}
           >
             <div className="btn-golden-border me-3 ">1</div>
-            <span className="text-uppercase">main information</span>
+            <h6 className="text-uppercase">main information</h6>
           </div>
           <div
             className="col d-flex align-items-center"
             onClick={() => Navigate("/CV/Form2")}
           >
             <div className="btn-golden-border me-3 ">2</div>
-            <span className="text-uppercase">about</span>
+            <h6 className="text-uppercase">about</h6>
           </div>
         </div>
       </div>
@@ -145,12 +137,12 @@ function CvPage1() {
         <form className="col-12 col-lg-4 me-lg-5">
           <div className="row">
             <div className="col-md col-lg me-3">
-              <label for="firstName" className="mb-3">
+              <label for="firstName" className="mb-3 label">
                 First Name
               </label>
               <input
                 type="text"
-                className="form-control px-3 py-2"
+                className="form-control px-3 py-2 text-dark text-dark"
                 id="firstName"
                 placeholder="Enter your first name"
                 name="fName"
@@ -159,12 +151,12 @@ function CvPage1() {
               />
             </div>
             <div className="col-md col-lg">
-              <label for="lastName" className="mb-3 mt-3 mt-lg-0">
+              <label for="lastName" className="mb-3 mt-3 mt-lg-0 label">
                 Last Name
               </label>
               <input
                 type="text"
-                className="form-control px-3 py-2"
+                className="form-control px-3 py-2 text-dark"
                 id="lastName"
                 placeholder="Enter your last name"
                 name="lName"
@@ -176,12 +168,12 @@ function CvPage1() {
 
           <div className="row mt-3">
             <div className="col-md col-lg me-3">
-              <label for="profession" className="mb-3">
+              <label for="profession" className="mb-3 label">
                 Profession
               </label>
               <input
                 type="text"
-                className="form-control px-3 py-2"
+                className="form-control px-3 py-2 text-dark"
                 id="profession"
                 placeholder="Enter your profession"
                 name="profession"
@@ -190,12 +182,12 @@ function CvPage1() {
               />
             </div>
             <div className="col-md col-lg">
-              <label for="country" className="mb-3 mt-3 mt-lg-0">
+              <label for="country" className="mb-3 mt-3 mt-lg-0 label">
                 Country
               </label>
               <input
                 type="text"
-                className="form-control px-3 py-2"
+                className="form-control px-3 py-2 text-dark"
                 id="country"
                 placeholder="Enter your country"
                 name="country"
@@ -207,12 +199,12 @@ function CvPage1() {
 
           <div className="row mt-3">
             <div className="col-md col-lg me-3">
-              <label for="city" className="mb-3">
+              <label for="city" className="mb-3 label">
                 City
               </label>
               <input
                 type="text"
-                className="form-control px-3 py-2"
+                className="form-control px-3 py-2 text-dark"
                 id="city"
                 placeholder="Enter your city"
                 name="city"
@@ -221,13 +213,13 @@ function CvPage1() {
               />
             </div>
             <div className="col-md col-lg-8">
-              <label for="phone" className="mb-3 mt-3 mt-lg-0">
+              <label for="phone" className="mb-3 mt-3 mt-lg-0 label">
                 Mobile Number
               </label>
               <br />
               <input
                 type="tel"
-                className="form-control px-5 py-2"
+                className="form-control px-5 py-2 text-dark"
                 id="phone"
                 placeholder="Enter your mobile number"
                 name="mobileNumber"
@@ -239,12 +231,12 @@ function CvPage1() {
 
           <div className="row mt-3">
             <div className="col-md col-lg">
-              <label for="email" className="mb-3">
+              <label for="email" className="mb-3 label">
                 Email
               </label>
               <input
                 type="email"
-                className="form-control px-3 py-2"
+                className="form-control px-3 py-2 text-dark"
                 id="email"
                 placeholder="Enter your email"
                 name="email"
@@ -256,24 +248,20 @@ function CvPage1() {
 
           <div className="row mt-3">
             <div className="col-6">
-              <label for="personalPhoto" className="d-none d-lg-block">
+              <label for="personalPhoto" className="d-none d-lg-block label">
                 Personal Photo
-              </label>
-              <label for="personalPhoto" className="d-lg-none">
-                Upload CV
               </label>
             </div>
           </div>
-
           <div className="row mt-3">
             <div className="col golden-dashed-border d-flex flex-column align-items-center py-5">
               <img src={img} alt="" width="80px" />
-              <p className="fw-bold mt-3" >
+              <p className="fw-bold-cv mt-3" >
                 Drag & drop files or
                 <label
                   for="personalPhoto"
                   id="fileLink"
-                  className="gold-txt browse-txt"
+                  className="gold-txt browse-txt mx-2"
                 >
                   Browse
                 </label>
@@ -298,8 +286,8 @@ function CvPage1() {
           <div className="col-12 col-lg-2 mb-3 mb-lg-0">
             <button
               type="submit"
-              onClick={() => (formik.handleSubmit(), Navigate("/CV/Form2"))}
-              className="btn  text-white text-uppercase btn-gold-hover py-3 w-100"
+              onClick={() => (handleSubmit(), Navigate("/CV/form2"))}
+              className="btn  text-white btn-gold-hover w-100 btn-back-cv"
             >
               Continue
             </button>
@@ -309,7 +297,7 @@ function CvPage1() {
             <button
               type="button"
               onClick={() => Navigate("/")}
-              className="btn btn-secondary text-white text-uppercase me-3 py-3 mb-3 mb-lg-0 w-100"
+              className="btn btn-secondary text-white me-3 mb-3 mb-lg-0 w-100 btn-back-cv"
             >
               Back
             </button>

@@ -25,14 +25,10 @@ function CvPage2() {
 
   console.log(aboutData);
   return (
-    <div>
+    <div style={{marginTop:"100px"}}>
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <p className="my-2">Create CV</p>
-            <div className="gold-border"></div>
-            <p className="pt-2">6th June 2023</p>
-          </div>
+
         </div>
       </div>
       {/* End small title */}
@@ -56,14 +52,14 @@ function CvPage2() {
             className="col d-flex align-items-center"
             onClick={() => Navigate("/CV")}
           >
-            <div className="btn-golden-border me-3 bg-warning">1</div>
+            <div className="btn-golden-border me-3 createcv-active">1</div>
             <span className="text-uppercase">main information</span>
           </div>
           <div
             className="col d-flex align-items-center"
             onClick={() => Navigate("/CV/Form2")}
           >
-            <div className="btn-golden-border me-3 bg-warning">2</div>
+            <div className="btn-golden-border me-3 createcv-active">2</div>
             <span className="text-uppercase">about</span>
           </div>
           <div
@@ -95,7 +91,7 @@ function CvPage2() {
             className="col d-flex align-items-center"
             onClick={() => Navigate("/CV/Form2")}
           >
-            <div className="btn-golden-border me-3 bg-warning">2</div>
+            <div className="btn-golden-border me-3 createcv-active">2</div>
             <span className="text-uppercase">About</span>
           </div>
           <div
@@ -115,11 +111,11 @@ function CvPage2() {
         >
           <div className="row my-3">
             <div className="col-md col-lg me-3">
-              <label for="about" className="mb-3">
+              <h5 for="about" className="mb-3">
                 About
-              </label>
+              </h5>
               <textarea
-                className="form-control px-3 py-2"
+                className="form-control px-3 py-2 text-dark"
                 id="about"
                 rows="5"
                 cols
@@ -139,7 +135,7 @@ function CvPage2() {
             <button
               type="submit"
               onClick={() => (handleSubmit(), Navigate("/CV/Form3"))}
-              className="btn bg-gold text-white text-uppercase btn-gold-hover py-3 w-100"
+              className="btn  text-white btn-gold-hover w-100 btn-back-cv"
             >
               Continue
             </button>
@@ -148,12 +144,11 @@ function CvPage2() {
             {/* to make continue btn appear first in md sm screens */}
             <button
               type="button"
-              onClick={() => Navigate(-1)}
-              className="btn btn-secondary text-white text-uppercase me-3 py-3 mb-3 mb-lg-0 w-100"
+              onClick={() => Navigate("/CV")}
+              className="btn btn-secondary text-white me-3 mb-3 mb-lg-0 w-100 btn-back-cv"
             >
               Back
             </button>
-
           </div>
         </div>
       </div>

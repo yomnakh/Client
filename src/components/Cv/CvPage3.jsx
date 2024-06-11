@@ -39,14 +39,9 @@ function CvPage3() {
   };
 console.log(skillsData);
   return (
-    <div>
+    <div style={{marginTop:"100px"}}>
       <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <p className="my-2">Create CV</p>
-            <div className="gold-border"></div>
-            <p className="pt-2">6th June 2023</p>
-          </div>
+        <div className="row"> 
         </div>
       </div>
       {/* End small title */}
@@ -66,15 +61,15 @@ console.log(skillsData);
       <div className="container px-4 py-4 background-transparent rounded d-none d-lg-block">
         <div className="row">
           <div className="col d-flex align-items-center" onClick={() => Navigate('/CV')} >
-            <div className="btn-golden-border me-3 bg-warning">1</div>
+            <div className="btn-golden-border me-3 createcv-active">1</div>
             <span className="text-uppercase">main information</span>
           </div>
           <div className="col d-flex align-items-center" onClick={() => Navigate('/CV/Form2')}>
-            <div className="btn-golden-border me-3 bg-warning" >2</div>
+            <div className="btn-golden-border me-3 createcv-active" >2</div>
             <span className="text-uppercase">about</span>
           </div>
           <div className="col d-flex align-items-center" onClick={() => Navigate('/CV/Form3')}>
-            <div className="btn-golden-border me-3 bg-warning" >3</div>
+            <div className="btn-golden-border me-3 createcv-active" >3</div>
             <span className="text-uppercase">Skills</span>
           </div>
           <div className="col d-flex align-items-center" onClick={() => Navigate('/CV/Form4')}>
@@ -90,7 +85,7 @@ console.log(skillsData);
       <div className="container px-4 py-4 background-transparent rounded d-block d-lg-none">
         <div className="row">
           <div className="col d-flex align-items-center" onClick={() => Navigate('/CV/Form3')}>
-            <div className="btn-golden-border me-3 bg-warning" >3</div>
+            <div className="btn-golden-border me-3 createcv-active" >3</div>
             <span className="text-uppercase">Skills</span>
           </div>
           <div className="col d-flex align-items-center" onClick={() => Navigate('/CV/Form4')}>
@@ -102,10 +97,10 @@ console.log(skillsData);
 
       <div className="container mt-4 px-4 py-4 background-transparent rounded form-container d-flex">
         <form
-          className="col-12 col-lg-4 bg-black me-lg-5"
+          className="col-12 col-lg-4  me-lg-5"
           onSubmit={handleSubmit}
         >
-          <label className="text-white ms-3">Skills</label>
+          <h5 className="text-black ms-3">Skills</h5>
           {skillsData.map((skill, index) => (
             <div className="d-flex my-2 ms-3" key={index}>
               <input
@@ -122,7 +117,7 @@ console.log(skillsData);
               />
               <button
                 className="btn col-1 border-0"
-                style={{ backgroundColor: "transparent", color: "#BF9B30" }}
+                style={{ backgroundColor: "transparent", color: "#1b3f6b" , fontSize:"20px"}}
                 type="button"
                 onClick={() => removeSkillField(index)}
               >
@@ -134,13 +129,13 @@ console.log(skillsData);
 
             <button
               type="button"
-              className="col-1 border-0"
-              style={{ backgroundColor: "transparent", color: "#BF9B30" }}
+              className="col-1 border-0 add-skill-cv"
+              style={{ backgroundColor: "transparent", color: "#1b3f6b" }}
               onClick={addSkillField}
             >
               <FontAwesomeIcon
                 className="rounded-circle p-1"
-                style={{ border: "2px solid #BF9B30" }}
+                style={{ border: "3px solid #1b3f6b" }}
                 icon={faPlus}
               />
             </button>
@@ -151,10 +146,23 @@ console.log(skillsData);
       <div className="container btns-form-part">
         <div className="row my-3">
           <div className="col-12 col-lg-2 mb-3 mb-lg-0">
-            <button type="submit" onClick={() => (handleSubmit(), Navigate('/CV/Form4'))} className="btn bg-gold text-white text-uppercase btn-gold-hover py-3 w-100">Continue</button>
+            <button
+              type="submit"
+              onClick={() => (handleSubmit(), Navigate("/CV/Form4"))}
+              className="btn  text-white btn-gold-hover w-100 btn-back-cv"
+            >
+              Continue
+            </button>
           </div>
-          <div className="col-12 col-lg-2 order-lg-first">{/* to make continue btn appear first in md sm screens */}
-            <button type="button" onClick={() => Navigate(-1)} className="btn btn-secondary text-white text-uppercase me-3 py-3 mb-3 mb-lg-0 w-100">Back</button>
+          <div className="col-12 col-lg-2 order-lg-first">
+            {/* to make continue btn appear first in md sm screens */}
+            <button
+              type="button"
+              onClick={() => Navigate("/CV/Form2")}
+              className="btn btn-secondary text-white me-3 mb-3 mb-lg-0 w-100 btn-back-cv"
+            >
+              Back
+            </button>
           </div>
         </div>
       </div>
